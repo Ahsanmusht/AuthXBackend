@@ -61,7 +61,7 @@ public class QRService : IQRService
         if (totalItems == 0)
             throw new InvalidOperationException("No pending items to print.");
 
-        var job = new Core.Entities.PrintJob
+        var printJob  = new Core.Entities.PrintJob
         {
             CompanyId  = companyId,
             BatchId    = dto.BatchId,
@@ -70,15 +70,15 @@ public class QRService : IQRService
             CreatedBy  = userId
         };
 
-        await _uow.PrintJobs.AddAsync(job);
+        await _uow.PrintJobs.AddAsync(printJob);
         await _uow.SaveChangesAsync();
 
         // Enqueue background processing
         BackgroundJob.Enqueue<PrintProcessingJob>(
             queue: "print_jobs",
-            job => job.ProcessAsync(companyId, userId, job.PrintJobId));
+            job => job.ProcessAsync(companyId, userId, printJob.PrintJobId));
 
-        return MapPrintJob(job);
+        return MapPrintJob(printJob);
     }
 
     public async Task<PrintJobDto> GetPrintJobAsync(int companyId, long printJobId)

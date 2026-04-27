@@ -4,7 +4,7 @@ namespace AuthX.Services.BackgroundJobs;
 
 public static class JobScheduler
 {
-    public static void RegisterRecurringJobs()
+    public static void RegisterRecurringJobs(IRecurringJobManager jobManager)
     {
         // Clean old scan logs older than 6 months — runs daily at 2 AM
         RecurringJob.AddOrUpdate<ScanLogCleanupJob>(

@@ -9,3 +9,4 @@ D:\AuthXBackend\AuthX.Core\obj\Debug\net9.0\AuthX.Core.dll
 D:\AuthXBackend\AuthX.Core\obj\Debug\net9.0\refint\AuthX.Core.dll
 D:\AuthXBackend\AuthX.Core\obj\Debug\net9.0\AuthX.Core.pdb
 D:\AuthXBackend\AuthX.Core\obj\Debug\net9.0\ref\AuthX.Core.dll
+D:\AuthXBackend\AuthX.Core\obj\Debug\net9.0\AuthX.Core.sourcelink.json

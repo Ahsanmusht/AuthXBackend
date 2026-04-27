@@ -28,7 +28,7 @@ public class JwtHelper : IJwtHelper
         var expiry = DateTime.UtcNow.AddMinutes(
             int.Parse(_config["Jwt:AccessTokenExpiryMinutes"] ?? "60"));
 
-        var claims = new List<Claim>
+        var claims = new List<System.Security.Claims.Claim>
         {
             new(ClaimTypes.NameIdentifier, user.UserId.ToString()),
             new(ClaimTypes.Email,          user.Email),
@@ -37,7 +37,7 @@ public class JwtHelper : IJwtHelper
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
-        claims.AddRange(roles.Select(r => new Claim(ClaimTypes.Role, r)));
+        claims.AddRange(roles.Select(r => new System.Security.Claims.Claim(ClaimTypes.Role, r)));
 
         var token = new JwtSecurityToken(
             issuer:             _config["Jwt:Issuer"],

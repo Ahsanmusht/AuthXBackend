@@ -159,3 +159,4 @@ D:\AuthXBackend\AuthX.API\obj\Debug\net9.0\refint\AuthX.API.dll
 D:\AuthXBackend\AuthX.API\obj\Debug\net9.0\AuthX.API.pdb
 D:\AuthXBackend\AuthX.API\obj\Debug\net9.0\AuthX.API.genruntimeconfig.cache
 D:\AuthXBackend\AuthX.API\obj\Debug\net9.0\ref\AuthX.API.dll
+D:\AuthXBackend\AuthX.API\obj\Debug\net9.0\AuthX.API.sourcelink.json

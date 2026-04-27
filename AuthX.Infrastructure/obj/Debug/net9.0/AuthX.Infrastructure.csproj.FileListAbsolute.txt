@@ -15,3 +15,4 @@ D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\refint\AuthX.Infrastructur
 D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.pdb
 D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.genruntimeconfig.cache
 D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\ref\AuthX.Infrastructure.dll
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.sourcelink.json

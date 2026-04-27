@@ -34,3 +34,4 @@ D:\AuthXBackend\AuthX.Services\obj\Debug\net9.0\AuthX.Services.dll
 D:\AuthXBackend\AuthX.Services\obj\Debug\net9.0\refint\AuthX.Services.dll
 D:\AuthXBackend\AuthX.Services\obj\Debug\net9.0\AuthX.Services.pdb
 D:\AuthXBackend\AuthX.Services\obj\Debug\net9.0\ref\AuthX.Services.dll
+D:\AuthXBackend\AuthX.Services\obj\Debug\net9.0\AuthX.Services.sourcelink.json

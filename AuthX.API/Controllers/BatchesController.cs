@@ -10,7 +10,13 @@ namespace AuthX.API.Controllers;
 public class BatchesController : BaseController
 {
     private readonly IBatchService _svc;
-    public BatchesController(IBatchService svc) => _svc = svc;
+    private readonly IQRService    _qrSvc;
+
+    public BatchesController(IBatchService svc, IQRService qrSvc)
+    {
+        _svc   = svc;
+        _qrSvc = qrSvc;
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] PaginationParams p)
@@ -37,5 +43,5 @@ public class BatchesController : BaseController
 
     [HttpGet("{id:long}/progress")]
     public async Task<IActionResult> Progress(long id)
-        => OkResult(await _svc.GetBatchProgressAsync(id)); // via IQRService
+        => OkResult(await _qrSvc.GetBatchProgressAsync(id));
 }

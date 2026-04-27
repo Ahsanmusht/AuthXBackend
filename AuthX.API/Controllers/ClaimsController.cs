@@ -1,6 +1,7 @@
 using AuthX.Core.Constants;
 using AuthX.Core.DTOs.Claims;
 using AuthX.Core.DTOs.Common;
+using AuthX.Core.Extensions;
 using AuthX.Core.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

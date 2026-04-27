@@ -39,7 +39,7 @@ services.AddScoped<ScanLogCleanupJob>();
             .UseSimpleAssemblyNameTypeSerializer()
             .UseRecommendedSerializerSettings()
             .UseSqlServerStorage(
-                config.GetConnectionString("Default"),
+                config.GetConnectionString("DefaultConnection"),
                 new SqlServerStorageOptions
                 {
                     CommandBatchMaxTimeout       = TimeSpan.FromMinutes(5),

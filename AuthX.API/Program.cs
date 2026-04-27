@@ -28,9 +28,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 
 // ─── Database ─────────────────────────────────────────────
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(
-        builder.Configuration.GetConnectionString("Default"),
+        connectionString,
         sql =>
         {
             sql.EnableRetryOnFailure(3, TimeSpan.FromSeconds(5), null);
@@ -38,13 +41,22 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
         }));
 
 // ─── Redis ────────────────────────────────────────────────
-builder.Services.AddStackExchangeRedisCache(opt =>
+var redisConnection = builder.Configuration["Redis:Connection"];
+if (!string.IsNullOrEmpty(redisConnection))
 {
-    opt.Configuration = builder.Configuration["Redis:Connection"];
-    opt.InstanceName = "PV_";
-});
-
-builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
+    builder.Services.AddStackExchangeRedisCache(opt =>
+    {
+        opt.Configuration = redisConnection;
+        opt.InstanceName = "PV_";
+    });
+    builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
+}
+else
+{
+    // Fallback to in-memory cache if Redis not configured
+    builder.Services.AddDistributedMemoryCache();
+    builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
+}
 
 // ─── Repository / UoW ────────────────────────────────────
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -53,10 +65,15 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddApplicationServices(builder.Configuration);
 
 // ─── JWT Authentication ───────────────────────────────────
-var jwtKey = builder.Configuration["Jwt:Key"]
-    ?? throw new InvalidOperationException("Jwt:Key is missing in appsettings.");
-var jwtIssuer = builder.Configuration["Jwt:Issuer"]!;
-var jwtAud = builder.Configuration["Jwt:Audience"]!;
+var jwtKey = builder.Configuration["Jwt:Key"];
+if (string.IsNullOrEmpty(jwtKey))
+{
+    throw new InvalidOperationException(
+        "JWT Key is not configured. Please set 'Jwt:Key' in appsettings.json");
+}
+
+var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "AuthX.API";
+var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "AuthX.Client";
 
 builder.Services.AddAuthentication(opt =>
 {
@@ -72,7 +89,7 @@ builder.Services.AddAuthentication(opt =>
         ValidateIssuer = true,
         ValidIssuer = jwtIssuer,
         ValidateAudience = true,
-        ValidAudience = jwtAud,
+        ValidAudience = jwtAudience,
         ValidateLifetime = true,
         ClockSkew = TimeSpan.Zero
     };
@@ -93,21 +110,26 @@ builder.Services.AddAuthentication(opt =>
 builder.Services.AddAuthorization();
 
 // ─── SignalR + Redis backplane ────────────────────────────
-builder.Services.AddSignalR(opt =>
+var signalRBuilder = builder.Services.AddSignalR(opt =>
 {
     opt.EnableDetailedErrors = builder.Environment.IsDevelopment();
     opt.MaximumReceiveMessageSize = 102_400;
     opt.KeepAliveInterval = TimeSpan.FromSeconds(15);
     opt.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
-})
-.AddStackExchangeRedis(builder.Configuration["Redis:Connection"]!);
+});
+
+if (!string.IsNullOrEmpty(redisConnection))
+{
+    signalRBuilder.AddStackExchangeRedis(redisConnection);
+}
 
 // ─── CORS ─────────────────────────────────────────────────
+var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
+    ?? new[] { "http://localhost:5173", "http://localhost:3000" };
+
 builder.Services.AddCors(opt =>
     opt.AddPolicy("ReactApp", p => p
-        .WithOrigins(
-            builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
-            ?? ["http://localhost:5173"])
+        .WithOrigins(allowedOrigins)
         .AllowAnyHeader()
         .AllowAnyMethod()
         .AllowCredentials()));
@@ -146,7 +168,7 @@ builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "ProductVerification API",
+        Title = "AuthX API",
         Version = "v1",
         Description = "Product Verification & Digital Warranty System"
     });
@@ -181,7 +203,12 @@ builder.Services.AddMemoryCache();
 var app = builder.Build();
 // ═══════════════════════════════════════════════════════════
 
-JobScheduler.RegisterRecurringJobs();
+using (var scope = app.Services.CreateScope())
+{
+    var jobManager = scope.ServiceProvider
+        .GetRequiredService<IRecurringJobManager>();
+    JobScheduler.RegisterRecurringJobs(jobManager);
+}
 
 if (app.Environment.IsDevelopment())
 {
@@ -200,7 +227,7 @@ app.UseAuthorization();
 // ─── Hangfire Dashboard ───────────────────────────────────
 app.UseHangfireDashboard("/hangfire", new DashboardOptions
 {
-    Authorization = [new HangfireAuthFilter()]
+    Authorization = new[] { new HangfireAuthFilter() }
 });
 
 app.MapControllers();

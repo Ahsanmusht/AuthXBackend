@@ -10,6 +10,8 @@
         "dependencies": {
           "AuthX.Infrastructure": "1.0.0",
           "AuthX.Services": "1.0.0",
+          "Hangfire.AspNetCore": "1.8.23",
+          "Hangfire.SqlServer": "1.8.23",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.26",
           "Microsoft.AspNetCore.OpenApi": "9.0.5",
           "Microsoft.AspNetCore.SignalR.StackExchangeRedis": "8.0.26",
