@@ -1,2 +1,100 @@
 2026-04-27 12:21:31.611 +05:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
 2026-04-27 12:21:32.230 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 12:21:33.469 +05:00 [INF] Now listening on: http://localhost:5140
+2026-04-27 12:21:33.830 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 12:21:33.896 +05:00 [INF] Hosting environment: Development
+2026-04-27 12:21:34.446 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-04-27 12:21:44.843 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/ - null null
+2026-04-27 12:21:54.727 +05:00 [ERR] Unhandled exception: Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__3(JwtBearerOptions opt) in D:\AuthXBackend\AuthX.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-27 12:21:55.680 +05:00 [INF] HTTP GET / responded 400 in 9310.0276 ms
+2026-04-27 12:21:56.024 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/ - 400 null application/json 11189.7068ms
+2026-04-27 12:21:57.080 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/favicon.ico - null null
+2026-04-27 12:21:57.244 +05:00 [ERR] Unhandled exception: Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__3(JwtBearerOptions opt) in D:\AuthXBackend\AuthX.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-27 12:21:57.267 +05:00 [INF] HTTP GET /favicon.ico responded 400 in 26.9188 ms
+2026-04-27 12:21:57.289 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/favicon.ico - 400 null application/json 209.314ms
+2026-04-27 12:22:03.749 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/index.html - null null
+2026-04-27 12:22:03.789 +05:00 [ERR] Unhandled exception: Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__3(JwtBearerOptions opt) in D:\AuthXBackend\AuthX.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-27 12:22:03.816 +05:00 [INF] HTTP GET /index.html responded 400 in 37.3325 ms
+2026-04-27 12:22:03.875 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/index.html - 400 null application/json 125.7567ms
+2026-04-27 12:22:03.963 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/favicon.ico - null null
+2026-04-27 12:22:04.006 +05:00 [ERR] Unhandled exception: Value cannot be null. (Parameter 's')
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__3(JwtBearerOptions opt) in D:\AuthXBackend\AuthX.API\Program.cs:line 64
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-27 12:22:04.029 +05:00 [INF] HTTP GET /favicon.ico responded 400 in 22.8704 ms
+2026-04-27 12:22:04.054 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/favicon.ico - 400 null application/json 91.0552ms
+2026-04-27 12:23:46.774 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger - null null
+2026-04-27 12:23:46.787 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger - 301 0 null 12.7387ms
+2026-04-27 12:23:46.829 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/index.html - null null
+2026-04-27 12:23:46.938 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/index.html - 200 null text/html;charset=utf-8 109.1116ms
+2026-04-27 12:23:47.014 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui-bundle.js - null null
+2026-04-27 12:23:47.014 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui-standalone-preset.js - null null
+2026-04-27 12:23:47.016 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui.css - null null
+2026-04-27 12:23:47.168 +05:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-04-27 12:23:47.253 +05:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-04-27 12:23:47.274 +05:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-04-27 12:23:47.304 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 290.7695ms
+2026-04-27 12:23:47.326 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 311.3022ms
+2026-04-27 12:23:47.328 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/swagger-ui.css - 200 144929 text/css 313.0226ms
+2026-04-27 12:23:48.029 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/v1/swagger.json - null null
+2026-04-27 12:23:48.088 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/favicon-32x32.png - null null
+2026-04-27 12:23:48.162 +05:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-04-27 12:23:48.200 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/favicon-32x32.png - 200 628 image/png 112.0965ms
+2026-04-27 12:23:48.207 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 178.0564ms
