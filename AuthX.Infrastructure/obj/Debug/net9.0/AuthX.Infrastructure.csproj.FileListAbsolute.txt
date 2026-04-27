@@ -1,0 +1,17 @@
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Infrastructure.deps.json
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Infrastructure.runtimeconfig.json
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Infrastructure.dll
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Infrastructure.pdb
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Core.dll
+D:\AuthXBackend\AuthX.Infrastructure\bin\Debug\net9.0\AuthX.Core.pdb
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.csproj.AssemblyReference.cache
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.AssemblyInfoInputs.cache
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.AssemblyInfo.cs
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.csproj.CoreCompileInputs.cache
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.In.612BB3DA.Up2Date
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.dll
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\refint\AuthX.Infrastructure.dll
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.pdb
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\AuthX.Infrastructure.genruntimeconfig.cache
+D:\AuthXBackend\AuthX.Infrastructure\obj\Debug\net9.0\ref\AuthX.Infrastructure.dll
