@@ -9089,6 +9089,8 @@
     "net9.0": [
       "AuthX.Infrastructure >= 1.0.0",
       "AuthX.Services >= 1.0.0",
+      "Hangfire.AspNetCore >= 1.8.*",
+      "Hangfire.SqlServer >= 1.8.*",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.*",
       "Microsoft.AspNetCore.OpenApi >= 9.0.5",
       "Microsoft.AspNetCore.SignalR.StackExchangeRedis >= 8.*",
@@ -9154,6 +9156,14 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Hangfire.AspNetCore": {
+            "target": "Package",
+            "version": "[1.8.*, )"
+          },
+          "Hangfire.SqlServer": {
+            "target": "Package",
+            "version": "[1.8.*, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.*, )"
