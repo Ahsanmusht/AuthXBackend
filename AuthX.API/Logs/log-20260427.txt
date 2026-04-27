@@ -412,3 +412,135 @@ StackExchange.Redis.RedisConnectionException: It was not possible to connect to 
 2026-04-27 15:06:44.057 +05:00 [INF] Server desktop-4153n37:17332:789cae98 All dispatchers stopped
 2026-04-27 15:06:44.074 +05:00 [INF] Server desktop-4153n37:17332:789cae98 successfully reported itself as stopped in 11.2853 ms
 2026-04-27 15:06:44.076 +05:00 [INF] Server desktop-4153n37:17332:789cae98 has been stopped in total 776.1146 ms
+2026-04-27 15:07:23.956 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-04-27 15:07:25.068 +05:00 [INF] Hangfire SQL objects installed.
+2026-04-27 15:07:26.092 +05:00 [INF] Connecting to Redis endpoints: localhost:6379. Using Server Name: DESKTOP-4153N37_e14c6335987a4d7fbca6d0787bf3da78
+2026-04-27 15:07:26.441 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 15:07:26.733 +05:00 [INF] Now listening on: http://localhost:5140
+2026-04-27 15:07:26.761 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: 103.121.121.202@AuthX_DB'
+2026-04-27 15:07:26.803 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-04-27 15:07:26.829 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-04-27 15:07:27.006 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 15:07:27.018 +05:00 [INF] Hosting environment: Development
+2026-04-27 15:07:27.051 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-04-27 15:07:27.094 +05:00 [INF] Server desktop-4153n37:16624:9c20a87b successfully announced in 36.9125 ms
+2026-04-27 15:07:27.111 +05:00 [INF] Server desktop-4153n37:16624:9c20a87b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-04-27 15:07:27.221 +05:00 [INF] Server desktop-4153n37:16624:9c20a87b all the dispatchers started
+2026-04-27 15:07:31.651 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/index.html - null null
+2026-04-27 15:07:31.972 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/index.html - 200 null text/html;charset=utf-8 321.2131ms
+2026-04-27 15:07:32.769 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/swagger/v1/swagger.json - null null
+2026-04-27 15:07:33.197 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 427.9982ms
+2026-04-27 15:07:35.821 +05:00 [ERR] Error connecting to Redis.
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisOptions.ConnectAsync(TextWriter log)
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisHubLifetimeManager`1.EnsureRedisServerConnection()
+2026-04-27 15:08:36.213 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Setup/first-admin - application/json 154
+2026-04-27 15:08:36.302 +05:00 [INF] CORS policy execution failed.
+2026-04-27 15:08:36.311 +05:00 [INF] Request origin http://localhost:5140 does not have permission to access the resource.
+2026-04-27 15:08:36.744 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SetupController.CreateFirstAdmin (AuthX.API)'
+2026-04-27 15:08:36.796 +05:00 [INF] Route matched with {action = "CreateFirstAdmin", controller = "Setup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateFirstAdmin(AuthX.API.Controllers.FirstAdminDto) on controller AuthX.API.Controllers.SetupController (AuthX.API).
+2026-04-27 15:08:41.185 +05:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[IsActive] = CAST(1 AS bit)) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2026-04-27 15:08:42.085 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 200), @p2='?' (DbType = Boolean), @p3='?' (Size = 500), @p4='?' (Size = 200), @p5='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Company] ([CreatedAt], [Domain], [IsActive], [LogoUrl], [Name], [UpdatedAt])
+OUTPUT INSERTED.[CompanyId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2026-04-27 15:08:42.508 +05:00 [INF] Executed DbCommand (24ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = Boolean), @p5='?' (Size = 100), @p6='?' (DbType = Int32), @p7='?' (DbType = Boolean), @p8='?' (Size = 100), @p9='?' (DbType = Int32), @p10='?' (DbType = Boolean), @p11='?' (Size = 100), @p12='?' (DbType = Int32), @p13='?' (DbType = Boolean), @p14='?' (Size = 100), @p15='?' (DbType = Int32), @p16='?' (DbType = Boolean), @p17='?' (Size = 100)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [Roles] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2),
+(@p9, @p10, @p11, 3),
+(@p12, @p13, @p14, 4),
+(@p15, @p16, @p17, 5)) AS i ([CompanyId], [IsActive], [RoleName], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([CompanyId], [IsActive], [RoleName])
+VALUES (i.[CompanyId], i.[IsActive], i.[RoleName])
+OUTPUT INSERTED.[RoleId], i._Position;
+2026-04-27 15:08:43.106 +05:00 [INF] Executed DbCommand (64ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 150), @p3='?' (DbType = Boolean), @p4='?' (Size = 150), @p5='?' (Size = 500), @p6='?' (Size = 4000), @p7='?' (Size = 500), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([CompanyId], [CreatedAt], [Email], [IsActive], [Name], [PasswordHash], [Phone], [RefreshToken], [RefreshTokenExpiry])
+OUTPUT INSERTED.[UserId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-04-27 15:08:43.234 +05:00 [INF] Executed DbCommand (60ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [UserRoles] ([RoleId], [UserId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1);
+2026-04-27 15:08:43.274 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-27 15:08:43.376 +05:00 [INF] Executed action AuthX.API.Controllers.SetupController.CreateFirstAdmin (AuthX.API) in 6523.1518ms
+2026-04-27 15:08:43.394 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SetupController.CreateFirstAdmin (AuthX.API)'
+2026-04-27 15:08:43.426 +05:00 [INF] HTTP POST /api/Setup/first-admin responded 200 in 7121.8155 ms
+2026-04-27 15:08:43.502 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Setup/first-admin - 200 null application/json; charset=utf-8 7289.343ms
+2026-04-27 15:09:58.853 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/login - application/json 50
+2026-04-27 15:09:59.175 +05:00 [INF] CORS policy execution failed.
+2026-04-27 15:09:59.254 +05:00 [INF] Request origin http://localhost:5140 does not have permission to access the resource.
+2026-04-27 15:09:59.264 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-04-27 15:09:59.292 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthX.Core.DTOs.Auth.LoginRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-04-27 15:09:59.584 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__ToLower_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__ToLower_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-27 15:09:59.593 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Login (AuthX.API) in 298.4488ms
+2026-04-27 15:09:59.597 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-04-27 15:09:59.604 +05:00 [ERR] Unhandled exception: Invalid email or password.
+System.UnauthorizedAccessException: Invalid email or password.
+   at AuthX.Services.Implementations.AuthService.LoginAsync(LoginRequestDto dto) in D:\AuthXBackend\AuthX.Services\Implementations\AuthService.cs:line 27
+   at AuthX.API.Controllers.AuthController.Login(LoginRequestDto dto) in D:\AuthXBackend\AuthX.API\Controllers\AuthController.cs:line 18
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-27 15:09:59.672 +05:00 [INF] HTTP POST /api/Auth/login responded 401 in 497.9888 ms
+2026-04-27 15:09:59.679 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/login - 401 null application/json 825.3097ms
+2026-04-27 15:10:10.501 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/login - application/json 58
+2026-04-27 15:10:10.553 +05:00 [INF] CORS policy execution failed.
+2026-04-27 15:10:10.560 +05:00 [INF] Request origin http://localhost:5140 does not have permission to access the resource.
+2026-04-27 15:10:10.586 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-04-27 15:10:10.595 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthX.Core.DTOs.Auth.LoginRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-04-27 15:10:10.678 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__ToLower_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__ToLower_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-04-27 15:10:10.999 +05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-04-27 15:10:11.131 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 150), @p3='?' (DbType = Boolean), @p4='?' (Size = 150), @p5='?' (Size = 500), @p6='?' (Size = 4000), @p7='?' (Size = 500), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CompanyId] = @p0, [CreatedAt] = @p1, [Email] = @p2, [IsActive] = @p3, [Name] = @p4, [PasswordHash] = @p5, [Phone] = @p6, [RefreshToken] = @p7, [RefreshTokenExpiry] = @p8
+OUTPUT 1
+WHERE [UserId] = @p9;
+2026-04-27 15:10:11.141 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Auth.LoginResponseDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-27 15:10:11.164 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Login (AuthX.API) in 552.9651ms
+2026-04-27 15:10:11.169 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-04-27 15:10:11.172 +05:00 [INF] HTTP POST /api/Auth/login responded 200 in 620.3126 ms
+2026-04-27 15:10:11.175 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/login - 200 null application/json; charset=utf-8 673.6163ms
