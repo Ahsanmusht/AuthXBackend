@@ -349,3 +349,66 @@ StackExchange.Redis.RedisConnectionException: It was not possible to connect to 
    at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
    at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisOptions.ConnectAsync(TextWriter log)
    at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisHubLifetimeManager`1.EnsureRedisServerConnection()
+2026-04-27 14:50:03.501 +05:00 [INF] Server desktop-4153n37:14172:404998c9 caught stopping signal...
+2026-04-27 14:50:03.517 +05:00 [INF] Application is shutting down...
+2026-04-27 14:50:03.734 +05:00 [INF] Server desktop-4153n37:14172:404998c9 All dispatchers stopped
+2026-04-27 14:50:03.745 +05:00 [INF] Server desktop-4153n37:14172:404998c9 successfully reported itself as stopped in 7.3063 ms
+2026-04-27 14:50:03.747 +05:00 [INF] Server desktop-4153n37:14172:404998c9 has been stopped in total 229.5171 ms
+2026-04-27 14:50:31.096 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-04-27 14:50:32.168 +05:00 [INF] Hangfire SQL objects installed.
+2026-04-27 14:50:33.042 +05:00 [INF] Connecting to Redis endpoints: localhost:6379. Using Server Name: DESKTOP-4153N37_264aa553a475423c882638c1df2b9220
+2026-04-27 14:50:33.364 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 14:50:33.563 +05:00 [INF] Now listening on: http://localhost:5140
+2026-04-27 14:50:33.646 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: 103.121.121.202@Ronin_PV_DB'
+2026-04-27 14:50:33.659 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-04-27 14:50:33.701 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-04-27 14:50:33.793 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 14:50:33.925 +05:00 [INF] Server desktop-4153n37:17080:45bd85da successfully announced in 52.042 ms
+2026-04-27 14:50:33.956 +05:00 [INF] Hosting environment: Development
+2026-04-27 14:50:33.985 +05:00 [INF] Server desktop-4153n37:17080:45bd85da is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-04-27 14:50:34.005 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-04-27 14:50:34.178 +05:00 [INF] Server desktop-4153n37:17080:45bd85da all the dispatchers started
+2026-04-27 14:50:42.353 +05:00 [ERR] Error connecting to Redis.
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisOptions.ConnectAsync(TextWriter log)
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisHubLifetimeManager`1.EnsureRedisServerConnection()
+2026-04-27 14:53:13.816 +05:00 [INF] Server desktop-4153n37:17080:45bd85da caught stopping signal...
+2026-04-27 14:53:13.827 +05:00 [INF] Application is shutting down...
+2026-04-27 14:53:14.354 +05:00 [INF] Server desktop-4153n37:17080:45bd85da caught stopped signal...
+2026-04-27 14:53:14.557 +05:00 [INF] Server desktop-4153n37:17080:45bd85da All dispatchers stopped
+2026-04-27 14:53:14.612 +05:00 [INF] Server desktop-4153n37:17080:45bd85da successfully reported itself as stopped in 52.3151 ms
+2026-04-27 14:53:14.614 +05:00 [INF] Server desktop-4153n37:17080:45bd85da has been stopped in total 787.1062 ms
+2026-04-27 15:02:25.502 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-04-27 15:02:26.627 +05:00 [INF] Hangfire SQL objects installed.
+2026-04-27 15:02:27.605 +05:00 [INF] Connecting to Redis endpoints: localhost:6379. Using Server Name: DESKTOP-4153N37_98cd17f79d3644f3986f24f4c96c4c67
+2026-04-27 15:02:27.869 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-27 15:02:28.021 +05:00 [INF] Now listening on: http://localhost:5140
+2026-04-27 15:02:28.046 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: 103.121.121.202@AuthX_DB'
+2026-04-27 15:02:28.048 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-04-27 15:02:28.050 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-04-27 15:02:28.086 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-27 15:02:28.094 +05:00 [INF] Hosting environment: Development
+2026-04-27 15:02:28.101 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-04-27 15:02:28.169 +05:00 [INF] Server desktop-4153n37:17332:789cae98 successfully announced in 32.4745 ms
+2026-04-27 15:02:28.178 +05:00 [INF] Server desktop-4153n37:17332:789cae98 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-04-27 15:02:28.233 +05:00 [INF] Server desktop-4153n37:17332:789cae98 all the dispatchers started
+2026-04-27 15:02:35.991 +05:00 [ERR] Error connecting to Redis.
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisOptions.ConnectAsync(TextWriter log)
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisHubLifetimeManager`1.EnsureRedisServerConnection()
+2026-04-27 15:06:43.296 +05:00 [INF] Server desktop-4153n37:17332:789cae98 caught stopping signal...
+2026-04-27 15:06:43.300 +05:00 [INF] Application is shutting down...
+2026-04-27 15:06:43.841 +05:00 [INF] Server desktop-4153n37:17332:789cae98 caught stopped signal...
+2026-04-27 15:06:44.057 +05:00 [INF] Server desktop-4153n37:17332:789cae98 All dispatchers stopped
+2026-04-27 15:06:44.074 +05:00 [INF] Server desktop-4153n37:17332:789cae98 successfully reported itself as stopped in 11.2853 ms
+2026-04-27 15:06:44.076 +05:00 [INF] Server desktop-4153n37:17332:789cae98 has been stopped in total 776.1146 ms
