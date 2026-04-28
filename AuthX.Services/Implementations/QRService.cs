@@ -12,12 +12,12 @@ namespace AuthX.Services.Implementations;
 
 public class QRService : IQRService
 {
-    private readonly IUnitOfWork        _uow;
+    private readonly IUnitOfWork _uow;
     private readonly IRedisCacheService _cache;
 
     public QRService(IUnitOfWork uow, IRedisCacheService cache)
     {
-        _uow   = uow;
+        _uow = uow;
         _cache = cache;
     }
 
@@ -38,10 +38,10 @@ public class QRService : IQRService
 
         return new QRGenerationResultDto
         {
-            GenerationId   = 0,
-            BatchId        = batch.BatchId,
+            GenerationId = 0,
+            BatchId = batch.BatchId,
             TotalGenerated = batch.Quantity,
-            Message        = $"QR generation queued for {batch.Quantity:N0} items. " +
+            Message = $"QR generation queued for {batch.Quantity:N0} items. " +
                              "You will be notified when complete."
         };
     }
@@ -61,13 +61,13 @@ public class QRService : IQRService
         if (totalItems == 0)
             throw new InvalidOperationException("No pending items to print.");
 
-        var printJob  = new Core.Entities.PrintJob
+        var printJob = new Core.Entities.PrintJob
         {
-            CompanyId  = companyId,
-            BatchId    = dto.BatchId,
+            CompanyId = companyId,
+            BatchId = dto.BatchId,
             TotalItems = totalItems,
             FileFormat = dto.FileFormat,
-            CreatedBy  = userId
+            CreatedBy = userId
         };
 
         await _uow.PrintJobs.AddAsync(printJob);
@@ -94,35 +94,36 @@ public class QRService : IQRService
     {
         var items = await _uow.ProductItems.Query()
             .Where(i => i.BatchId == batchId && i.CompanyId == companyId)
-            .Select(i => new { i.SerialNo, i.QRCode })
+            .Select(i => new { i.SerialNo, i.QRCode, i.QRImagePath })
             .ToListAsync();
 
         if (format.ToUpper() == "CSV")
         {
-            var csv = "SerialNo,QRCode\n" +
-                string.Join("\n", items.Select(i => $"{i.SerialNo},{i.QRCode}"));
+            var csv = "SerialNo,QRCode,QRImagePath\n" +
+                string.Join("\n", items.Select(i =>
+                    $"{i.SerialNo},{i.QRCode},{i.QRImagePath ?? ""}"));
             return System.Text.Encoding.UTF8.GetBytes(csv);
         }
 
-        throw new InvalidOperationException($"Format '{format}' not supported for direct export.");
+        throw new InvalidOperationException($"Format '{format}' not supported.");
     }
 
     public async Task<BatchProgressDto> GetBatchProgressAsync(long batchId)
     {
         var cacheKey = CacheKeys.BatchProgress(batchId.ToString());
-        var cached   = await _cache.GetAsync<BatchProgressDto>(cacheKey);
+        var cached = await _cache.GetAsync<BatchProgressDto>(cacheKey);
         if (cached != null) return cached;
 
         var batch = await _uow.Batches.Query()
             .Where(b => b.BatchId == batchId)
             .Select(b => new BatchProgressDto
             {
-                BatchId     = b.BatchId,
-                BatchNo     = b.BatchNo,
-                Total       = b.Quantity,
-                Generated   = b.Items.Count(),
-                Printed     = b.Items.Count(i => i.PrintStatus == "Printed"),
-                Dispatched  = b.Items.Count(i => i.Status == "Dispatched"),
+                BatchId = b.BatchId,
+                BatchNo = b.BatchNo,
+                Total = b.Quantity,
+                Generated = b.Items.Count(),
+                Printed = b.Items.Count(i => i.PrintStatus == "Printed"),
+                Dispatched = b.Items.Count(i => i.Status == "Dispatched"),
                 PercentDone = b.Quantity == 0 ? 0 :
                     (int)(b.Items.Count(i => i.Status == "Dispatched") * 100.0 / b.Quantity)
             })
@@ -135,15 +136,15 @@ public class QRService : IQRService
 
     private static PrintJobDto MapPrintJob(Core.Entities.PrintJob job) => new()
     {
-        PrintJobId   = job.PrintJobId,
-        BatchId      = job.BatchId,
-        TotalItems   = job.TotalItems,
+        PrintJobId = job.PrintJobId,
+        BatchId = job.BatchId,
+        TotalItems = job.TotalItems,
         PrintedCount = job.PrintedCount,
-        Status       = job.Status,
-        FileUrl      = job.FileUrl,
-        FileFormat   = job.FileFormat,
+        Status = job.Status,
+        FileUrl = job.FileUrl,
+        FileFormat = job.FileFormat,
         ErrorMessage = job.ErrorMessage,
-        CreatedAt    = job.CreatedAt,
-        CompletedAt  = job.CompletedAt
+        CreatedAt = job.CreatedAt,
+        CompletedAt = job.CompletedAt
     };
 }

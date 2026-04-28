@@ -221,6 +221,7 @@ app.UseSerilogRequestLogging();
 app.UseCors("ReactApp");
 app.UseRateLimiter();
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 
