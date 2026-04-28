@@ -4659,3 +4659,261 @@ WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
 2026-04-28 13:08:12.117 +05:00 [INF] Server desktop-4153n37:17380:da2e7776 All dispatchers stopped
 2026-04-28 13:08:12.182 +05:00 [INF] Server desktop-4153n37:17380:da2e7776 successfully reported itself as stopped in 27.7289 ms
 2026-04-28 13:08:12.188 +05:00 [INF] Server desktop-4153n37:17380:da2e7776 has been stopped in total 398.8025 ms
+2026-04-28 13:08:37.540 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-04-28 13:08:38.298 +05:00 [INF] Hangfire SQL objects installed.
+2026-04-28 13:08:39.048 +05:00 [INF] Connecting to Redis endpoints: localhost:6379. Using Server Name: DESKTOP-4153N37_3eb72b61d33644a79ef67c0668fd6c1d
+2026-04-28 13:08:39.386 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-28 13:08:39.572 +05:00 [INF] Now listening on: http://localhost:5140
+2026-04-28 13:08:39.652 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: 103.121.121.202@AuthX_DB'
+2026-04-28 13:08:39.671 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-04-28 13:08:39.688 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-04-28 13:08:39.834 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-28 13:08:39.874 +05:00 [INF] Hosting environment: Development
+2026-04-28 13:08:39.887 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-04-28 13:08:40.017 +05:00 [INF] Server desktop-4153n37:14684:6e0ee4b8 successfully announced in 116.6804 ms
+2026-04-28 13:08:40.272 +05:00 [INF] Server desktop-4153n37:14684:6e0ee4b8 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-04-28 13:08:40.320 +05:00 [INF] Server desktop-4153n37:14684:6e0ee4b8 all the dispatchers started
+2026-04-28 13:08:48.084 +05:00 [ERR] Error connecting to Redis.
+StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). Error connecting right now. To allow this multiplexer to continue retrying until it's able to connect, use abortConnect=false in your connection string or AbortOnConnectFail=false; in your code.
+   at StackExchange.Redis.ConnectionMultiplexer.ConnectImplAsync(ConfigurationOptions configuration, TextWriter writer, Nullable`1 serverType) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 620
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisOptions.ConnectAsync(TextWriter log)
+   at Microsoft.AspNetCore.SignalR.StackExchangeRedis.RedisHubLifetimeManager`1.EnsureRedisServerConnection()
+2026-04-28 13:09:01.840 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-04-28 13:09:01.872 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-04-28 13:09:02.147 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/2 - null null
+2026-04-28 13:09:02.153 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/2 - null null
+2026-04-28 13:09:02.155 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/2 - null null
+2026-04-28 13:09:02.155 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/2 - null null
+2026-04-28 13:09:02.303 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.302 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.303 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.303 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.316 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 10.1908 ms
+2026-04-28 13:09:02.303 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.316 +05:00 [INF] HTTP OPTIONS /api/QR/progress/2 responded 204 in 13.0288 ms
+2026-04-28 13:09:02.316 +05:00 [INF] HTTP OPTIONS /api/Batches/2 responded 204 in 10.6914 ms
+2026-04-28 13:09:02.303 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.317 +05:00 [INF] HTTP OPTIONS /api/QR/progress/2 responded 204 in 17.5286 ms
+2026-04-28 13:09:02.331 +05:00 [INF] HTTP OPTIONS /api/Batches/2 responded 204 in 31.1888 ms
+2026-04-28 13:09:02.333 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 492.5913ms
+2026-04-28 13:09:02.346 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/2 - 204 null null 191.6224ms
+2026-04-28 13:09:02.358 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/2 - 204 null null 210.7898ms
+2026-04-28 13:09:02.366 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 67.0033 ms
+2026-04-28 13:09:02.377 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/2 - 204 null null 224.2885ms
+2026-04-28 13:09:02.382 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/2 - 204 null null 227.2636ms
+2026-04-28 13:09:02.399 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/2 - null null
+2026-04-28 13:09:02.404 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-04-28 13:09:02.418 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/2 - null null
+2026-04-28 13:09:02.422 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 586.1309ms
+2026-04-28 13:09:02.466 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.467 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.483 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:02.740 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-04-28 13:09:02.740 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-04-28 13:09:02.740 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API)'
+2026-04-28 13:09:02.794 +05:00 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.NotificationsController (AuthX.API).
+2026-04-28 13:09:02.794 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-04-28 13:09:02.794 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-04-28 13:09:05.274 +05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p1]
+    WHERE [p].[BatchId] = [p1].[BatchId]) AS bigint) AS [GeneratedQty], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p2]
+    WHERE [p].[BatchId] = [p2].[BatchId] AND [p2].[PrintStatus] = N'Printed') AS bigint) AS [PrintedQty], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p3]
+    WHERE [p].[BatchId] = [p3].[BatchId] AND [p3].[Status] = N'Dispatched') AS bigint) AS [DispatchedQty]
+FROM [ProductionBatch] AS [p]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+2026-04-28 13:09:05.274 +05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Notification] AS [n]
+WHERE [n].[TargetUserId] = @__userId_0 OR [n].[TargetUserId] IS NULL
+2026-04-28 13:09:05.362 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-28 13:09:05.384 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [n].[NotificationId], [n].[Type], [n].[Message], [n].[ReferenceId], [n].[ActionUrl], [n].[IsRead], [n].[CreatedAt]
+FROM [Notification] AS [n]
+WHERE [n].[TargetUserId] = @__userId_0 OR [n].[TargetUserId] IS NULL
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-04-28 13:09:05.399 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Notifications.NotificationDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-28 13:09:05.456 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-04-28 13:09:05.461 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/2 - null null
+2026-04-28 13:09:05.465 +05:00 [INF] Executed action AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API) in 2653.1317ms
+2026-04-28 13:09:05.464 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 2637.0748ms
+2026-04-28 13:09:05.468 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:05.472 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:05.483 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API)'
+2026-04-28 13:09:05.485 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-04-28 13:09:05.497 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-04-28 13:09:05.497 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API)'
+2026-04-28 13:09:05.500 +05:00 [INF] HTTP GET /api/Notifications responded 200 in 3033.0571 ms
+2026-04-28 13:09:05.502 +05:00 [INF] HTTP GET /api/Batches/2 responded 200 in 3019.0840 ms
+2026-04-28 13:09:05.513 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-04-28 13:09:05.516 +05:00 [INF] Route matched with {action = "GetAll", controller = "Notifications"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.NotificationsController (AuthX.API).
+2026-04-28 13:09:05.544 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Notifications?pageSize=20 - 200 null application/json; charset=utf-8 3139.7733ms
+2026-04-28 13:09:05.545 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/2 - 200 null application/json; charset=utf-8 3127.1573ms
+2026-04-28 13:09:05.854 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Notification] AS [n]
+WHERE [n].[TargetUserId] = @__userId_0 OR [n].[TargetUserId] IS NULL
+2026-04-28 13:09:05.854 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p1]
+    WHERE [p].[BatchId] = [p1].[BatchId]) AS bigint) AS [GeneratedQty], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p2]
+    WHERE [p].[BatchId] = [p2].[BatchId] AND [p2].[PrintStatus] = N'Printed') AS bigint) AS [PrintedQty], CAST((
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p3]
+    WHERE [p].[BatchId] = [p3].[BatchId] AND [p3].[Status] = N'Dispatched') AS bigint) AS [DispatchedQty]
+FROM [ProductionBatch] AS [p]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+2026-04-28 13:09:05.871 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-28 13:09:05.881 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 345.7935ms
+2026-04-28 13:09:05.881 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__userId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [n].[NotificationId], [n].[Type], [n].[Message], [n].[ReferenceId], [n].[ActionUrl], [n].[IsRead], [n].[CreatedAt]
+FROM [Notification] AS [n]
+WHERE [n].[TargetUserId] = @__userId_0 OR [n].[TargetUserId] IS NULL
+ORDER BY [n].[CreatedAt] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-04-28 13:09:05.887 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-04-28 13:09:05.897 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Notifications.NotificationDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-04-28 13:09:05.906 +05:00 [INF] HTTP GET /api/Batches/2 responded 200 in 433.6119 ms
+2026-04-28 13:09:05.925 +05:00 [INF] Executed action AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API) in 376.9415ms
+2026-04-28 13:09:05.950 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.NotificationsController.GetAll (AuthX.API)'
+2026-04-28 13:09:05.935 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/2 - 200 null application/json; charset=utf-8 473.7921ms
+2026-04-28 13:09:05.968 +05:00 [INF] HTTP GET /api/Notifications responded 200 in 499.6888 ms
+2026-04-28 13:09:06.018 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Notifications?pageSize=20 - 200 null application/json; charset=utf-8 562.3766ms
+2026-04-28 13:09:06.267 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/export/2?format=CSV - null null
+2026-04-28 13:09:06.329 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:06.333 +05:00 [INF] HTTP OPTIONS /api/QR/export/2 responded 204 in 4.7170 ms
+2026-04-28 13:09:06.717 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/export/2?format=CSV - 204 null null 449.9307ms
+2026-04-28 13:09:06.784 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/export/2?format=CSV - null null
+2026-04-28 13:09:06.799 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:06.812 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Export (AuthX.API)'
+2026-04-28 13:09:06.830 +05:00 [INF] Route matched with {action = "Export", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Export(Int64, System.String) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-04-28 13:09:06.899 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__batchId_0='?' (DbType = Int64), @__companyId_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [p].[SerialNo], [p].[QRCode], [p].[QRImagePath]
+FROM [ProductItem] AS [p]
+WHERE [p].[BatchId] = @__batchId_0 AND [p].[CompanyId] = @__companyId_1
+2026-04-28 13:09:06.923 +05:00 [INF] Executing FileContentResult, sending file with download name 'batch-2-qrcodes.csv' ...
+2026-04-28 13:09:06.949 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Export (AuthX.API) in 111.2318ms
+2026-04-28 13:09:06.968 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Export (AuthX.API)'
+2026-04-28 13:09:06.994 +05:00 [INF] HTTP GET /api/QR/export/2 responded 200 in 194.1525 ms
+2026-04-28 13:09:07.003 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/export/2?format=CSV - 200 7727 text/csv 218.7142ms
+2026-04-28 13:09:07.194 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000001.png - null null
+2026-04-28 13:09:07.197 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000002.png - null null
+2026-04-28 13:09:07.200 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000003.png - null null
+2026-04-28 13:09:07.277 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000001.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000001.png'
+2026-04-28 13:09:07.201 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000004.png - null null
+2026-04-28 13:09:07.303 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000002.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000002.png'
+2026-04-28 13:09:07.312 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000010.png - null null
+2026-04-28 13:09:07.312 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000003.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000003.png'
+2026-04-28 13:09:07.313 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000009.png - null null
+2026-04-28 13:09:07.319 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000001.png responded 200 in 83.4707 ms
+2026-04-28 13:09:07.331 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000004.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000004.png'
+2026-04-28 13:09:07.349 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000002.png responded 200 in 99.3839 ms
+2026-04-28 13:09:07.363 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000010.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000010.png'
+2026-04-28 13:09:07.368 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000003.png responded 200 in 58.2618 ms
+2026-04-28 13:09:07.383 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000009.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000009.png'
+2026-04-28 13:09:07.398 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000001.png - 200 4550 image/png 204.5643ms
+2026-04-28 13:09:07.402 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000004.png responded 200 in 71.1753 ms
+2026-04-28 13:09:07.413 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000002.png - 200 4540 image/png 216.218ms
+2026-04-28 13:09:07.416 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000010.png responded 200 in 54.9871 ms
+2026-04-28 13:09:07.421 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000003.png - 200 4513 image/png 220.617ms
+2026-04-28 13:09:07.430 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000009.png responded 200 in 48.2353 ms
+2026-04-28 13:09:07.439 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000006.png - null null
+2026-04-28 13:09:07.450 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000004.png - 200 4600 image/png 249.3354ms
+2026-04-28 13:09:07.469 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000005.png - null null
+2026-04-28 13:09:07.484 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000010.png - 200 4558 image/png 171.4518ms
+2026-04-28 13:09:07.538 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000007.png - null null
+2026-04-28 13:09:07.550 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000009.png - 200 4429 image/png 237.3447ms
+2026-04-28 13:09:07.567 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000006.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000006.png'
+2026-04-28 13:09:07.586 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000011.png - null null
+2026-04-28 13:09:07.616 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000005.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000005.png'
+2026-04-28 13:09:07.625 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000008.png - null null
+2026-04-28 13:09:07.638 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000007.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000007.png'
+2026-04-28 13:09:07.701 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000007.png responded 200 in 63.6861 ms
+2026-04-28 13:09:07.664 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000006.png responded 200 in 97.4567 ms
+2026-04-28 13:09:07.673 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000011.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000011.png'
+2026-04-28 13:09:07.681 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000005.png responded 200 in 66.5795 ms
+2026-04-28 13:09:07.688 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000008.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000008.png'
+2026-04-28 13:09:07.655 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000012.png - null null
+2026-04-28 13:09:07.707 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000007.png - 200 4505 image/png 168.7545ms
+2026-04-28 13:09:07.718 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000006.png - 200 4613 image/png 279.9095ms
+2026-04-28 13:09:07.722 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000011.png responded 200 in 51.3033 ms
+2026-04-28 13:09:07.728 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000005.png - 200 4513 image/png 258.7458ms
+2026-04-28 13:09:07.735 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000008.png responded 200 in 47.6217 ms
+2026-04-28 13:09:07.742 +05:00 [INF] Sending file. Request path: '/qr-images/1/2/BTH-001-00000012.png'. Physical path: 'D:\AuthXBackend\AuthX.API\wwwroot\qr-images\1\2\BTH-001-00000012.png'
+2026-04-28 13:09:07.793 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000011.png - 200 4486 image/png 207.3329ms
+2026-04-28 13:09:07.826 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000008.png - 200 4677 image/png 200.4656ms
+2026-04-28 13:09:07.834 +05:00 [INF] HTTP GET /qr-images/1/2/BTH-001-00000012.png responded 200 in 93.6233 ms
+2026-04-28 13:09:07.919 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/qr-images/1/2/BTH-001-00000012.png - 200 4576 image/png 264.5554ms
+2026-04-28 13:09:18.877 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 16055.8431ms
+2026-04-28 13:09:18.879 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-04-28 13:09:18.881 +05:00 [ERR] Unhandled exception: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s). ConnectTimeout, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 1, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-4153N37(SE.Redis-v2.7.33.41805), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=769,Timers=10), v: 2.7.33.41805 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s). ConnectTimeout, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 1, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-4153N37(SE.Redis-v2.7.33.41805), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=769,Timers=10), v: 2.7.33.41805 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). ConnectTimeout
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at AuthX.Infrastructure.Cache.RedisCacheService.GetAsync[T](String key) in D:\AuthXBackend\AuthX.Infrastructure\Cache\RedisCacheService.cs:line 26
+   at AuthX.Services.Implementations.QRService.GetBatchProgressAsync(Int64 batchId) in D:\AuthXBackend\AuthX.Services\Implementations\QRService.cs:line 114
+   at AuthX.API.Controllers.QRController.Progress(Int64 batchId) in D:\AuthXBackend\AuthX.API\Controllers\QRController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-28 13:09:18.917 +05:00 [ERR] HTTP GET /api/QR/progress/2 responded 500 in 16452.1032 ms
+2026-04-28 13:09:18.922 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/2 - null null
+2026-04-28 13:09:18.926 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/2 - 500 null application/json 16527.7016ms
+2026-04-28 13:09:18.931 +05:00 [INF] CORS policy execution successful.
+2026-04-28 13:09:18.940 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-04-28 13:09:18.942 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-04-28 13:09:24.864 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 5920.0841ms
+2026-04-28 13:09:24.866 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-04-28 13:09:24.867 +05:00 [ERR] Unhandled exception: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s). ConnectTimeout, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 2, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-4153N37(SE.Redis-v2.7.33.41805), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=884,Timers=10), v: 2.7.33.41805 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+StackExchange.Redis.RedisConnectionException: The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s). ConnectTimeout, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: CheckingForTimeout, rs: NotStarted, ws: Idle, in: 0, last-in: 0, cur-in: 0, sync-ops: 0, async-ops: 2, serverEndpoint: localhost:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-4153N37(SE.Redis-v2.7.33.41805), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=0,Free=32767,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=884,Timers=10), v: 2.7.33.41805 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+ ---> StackExchange.Redis.RedisConnectionException: It was not possible to connect to the redis server(s). ConnectTimeout
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefreshAsync(String key, Boolean getData, CancellationToken token)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAsync(String key, CancellationToken token)
+   at AuthX.Infrastructure.Cache.RedisCacheService.GetAsync[T](String key) in D:\AuthXBackend\AuthX.Infrastructure\Cache\RedisCacheService.cs:line 26
+   at AuthX.Services.Implementations.QRService.GetBatchProgressAsync(Int64 batchId) in D:\AuthXBackend\AuthX.Services\Implementations\QRService.cs:line 114
+   at AuthX.API.Controllers.QRController.Progress(Int64 batchId) in D:\AuthXBackend\AuthX.API\Controllers\QRController.cs:line 43
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+2026-04-28 13:09:24.891 +05:00 [ERR] HTTP GET /api/QR/progress/2 responded 500 in 5959.2541 ms
+2026-04-28 13:09:24.909 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/2 - 500 null application/json 5986.8412ms
