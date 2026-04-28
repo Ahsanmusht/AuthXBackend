@@ -10,6 +10,8 @@ public class BatchListDto
     public int     Quantity      { get; set; }
     public string  Status        { get; set; } = null!;
     public DateTime CreatedAt    { get; set; }
+    public string? ColorName   { get; set; }
+public string? ColorHexCode { get; set; }
 }
 
 public class BatchDetailDto : BatchListDto
@@ -26,6 +28,7 @@ public class CreateBatchDto
     public string   BatchNo        { get; set; } = null!;
     public DateOnly ProductionDate { get; set; }
     public int      Quantity       { get; set; }
+    public int? ColorId { get; set; }
 }
 
 public class BatchProgressDto

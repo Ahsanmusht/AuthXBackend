@@ -20,56 +20,57 @@ public class DispatchService : IDispatchService
     }
 
     public async Task<DispatchResultDto> ScanDispatchAsync(
-        int companyId, int scannedBy, string qrCode, string? location)
+    int companyId, int scannedBy, string qrCode, string? location)
+{
+    var item = await _uow.ProductItems.Query()
+        .Include(i => i.Product)
+        .FirstOrDefaultAsync(i => i.QRCode == qrCode && i.CompanyId == companyId)
+        ?? throw new KeyNotFoundException("QR Code not found.");
+
+    if (item.Status == ItemStatuses.Dispatched)
+        throw new InvalidOperationException("Item already dispatched.");
+
+    if (item.Status != ItemStatuses.Printed && item.Status != ItemStatuses.Generated)
+        throw new InvalidOperationException($"Item cannot be dispatched in status: {item.Status}");
+
+    // Company warranty delay setting fetch karo
+    var settings = await _uow.CompanySettings.Query()
+        .FirstOrDefaultAsync(s => s.CompanyId == companyId);
+    int delayDays = settings?.WarrantyDelayDays ?? 60; // default 2 months
+
+    var now = DateTime.UtcNow;
+    var warrantyStart = now.AddDays(delayDays); // 2 months baad warranty shuru
+
+    item.Status            = ItemStatuses.Dispatched;
+    item.WarrantyStartDate = warrantyStart;
+    item.WarrantyEndDate   = warrantyStart.AddDays(item.Product.WarrantyDays);
+    item.IsFirstScan       = true;
+    item.FirstScanDate     = now;
+    item.FirstScanType     = "DispatchScan";
+
+    _uow.ProductItems.Update(item);
+
+    await _uow.Dispatches.AddAsync(new Dispatch
     {
-        var item = await _uow.ProductItems.Query()
-            .Include(i => i.Product)
-            .FirstOrDefaultAsync(i =>
-                i.QRCode == qrCode && i.CompanyId == companyId)
-            ?? throw new KeyNotFoundException("QR Code not found.");
+        CompanyId    = companyId,
+        ItemId       = item.ItemId,
+        ScannedBy    = scannedBy,
+        Location     = location,
+        DispatchDate = now
+    });
 
-        if (item.Status == ItemStatuses.Dispatched)
-            throw new InvalidOperationException("Item already dispatched.");
+    await _uow.SaveChangesAsync();
+    await _cache.RemoveAsync(CacheKeys.QRItem(qrCode));
 
-        if (item.Status != ItemStatuses.Printed &&
-            item.Status != ItemStatuses.Generated)
-            throw new InvalidOperationException($"Item cannot be dispatched in status: {item.Status}");
-
-        var now = DateTime.UtcNow;
-
-        // Set warranty
-        item.Status            = ItemStatuses.Dispatched;
-        item.WarrantyStartDate = now;
-        item.WarrantyEndDate   = now.AddDays(item.Product.WarrantyDays);
-        item.IsFirstScan       = true;
-        item.FirstScanDate     = now;
-        item.FirstScanType     = "DispatchScan";
-
-        _uow.ProductItems.Update(item);
-
-        await _uow.Dispatches.AddAsync(new Dispatch
-        {
-            CompanyId  = companyId,
-            ItemId     = item.ItemId,
-            ScannedBy  = scannedBy,
-            Location   = location,
-            DispatchDate = now
-        });
-
-        await _uow.SaveChangesAsync();
-
-        // Invalidate QR cache
-        await _cache.RemoveAsync(CacheKeys.QRItem(qrCode));
-
-        return new DispatchResultDto
-        {
-            DispatchId   = 0,
-            SerialNo     = item.SerialNo,
-            ProductName  = item.Product.Name,
-            DispatchDate = now,
-            WarrantyEnd  = item.WarrantyEndDate!.Value
-        };
-    }
+    return new DispatchResultDto
+    {
+        DispatchId   = 0,
+        SerialNo     = item.SerialNo,
+        ProductName  = item.Product.Name,
+        DispatchDate = now,
+        WarrantyEnd  = item.WarrantyEndDate!.Value
+    };
+}
 
     public async Task<PagedResult<DispatchListDto>> GetDispatchesAsync(
         int companyId, long? batchId, PaginationParams p)

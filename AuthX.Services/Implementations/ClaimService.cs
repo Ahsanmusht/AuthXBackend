@@ -54,7 +54,8 @@ public class ClaimService : IClaimService
 
         var item = await _uow.ProductItems.Query()
             .Include(i => i.Product).ThenInclude(p => p.Category)
-            .Include(i => i.Batch)
+             .Include(i => i.Product).ThenInclude(p => p.ProductColors).ThenInclude(pc => pc.Color)
+            .Include(i => i.Batch).ThenInclude(b => b.Color) 
             .Include(i => i.Claims)
             .FirstOrDefaultAsync(i => i.QRCode == qrCode);
 
@@ -83,7 +84,11 @@ public class ClaimService : IClaimService
                 ProductName  = item.Product.Name,
                 CategoryName = item.Product.Category.Name,
                 SerialNo     = item.SerialNo,
-                BatchNo      = item.Batch.BatchNo
+                BatchNo      = item.Batch.BatchNo,
+                ColorName    = item.Batch?.Color?.Name,
+            ColorHexCode = item.Batch?.Color?.HexCode,
+            ProductImageUrl = item.Product.ImageUrl,
+            ModelNo      = item.Product.ModelNo
             };
 
         // Check active claim
@@ -105,7 +110,11 @@ public class ClaimService : IClaimService
                 BatchNo      = item.Batch.BatchNo,
                 WarrantyStart = item.WarrantyStartDate,
                 WarrantyEnd   = item.WarrantyEndDate,
-                ClaimStatus  = activeClaim.Status
+                ClaimStatus  = activeClaim.Status,
+                ColorName    = item.Batch?.Color?.Name,
+            ColorHexCode = item.Batch?.Color?.HexCode,
+            ProductImageUrl = item.Product.ImageUrl,
+            ModelNo      = item.Product.ModelNo
             };
             // Short cache for in-process items
             await _cache.SetAsync(CacheKeys.QRItem(qrCode), result, TimeSpan.FromMinutes(2));
@@ -128,7 +137,11 @@ public class ClaimService : IClaimService
             SerialNo        = item.SerialNo,
             BatchNo         = item.Batch.BatchNo,
             WarrantyStart   = item.WarrantyStartDate,
-            WarrantyEnd     = item.WarrantyEndDate
+            WarrantyEnd     = item.WarrantyEndDate,
+            ColorName    = item.Batch?.Color?.Name,
+        ColorHexCode = item.Batch?.Color?.HexCode,
+        ProductImageUrl = item.Product.ImageUrl,
+        ModelNo      = item.Product.ModelNo
         };
 
         await _cache.SetAsync(CacheKeys.QRItem(qrCode), scanResult, TimeSpan.FromMinutes(5));

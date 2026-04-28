@@ -24,6 +24,10 @@ public class AppDbContext : DbContext
     public DbSet<ClaimStatusHistory> ClaimHistories  { get; set; }
     public DbSet<ScanLog>            ScanLogs        { get; set; }
     public DbSet<Notification>       Notifications   { get; set; }
+    public DbSet<Color>           Colors          { get; set; }
+public DbSet<ProductColor>    ProductColors   { get; set; }
+public DbSet<PrintSettings>   PrintSettings   { get; set; }
+public DbSet<CompanySettings> CompanySettings { get; set; }
 
     protected override void OnModelCreating(ModelBuilder mb)
     {
@@ -108,6 +112,8 @@ public class AppDbContext : DbContext
             e.HasOne(x => x.Category)
              .WithMany(c => c.Products)
              .HasForeignKey(x => x.CategoryId);
+             e.Property(x => x.ModelNo).HasMaxLength(100);
+e.Property(x => x.ImageUrl).HasMaxLength(500);
         });
 
         // ── ProductionBatch ────────────────────────────────
@@ -125,6 +131,7 @@ public class AppDbContext : DbContext
             e.HasOne(x => x.Product)
              .WithMany(p => p.Batches)
              .HasForeignKey(x => x.ProductId);
+             e.HasOne(x => x.Color).WithMany().HasForeignKey(x => x.ColorId).IsRequired(false);
         });
 
         // ── ProductItem ────────────────────────────────────
@@ -274,5 +281,47 @@ public class AppDbContext : DbContext
             e.HasIndex(x => new { x.TargetUserId, x.IsRead });
             e.HasIndex(x => new { x.CompanyId, x.CreatedAt });
         });
+        // ── Color ──────────────────────────────────────────────────
+mb.Entity<Color>(e =>
+{
+    e.ToTable("Color");
+    e.HasKey(x => x.ColorId);
+    e.Property(x => x.Name).HasMaxLength(100).IsRequired();
+    e.Property(x => x.HexCode).HasMaxLength(10).IsRequired();
+    e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+});
+
+// ── ProductColor ───────────────────────────────────────────
+mb.Entity<ProductColor>(e =>
+{
+    e.ToTable("ProductColor");
+    e.HasKey(x => new { x.ProductId, x.ColorId });
+    e.HasOne(x => x.Product).WithMany(p => p.ProductColors).HasForeignKey(x => x.ProductId);
+    e.HasOne(x => x.Color).WithMany(c => c.ProductColors).HasForeignKey(x => x.ColorId);
+});
+
+// ── PrintSettings ──────────────────────────────────────────
+mb.Entity<PrintSettings>(e =>
+{
+    e.ToTable("PrintSettings");
+    e.HasKey(x => x.Id);
+    e.Property(x => x.LabelWidthMm).HasColumnType("decimal(6,2)");
+    e.Property(x => x.LabelHeightMm).HasColumnType("decimal(6,2)");
+    e.Property(x => x.QRSizeMm).HasColumnType("decimal(6,2)");
+    e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
+    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+    e.HasIndex(x => x.CompanyId).IsUnique();
+});
+
+// ── CompanySettings ────────────────────────────────────────
+mb.Entity<CompanySettings>(e =>
+{
+    e.ToTable("CompanySettings");
+    e.HasKey(x => x.Id);
+    e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
+    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+    e.HasIndex(x => x.CompanyId).IsUnique();
+});
     }
 }

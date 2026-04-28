@@ -13,6 +13,10 @@ public class ScanResultDto
     public bool     CanClaim      { get; set; }
     public bool     IsUnderWarranty { get; set; }
     public string?  ClaimStatus   { get; set; } // if already claimed
+    public string? ColorName    { get; set; }
+public string? ColorHexCode { get; set; }
+public string? ProductImageUrl { get; set; }
+public string? ModelNo      { get; set; }
 }
 
 public class SubmitClaimDto

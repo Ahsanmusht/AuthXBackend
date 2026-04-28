@@ -1,3 +1,4 @@
+using AuthX.Core.DTOs.Colors;
 using AuthX.Core.DTOs.Common;
 using AuthX.Core.DTOs.Products;
 using AuthX.Core.Entities;
@@ -27,22 +28,22 @@ public class ProductService : IProductService
             .Take(p.PageSize)
             .Select(x => new ProductListDto
             {
-                ProductId    = x.ProductId,
-                Name         = x.Name,
-                SKU          = x.SKU,
+                ProductId = x.ProductId,
+                Name = x.Name,
+                SKU = x.SKU,
                 CategoryName = x.Category.Name,
                 WarrantyDays = x.WarrantyDays,
-                IsActive     = x.IsActive,
-                CreatedAt    = x.CreatedAt
+                IsActive = x.IsActive,
+                CreatedAt = x.CreatedAt
             })
             .ToListAsync();
 
         return new PagedResult<ProductListDto>
         {
-            Items      = items,
+            Items = items,
             TotalCount = total,
-            Page       = p.Page,
-            PageSize   = p.PageSize
+            Page = p.Page,
+            PageSize = p.PageSize
         };
     }
 
@@ -51,15 +52,21 @@ public class ProductService : IProductService
             .Where(x => x.CompanyId == companyId && x.ProductId == productId)
             .Select(x => new ProductDetailDto
             {
-                ProductId    = x.ProductId,
-                Name         = x.Name,
-                SKU          = x.SKU,
-                CategoryId   = x.CategoryId,
+                ProductId = x.ProductId,
+                Name = x.Name,
+                SKU = x.SKU,
+                CategoryId = x.CategoryId,
                 CategoryName = x.Category.Name,
                 WarrantyDays = x.WarrantyDays,
-                Description  = x.Description,
-                IsActive     = x.IsActive,
-                CreatedAt    = x.CreatedAt
+                Description = x.Description,
+                IsActive = x.IsActive,
+                CreatedAt = x.CreatedAt,
+                Colors = x.ProductColors.Select(pc => new ColorDto
+                {
+                    ColorId = pc.Color.ColorId,
+                    Name = pc.Color.Name,
+                    HexCode = pc.Color.HexCode
+                }).ToList()
             })
             .FirstOrDefaultAsync()
             ?? throw new KeyNotFoundException("Product not found.");
@@ -74,16 +81,28 @@ public class ProductService : IProductService
 
         var product = new Product
         {
-            CompanyId   = companyId,
-            CategoryId  = dto.CategoryId,
-            Name        = dto.Name.Trim(),
-            SKU         = dto.SKU.Trim().ToUpper(),
+            CompanyId = companyId,
+            CategoryId = dto.CategoryId,
+            Name = dto.Name.Trim(),
+            SKU = dto.SKU.Trim().ToUpper(),
             WarrantyDays = dto.WarrantyDays,
-            Description = dto.Description
+            Description = dto.Description,
+            ModelNo = dto.ModelNo,
+            ImageUrl = dto.ImageUrl
         };
 
         await _uow.Products.AddAsync(product);
         await _uow.SaveChangesAsync();
+        if (dto.ColorIds.Any())
+        {
+            var pColors = dto.ColorIds.Select(cid => new ProductColor
+            {
+                ProductId = product.ProductId,
+                ColorId = cid
+            });
+            await _uow.ProductColors.AddRangeAsync(pColors);
+            await _uow.SaveChangesAsync();
+        }
         return await GetByIdAsync(companyId, product.ProductId);
     }
 
@@ -93,11 +112,30 @@ public class ProductService : IProductService
             p.CompanyId == companyId && p.ProductId == productId)
             ?? throw new KeyNotFoundException("Product not found.");
 
-        product.CategoryId   = dto.CategoryId;
-        product.Name         = dto.Name.Trim();
+        product.CategoryId = dto.CategoryId;
+        product.Name = dto.Name.Trim();
         product.WarrantyDays = dto.WarrantyDays;
-        product.Description  = dto.Description;
+        product.Description = dto.Description;
+        product.ModelNo = dto.ModelNo;
+        if (!string.IsNullOrEmpty(dto.ImageUrl))
+            product.ImageUrl = dto.ImageUrl;
         _uow.Products.Update(product);
+
+
+        var existingColors = (await _uow.ProductColors
+        .FindAsync(pc => pc.ProductId == productId)).ToList();
+        existingColors.ForEach(pc => _uow.ProductColors.Remove(pc));
+
+        if (dto.ColorIds.Any())
+        {
+            var newColors = dto.ColorIds.Select(cid => new ProductColor
+            {
+                ProductId = productId,
+                ColorId = cid
+            });
+            await _uow.ProductColors.AddRangeAsync(newColors);
+        }
+
         await _uow.SaveChangesAsync();
         return await GetByIdAsync(companyId, productId);
     }

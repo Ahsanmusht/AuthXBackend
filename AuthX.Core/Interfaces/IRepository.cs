@@ -38,6 +38,10 @@ public interface IUnitOfWork : IDisposable
     IRepository<ClaimStatusHistory> ClaimHistories { get; }
     IRepository<ScanLog>            ScanLogs      { get; }
     IRepository<Notification>       Notifications { get; }
+    IRepository<Color>           Colors          { get; }
+IRepository<ProductColor>    ProductColors   { get; }
+IRepository<PrintSettings>   PrintSettings   { get; }
+IRepository<CompanySettings> CompanySettings { get; }
 
     Task<int> SaveChangesAsync();
 }

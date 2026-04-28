@@ -1,3 +1,5 @@
+using AuthX.Core.DTOs.Colors;
+
 namespace AuthX.Core.DTOs.Products;
 
 public class ProductListDto
@@ -9,6 +11,9 @@ public class ProductListDto
     public int     WarrantyDays { get; set; }
     public bool    IsActive     { get; set; }
     public DateTime CreatedAt   { get; set; }
+    public string? ModelNo  { get; set; }
+    public string? ImageUrl { get; set; }
+    public List<ColorDto> Colors { get; set; } = new();
 }
 
 public class ProductDetailDto : ProductListDto
@@ -24,6 +29,9 @@ public class CreateProductDto
     public string  SKU          { get; set; } = null!;
     public int     WarrantyDays { get; set; } = 365;
     public string? Description  { get; set; }
+    public string?    ModelNo    { get; set; }
+    public string?    ImageUrl   { get; set; }  // base64 ya URL
+    public List<int>  ColorIds   { get; set; } = new();
 }
 
 public class UpdateProductDto
@@ -32,4 +40,7 @@ public class UpdateProductDto
     public string  Name         { get; set; } = null!;
     public int     WarrantyDays { get; set; }
     public string? Description  { get; set; }
+    public string?    ModelNo    { get; set; }
+    public string?    ImageUrl   { get; set; }
+    public List<int>  ColorIds   { get; set; } = new();
 }

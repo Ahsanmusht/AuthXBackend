@@ -27,6 +27,10 @@ public class UnitOfWork : IUnitOfWork
         ClaimHistories = new Repository<ClaimStatusHistory>(_ctx);
         ScanLogs       = new Repository<ScanLog>(_ctx);
         Notifications  = new Repository<Notification>(_ctx);
+        Colors          = new Repository<Color>(_ctx);
+ProductColors   = new Repository<ProductColor>(_ctx);
+PrintSettings   = new Repository<PrintSettings>(_ctx);
+CompanySettings = new Repository<CompanySettings>(_ctx);
     }
 
     public IRepository<Company>            Companies      { get; }
@@ -45,6 +49,10 @@ public class UnitOfWork : IUnitOfWork
     public IRepository<ClaimStatusHistory> ClaimHistories { get; }
     public IRepository<ScanLog>            ScanLogs       { get; }
     public IRepository<Notification>       Notifications  { get; }
+    public IRepository<Color>           Colors          { get; }
+public IRepository<ProductColor>    ProductColors   { get; }
+public IRepository<PrintSettings>   PrintSettings   { get; }
+public IRepository<CompanySettings> CompanySettings { get; }
 
     public async Task<int> SaveChangesAsync()
         => await _ctx.SaveChangesAsync();

@@ -89,6 +89,9 @@ public class Product
     public Company              Company  { get; set; } = null!;
     public Category             Category { get; set; } = null!;
     public ICollection<ProductionBatch> Batches { get; set; } = new List<ProductionBatch>();
+    public string? ModelNo   { get; set; }
+public string? ImageUrl  { get; set; }
+public ICollection<ProductColor> ProductColors { get; set; } = new List<ProductColor>();
 }
 
 // ─── ProductionBatch ───────────────────────────────────────
@@ -103,6 +106,9 @@ public class ProductionBatch
     public string   Status         { get; set; } = "Draft";
     public int      CreatedBy      { get; set; }
     public DateTime CreatedAt      { get; set; } = DateTime.UtcNow;
+    public int? ColorId { get; set; }
+public Color? Color { get; set; }
+
 
     public Company                  Company  { get; set; } = null!;
     public Product                  Product  { get; set; } = null!;
@@ -254,4 +260,58 @@ public class Notification
     public string?   ActionUrl      { get; set; }
     public bool      IsRead         { get; set; } = false;
     public DateTime  CreatedAt      { get; set; } = DateTime.UtcNow;
+}
+
+public class Color
+{
+    public int      ColorId   { get; set; }
+    public int      CompanyId { get; set; }
+    public string   Name      { get; set; } = null!;
+    public string   HexCode   { get; set; } = null!;
+    public bool     IsActive  { get; set; } = true;
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public Company Company { get; set; } = null!;
+    public ICollection<ProductColor> ProductColors { get; set; } = new List<ProductColor>();
+}
+
+// ─── ProductColor ───────────────────────────────────────────
+public class ProductColor
+{
+    public int ProductId { get; set; }
+    public int ColorId   { get; set; }
+    public Product Product { get; set; } = null!;
+    public Color   Color   { get; set; } = null!;
+}
+
+// ─── PrintSettings ─────────────────────────────────────────
+public class PrintSettings
+{
+    public int     Id              { get; set; }
+    public int     CompanyId       { get; set; }
+    public decimal LabelWidthMm    { get; set; } = 17;
+    public decimal LabelHeightMm   { get; set; } = 30;
+    public decimal QRSizeMm        { get; set; } = 17;
+    public int     ColumnsPerRow   { get; set; } = 1;
+    public bool    ShowProductName { get; set; } = true;
+    public bool    ShowSerialNo    { get; set; } = true;
+    public bool    ShowBatchNo     { get; set; } = true;
+    public bool    ShowColorName   { get; set; } = false;
+    public bool    ShowModelNo     { get; set; } = false;
+    public bool    ShowCompanyName { get; set; } = false;
+    public int     WarrantyDelayDays { get; set; } = 60;
+    public DateTime UpdatedAt      { get; set; } = DateTime.UtcNow;
+
+    public Company Company { get; set; } = null!;
+}
+
+// ─── CompanySettings ───────────────────────────────────────
+public class CompanySettings
+{
+    public int      Id                 { get; set; }
+    public int      CompanyId          { get; set; }
+    public int      WarrantyDelayDays  { get; set; } = 60;
+    public DateTime UpdatedAt          { get; set; } = DateTime.UtcNow;
+
+    public Company Company { get; set; } = null!;
 }
