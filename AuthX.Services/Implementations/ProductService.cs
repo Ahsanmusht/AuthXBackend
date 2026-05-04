@@ -32,9 +32,19 @@ public class ProductService : IProductService
                 Name = x.Name,
                 SKU = x.SKU,
                 CategoryName = x.Category.Name,
+                CategoryId = x.CategoryId,
                 WarrantyDays = x.WarrantyDays,
+                Description = x.Description,
                 IsActive = x.IsActive,
-                CreatedAt = x.CreatedAt
+                CreatedAt = x.CreatedAt,
+                ModelNo = x.ModelNo,
+                ImageUrl = x.ImageUrl,
+                Colors = x.ProductColors.Select(pc => new ColorDto
+                {
+                    ColorId = pc.Color.ColorId,
+                    Name = pc.Color.Name,
+                    HexCode = pc.Color.HexCode
+                }).ToList()
             })
             .ToListAsync();
 

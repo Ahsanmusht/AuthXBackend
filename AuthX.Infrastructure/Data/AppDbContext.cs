@@ -113,7 +113,7 @@ public DbSet<CompanySettings> CompanySettings { get; set; }
              .WithMany(c => c.Products)
              .HasForeignKey(x => x.CategoryId);
              e.Property(x => x.ModelNo).HasMaxLength(100);
-e.Property(x => x.ImageUrl).HasMaxLength(500);
+e.Property(x => x.ImageUrl).HasMaxLength(2000);
         });
 
         // ── ProductionBatch ────────────────────────────────

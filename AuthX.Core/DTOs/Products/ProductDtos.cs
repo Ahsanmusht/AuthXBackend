@@ -5,6 +5,7 @@ namespace AuthX.Core.DTOs.Products;
 public class ProductListDto
 {
     public int     ProductId    { get; set; }
+    public int     CategoryId   { get; set; }
     public string  Name         { get; set; } = null!;
     public string  SKU          { get; set; } = null!;
     public string  CategoryName { get; set; } = null!;
@@ -12,6 +13,7 @@ public class ProductListDto
     public bool    IsActive     { get; set; }
     public DateTime CreatedAt   { get; set; }
     public string? ModelNo  { get; set; }
+    public string? Description  { get; set; }
     public string? ImageUrl { get; set; }
     public List<ColorDto> Colors { get; set; } = new();
 }
