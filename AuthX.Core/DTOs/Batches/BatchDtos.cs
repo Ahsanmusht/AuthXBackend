@@ -12,6 +12,7 @@ public class BatchListDto
     public DateTime CreatedAt    { get; set; }
     public string? ColorName   { get; set; }
 public string? ColorHexCode { get; set; }
+public string? ModelNo       { get; set; }
 }
 
 public class BatchDetailDto : BatchListDto

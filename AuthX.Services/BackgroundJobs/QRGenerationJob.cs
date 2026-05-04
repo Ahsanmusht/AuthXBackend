@@ -24,6 +24,7 @@ public class QRGenerationJob
     }
 
     [Queue("qr_generation")]
+    [AutomaticRetry(Attempts = 3, DelaysInSeconds = new[] { 30, 60, 120 })]
     public async Task GenerateAsync(int companyId, int userId, long batchId)
     {
         _log.LogInformation("QR Generation started — BatchId: {BatchId}", batchId);
@@ -39,51 +40,75 @@ public class QRGenerationJob
 
         if (batch.Status != BatchStatuses.Draft)
         {
-            _log.LogWarning("Batch {BatchId} already processed.", batchId);
+            _log.LogWarning("Batch {BatchId} already processed (status: {Status}). Skipping.",
+                batchId, batch.Status);
             return;
         }
 
         try
         {
-            var now    = DateTime.UtcNow;
-            var items  = new List<ProductItem>(batch.Quantity);
+            var now   = DateTime.UtcNow;
+            const int chunkSize = 5_000;
+            int totalInserted = 0;
 
-            for (int i = 1; i <= batch.Quantity; i++)
+            // ── Generate in chunks — avoids memory spike for 500k items ──
+            for (int chunkStart = 1; chunkStart <= batch.Quantity; chunkStart += chunkSize)
             {
-                var serial = $"{batch.BatchNo}-{i:D8}";
-                var qrCode = $"PV-{companyId}-{batchId}-{serial}-{Guid.NewGuid():N}"[..48].ToUpper();
+                int chunkEnd = Math.Min(chunkStart + chunkSize - 1, batch.Quantity);
+                var items = new List<ProductItem>(chunkEnd - chunkStart + 1);
 
-                items.Add(new ProductItem
+                for (int i = chunkStart; i <= chunkEnd; i++)
                 {
-                    CompanyId = companyId,
-                    ProductId = batch.ProductId,
-                    BatchId   = batchId,
-                    SerialNo  = serial,
-                    QRCode    = qrCode,
-                    QRImagePath = null,
-                    CreatedAt = now
-                });
+                    // ── FIX: NO TRUNCATION — full unique QR code ──────────────────
+                    // Format: PV-{companyId}-{batchId}-{batchNo}-{sequence}-{guid}
+                    // This is guaranteed unique because Guid.NewGuid() is UUID v4
+                    var serial = $"{batch.BatchNo}-{i:D8}";
+                    var qrCode = $"PV-{companyId}-{batchId}-{serial}-{Guid.NewGuid():N}".ToUpper();
+                    // qrCode length: ~60-70 chars, well within VARCHAR(500)
+                    // No truncation — no collision risk
+
+                    items.Add(new ProductItem
+                    {
+                        CompanyId   = companyId,
+                        ProductId   = batch.ProductId,
+                        BatchId     = batchId,
+                        SerialNo    = serial,
+                        QRCode      = qrCode,
+                        QRImagePath = null, // NOT storing images — on-demand generation
+                        CreatedAt   = now
+                    });
+                }
+
+                // ── Bulk insert with duplicate protection ──────────────────────────
+                try
+                {
+                    await _uow.ProductItems.AddRangeAsync(items);
+                    await _uow.SaveChangesAsync();
+                    totalInserted += items.Count;
+
+                    _log.LogInformation(
+                        "Batch {BatchId}: inserted chunk {Start}-{End} ({Total}/{Grand} total)",
+                        batchId, chunkStart, chunkEnd, totalInserted, batch.Quantity);
+                }
+                catch (DbUpdateException dbEx) when (IsUniqueConstraintViolation(dbEx))
+                {
+                    // Extremely rare — Guid collision (practically impossible but handle gracefully)
+                    _log.LogError(dbEx,
+                        "Batch {BatchId}: unique constraint on chunk {Start}-{End}. Retrying one-by-one.",
+                        batchId, chunkStart, chunkEnd);
+
+                    // Retry this chunk item-by-item to skip any duplicates
+                    int recovered = await InsertOneByOneAsync(items, batchId);
+                    totalInserted += recovered;
+                }
             }
 
-            // Chunked insert: 5,000 per transaction
-            const int chunk = 5_000;
-            for (int i = 0; i < items.Count; i += chunk)
-            {
-                var slice = items.Skip(i).Take(chunk).ToList();
-                await _uow.ProductItems.AddRangeAsync(slice);
-                await _uow.SaveChangesAsync();
-
-                _log.LogInformation(
-                    "Batch {BatchId}: inserted {Count}/{Total}",
-                    batchId, Math.Min(i + chunk, items.Count), items.Count);
-            }
-
-            // Log generation record
+            // ── Log generation record ────────────────────────────────────────────
             await _uow.QRGenerations.AddAsync(new QRGeneration
             {
                 CompanyId      = companyId,
                 BatchId        = batchId,
-                TotalGenerated = batch.Quantity,
+                TotalGenerated = totalInserted,
                 GeneratedBy    = userId
             });
 
@@ -95,17 +120,45 @@ public class QRGenerationJob
                 companyId:   companyId,
                 type:        NotificationTypes.QRGenerated,
                 referenceId: batchId,
-                message:     $"✓ {batch.Quantity:N0} QR codes generated for batch {batch.BatchNo}",
+                message:     $"✓ {totalInserted:N0} QR codes generated for batch {batch.BatchNo}",
                 actionUrl:   $"/batches/{batchId}");
 
             _log.LogInformation(
                 "QR Generation complete — BatchId: {BatchId}, Total: {Total}",
-                batchId, batch.Quantity);
+                batchId, totalInserted);
         }
         catch (Exception ex)
         {
             _log.LogError(ex, "QR Generation failed for BatchId: {BatchId}", batchId);
-            throw; // Hangfire will retry
+            throw; // Hangfire retries
         }
+    }
+
+    private async Task<int> InsertOneByOneAsync(List<ProductItem> items, long batchId)
+    {
+        int inserted = 0;
+        foreach (var item in items)
+        {
+            try
+            {
+                // Regenerate QR to avoid duplicate
+                item.QRCode = $"PV-{item.CompanyId}-{batchId}-{item.SerialNo}-{Guid.NewGuid():N}".ToUpper();
+                await _uow.ProductItems.AddAsync(item);
+                await _uow.SaveChangesAsync();
+                inserted++;
+            }
+            catch (Exception ex)
+            {
+                _log.LogWarning(ex, "Skipping item {SerialNo} due to error.", item.SerialNo);
+            }
+        }
+        return inserted;
+    }
+
+    private static bool IsUniqueConstraintViolation(DbUpdateException ex)
+    {
+        var msg = ex.InnerException?.Message ?? ex.Message;
+        return msg.Contains("UNIQUE") || msg.Contains("unique") ||
+               msg.Contains("duplicate key") || msg.Contains("IX_");
     }
 }

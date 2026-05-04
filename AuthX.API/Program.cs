@@ -198,6 +198,7 @@ builder.Services.AddSwaggerGen(opt =>
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddMemoryCache();
+builder.Services.AddResponseCaching();
 
 // ═══════════════════════════════════════════════════════════
 var app = builder.Build();
@@ -222,6 +223,7 @@ app.UseCors("ReactApp");
 app.UseRateLimiter();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseStaticFiles();
+app.UseResponseCaching();
 app.UseAuthentication();
 app.UseAuthorization();
 

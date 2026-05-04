@@ -26,44 +26,59 @@ public class BatchService : IBatchService
             .Take(p.PageSize)
             .Select(b => new BatchListDto
             {
-                BatchId        = b.BatchId,
-                BatchNo        = b.BatchNo,
-                ProductName    = b.Product.Name,
-                CategoryName   = b.Product.Category.Name,
+                BatchId = b.BatchId,
+                BatchNo = b.BatchNo,
+                ProductName = b.Product.Name,
+                CategoryName = b.Product.Category.Name,
                 ProductionDate = b.ProductionDate,
-                Quantity       = b.Quantity,
-                Status         = b.Status,
-                CreatedAt      = b.CreatedAt
+                Quantity = b.Quantity,
+                Status = b.Status,
+                CreatedAt = b.CreatedAt
             })
             .ToListAsync();
 
         return new PagedResult<BatchListDto>
         {
-            Items      = items,
+            Items = items,
             TotalCount = total,
-            Page       = p.Page,
-            PageSize   = p.PageSize
+            Page = p.Page,
+            PageSize = p.PageSize
         };
     }
 
     public async Task<BatchDetailDto> GetByIdAsync(int companyId, long batchId)
     {
         var b = await _uow.Batches.Query()
+         .Include(x => x.Color)
+        .Include(x => x.Product)
+            .ThenInclude(p => p.ProductColors)
+            .ThenInclude(pc => pc.Color)
             .Where(x => x.CompanyId == companyId && x.BatchId == batchId)
             .Select(x => new BatchDetailDto
             {
-                BatchId        = x.BatchId,
-                BatchNo        = x.BatchNo,
-                ProductId      = x.ProductId,
-                ProductName    = x.Product.Name,
-                CategoryName   = x.Product.Category.Name,
+                BatchId = x.BatchId,
+                BatchNo = x.BatchNo,
+                ProductId = x.ProductId,
+                ProductName = x.Product.Name,
+                CategoryName = x.Product.Category.Name,
+                ModelNo = x.Product.ModelNo,
+                ColorName = x.Color != null
+                ? x.Color.Name
+                : x.Product.ProductColors.FirstOrDefault() != null
+                    ? x.Product.ProductColors.First().Color.Name
+                    : null,
+                ColorHexCode = x.Color != null
+                ? x.Color.HexCode
+                : x.Product.ProductColors.FirstOrDefault() != null
+                    ? x.Product.ProductColors.First().Color.HexCode
+                    : null,
                 ProductionDate = x.ProductionDate,
-                Quantity       = x.Quantity,
-                Status         = x.Status,
-                CreatedAt      = x.CreatedAt,
-                GeneratedQty   = x.Items.Count(i => i.Status != null),
-                PrintedQty     = x.Items.Count(i => i.PrintStatus == "Printed"),
-                DispatchedQty  = x.Items.Count(i => i.Status == "Dispatched")
+                Quantity = x.Quantity,
+                Status = x.Status,
+                CreatedAt = x.CreatedAt,
+                GeneratedQty = x.Items.Count(i => i.Status != null),
+                PrintedQty = x.Items.Count(i => i.PrintStatus == "Printed"),
+                DispatchedQty = x.Items.Count(i => i.Status == "Dispatched")
             })
             .FirstOrDefaultAsync()
             ?? throw new KeyNotFoundException("Batch not found.");
@@ -79,12 +94,12 @@ public class BatchService : IBatchService
 
         var batch = new ProductionBatch
         {
-            CompanyId      = companyId,
-            ProductId      = dto.ProductId,
-            BatchNo        = dto.BatchNo.Trim().ToUpper(),
+            CompanyId = companyId,
+            ProductId = dto.ProductId,
+            BatchNo = dto.BatchNo.Trim().ToUpper(),
             ProductionDate = dto.ProductionDate,
-            Quantity       = dto.Quantity,
-            CreatedBy      = createdBy
+            Quantity = dto.Quantity,
+            CreatedBy = createdBy
         };
 
         await _uow.Batches.AddAsync(batch);
