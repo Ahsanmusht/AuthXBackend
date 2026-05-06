@@ -316,7 +316,7 @@ public class CompanySettings
     public int      CompanyId          { get; set; }
     public int      WarrantyDelayDays  { get; set; } = 60;
     public DateTime UpdatedAt          { get; set; } = DateTime.UtcNow;
-
+    public string ColorMode { get; set; } = "Multi";
     public Company Company { get; set; } = null!;
 }
 

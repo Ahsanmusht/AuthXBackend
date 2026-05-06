@@ -329,6 +329,7 @@ public class AppDbContext : DbContext
         {
             e.ToTable("CompanySettings");
             e.HasKey(x => x.Id);
+            e.Property(x => x.ColorMode).HasMaxLength(10).HasDefaultValue("Multi");
             e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
             e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
             e.HasIndex(x => x.CompanyId).IsUnique();

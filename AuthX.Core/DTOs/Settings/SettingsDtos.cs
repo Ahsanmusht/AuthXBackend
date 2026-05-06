@@ -14,3 +14,9 @@ public class PrintSettingsDto
     public bool    ShowCompanyName { get; set; } = false;
     public int     WarrantyDelayDays { get; set; } = 60;
 }
+
+public class CompanySettingsDto
+{
+    public string ColorMode { get; set; } = "Multi"; // "Multi" | "Single"
+    public int    WarrantyDelayDays { get; set; } = 60;
+}
