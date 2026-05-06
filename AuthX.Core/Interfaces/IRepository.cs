@@ -42,6 +42,8 @@ public interface IUnitOfWork : IDisposable
 IRepository<ProductColor>    ProductColors   { get; }
 IRepository<PrintSettings>   PrintSettings   { get; }
 IRepository<CompanySettings> CompanySettings { get; }
+IRepository<ReturnReason> ReturnReasons { get; }
+IRepository<ProductCondition> ProductConditions { get; }
 
     Task<int> SaveChangesAsync();
 }

@@ -29,6 +29,8 @@ public static class ServiceExtensions
         services.AddScoped<QRGenerationJob>();
 services.AddScoped<PrintProcessingJob>();
 services.AddScoped<ScanLogCleanupJob>();
+services.AddScoped<IReturnReasonService, ReturnReasonService>();
+services.AddScoped<IProductConditionService, ProductConditionService>();
 
         // ── SignalR push service ───────────────────────────
         services.AddScoped<ISignalRService, SignalRService>();

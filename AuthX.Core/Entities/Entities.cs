@@ -64,12 +64,15 @@ public class Category
 {
     public int      CategoryId  { get; set; }
     public int      CompanyId   { get; set; }
+    public int?     ParentId    { get; set; }
     public string   Name        { get; set; } = null!;
     public string?  Description { get; set; }
     public bool     IsActive    { get; set; } = true;
     public DateTime CreatedAt   { get; set; } = DateTime.UtcNow;
 
     public Company              Company  { get; set; } = null!;
+    public Category?            Parent   { get; set; }
+    public ICollection<Category> SubCategories { get; set; } = new List<Category>();
     public ICollection<Product> Products { get; set; } = new List<Product>();
 }
 
@@ -184,6 +187,7 @@ public class Dispatch
     public DateTime  DispatchDate { get; set; } = DateTime.UtcNow;
     public string?   Location     { get; set; }
     public string?   Notes        { get; set; }
+    public string?   SapInvoiceNo { get; set; }
 
     public ProductItem Item { get; set; } = null!;
 }
@@ -312,6 +316,33 @@ public class CompanySettings
     public int      CompanyId          { get; set; }
     public int      WarrantyDelayDays  { get; set; } = 60;
     public DateTime UpdatedAt          { get; set; } = DateTime.UtcNow;
+
+    public Company Company { get; set; } = null!;
+}
+
+// ─── ReturnReason ───────────────────────────────────────
+public class ReturnReason
+{
+    public int      ReturnReasonId { get; set; }
+    public int      CompanyId      { get; set; }
+    public string   Name           { get; set; } = null!;
+    public string?  Description    { get; set; }
+    public bool     IsActive       { get; set; } = true;
+    public DateTime CreatedAt      { get; set; } = DateTime.UtcNow;
+
+    public Company Company { get; set; } = null!;
+}
+
+// ─── ProductCondition ───────────────────────────────────────
+
+public class ProductCondition
+{
+    public int      ProductConditionId { get; set; }
+    public int      CompanyId          { get; set; }
+    public string   Name               { get; set; } = null!;
+    public string?  Description        { get; set; }
+    public bool     IsActive           { get; set; } = true;
+    public DateTime CreatedAt          { get; set; } = DateTime.UtcNow;
 
     public Company Company { get; set; } = null!;
 }

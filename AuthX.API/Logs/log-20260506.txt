@@ -1,0 +1,1319 @@
+2026-05-06 10:31:03.132 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-05-06 10:31:10.595 +05:00 [INF] Hangfire SQL objects installed.
+2026-05-06 10:31:12.749 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-06 10:31:13.979 +05:00 [INF] Now listening on: http://localhost:5140
+2026-05-06 10:31:14.103 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-4153N37\SQL2014@AuthX_DB'
+2026-05-06 10:31:14.167 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-05-06 10:31:14.229 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-06 10:31:14.368 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-06 10:31:14.596 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa successfully announced in 217.9171 ms
+2026-05-06 10:31:14.598 +05:00 [INF] Hosting environment: Development
+2026-05-06 10:31:14.611 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-06 10:31:14.657 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-05-06 10:31:14.882 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa all the dispatchers started
+2026-05-06 10:31:28.078 +05:00 [INF] Executed DbCommand (455ms) [Parameters=[@p0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+DELETE FROM ScanLog WHERE ScanTime < @p0
+2026-05-06 10:31:28.273 +05:00 [INF] ScanLog cleanup: removed 0 old records.
+2026-05-06 11:06:19.850 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:19.851 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:19.851 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:20.002 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:19.916 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:20.002 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:20.174 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.175 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.175 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.246 +05:00 [INF] HTTP OPTIONS /api/Categories responded 204 in 77.9925 ms
+2026-05-06 11:06:20.212 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.282 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 70.4132 ms
+2026-05-06 11:06:20.226 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 51.1846 ms
+2026-05-06 11:06:20.179 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.225 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 47.3332 ms
+2026-05-06 11:06:20.294 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Categories - 204 null null 291.734ms
+2026-05-06 11:06:20.337 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 335.0948ms
+2026-05-06 11:06:20.357 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?page=1&pageSize=20 - 204 null null 509.5755ms
+2026-05-06 11:06:20.603 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:20.387 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 536.8809ms
+2026-05-06 11:06:20.558 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.591 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:20.374 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 195.9161 ms
+2026-05-06 11:06:20.658 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.678 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:20.685 +05:00 [INF] HTTP OPTIONS /api/Categories responded 204 in 130.5148 ms
+2026-05-06 11:06:20.688 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:20.700 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?page=1&pageSize=20 - 204 null null 852.4837ms
+2026-05-06 11:06:20.720 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:21.112 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Categories - 204 null null 1195.8122ms
+2026-05-06 11:06:24.379 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.381 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.390 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.436 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.436 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.436 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.465 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.465 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.465 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.478 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.478 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.485 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.493 +05:00 [INF] HTTP GET /api/Colors responded 401 in 3835.3995 ms
+2026-05-06 11:06:24.499 +05:00 [INF] HTTP GET /api/Categories responded 401 in 3778.4525 ms
+2026-05-06 11:06:24.500 +05:00 [INF] HTTP GET /api/Products responded 401 in 3812.5183 ms
+2026-05-06 11:06:24.505 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 401 0 null 3901.7263ms
+2026-05-06 11:06:24.520 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Categories - 401 0 null 3841.4725ms
+2026-05-06 11:06:24.526 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:24.533 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - 401 0 null 3941.9975ms
+2026-05-06 11:06:24.572 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:24.551 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:24.568 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:24.541 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/refresh - null null
+2026-05-06 11:06:24.577 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:24.585 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:24.588 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.613 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.602 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.602 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 11:06:24.600 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:24.635 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.651 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.653 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '05-May-2026 3:37:44 pm', Current time (UTC): '06-May-2026 6:06:24 am'.
+2026-05-06 11:06:24.658 +05:00 [INF] HTTP OPTIONS /api/Auth/refresh responded 204 in 57.5967 ms
+2026-05-06 11:06:24.665 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.666 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.668 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 11:06:24.670 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/refresh - 204 null null 128.7783ms
+2026-05-06 11:06:24.677 +05:00 [INF] HTTP GET /api/Colors responded 401 in 109.1331 ms
+2026-05-06 11:06:24.679 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.684 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 11:06:24.703 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 401 0 null 176.8892ms
+2026-05-06 11:06:24.703 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/refresh - application/json 764
+2026-05-06 11:06:24.705 +05:00 [INF] HTTP GET /api/Products responded 401 in 127.4805 ms
+2026-05-06 11:06:24.710 +05:00 [INF] HTTP GET /api/Categories responded 401 in 124.7156 ms
+2026-05-06 11:06:24.737 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:24.744 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - 401 0 null 171.5678ms
+2026-05-06 11:06:24.752 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Categories - 401 0 null 200.4955ms
+2026-05-06 11:06:24.770 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Refresh (AuthX.API)'
+2026-05-06 11:06:24.836 +05:00 [INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(AuthX.Core.DTOs.Auth.RefreshTokenRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 11:06:25.494 +05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+2026-05-06 11:06:25.726 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-05-06 11:06:25.933 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 150), @p3='?' (DbType = Boolean), @p4='?' (Size = 150), @p5='?' (Size = 500), @p6='?' (Size = 4000), @p7='?' (Size = 500), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CompanyId] = @p0, [CreatedAt] = @p1, [Email] = @p2, [IsActive] = @p3, [Name] = @p4, [PasswordHash] = @p5, [Phone] = @p6, [RefreshToken] = @p7, [RefreshTokenExpiry] = @p8
+OUTPUT 1
+WHERE [UserId] = @p9;
+2026-05-06 11:06:25.968 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Auth.LoginResponseDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:26.031 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Refresh (AuthX.API) in 1183.2325ms
+2026-05-06 11:06:26.034 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Refresh (AuthX.API)'
+2026-05-06 11:06:26.037 +05:00 [INF] HTTP POST /api/Auth/refresh responded 200 in 1299.5487 ms
+2026-05-06 11:06:26.065 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/refresh - 200 null application/json; charset=utf-8 1362.4108ms
+2026-05-06 11:06:26.069 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:26.070 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:26.070 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:26.087 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:26.158 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:26.118 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:26.127 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:26.104 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:26.213 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 108.9946 ms
+2026-05-06 11:06:26.169 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 11.3589 ms
+2026-05-06 11:06:26.219 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API)'
+2026-05-06 11:06:26.219 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:06:26.236 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 166.7201ms
+2026-05-06 11:06:26.262 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 174.6513ms
+2026-05-06 11:06:26.297 +05:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.CategoriesController (AuthX.API).
+2026-05-06 11:06:26.351 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:26.392 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:06:26.468 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:26.507 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:06:26.563 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:06:27.274 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:06:27.280 +05:00 [INF] Executed DbCommand (11ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[CategoryId], [c].[Name], [c].[Description], [c].[IsActive], [c].[CreatedAt]
+FROM [Category] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+ORDER BY [c].[Name]
+2026-05-06 11:06:27.365 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:27.425 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Categories.CategoryDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:27.468 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 282.3194ms
+2026-05-06 11:06:27.612 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:06:27.835 +05:00 [INF] Executed DbCommand (154ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:06:27.912 +05:00 [INF] Executed action AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API) in 1493.1552ms
+2026-05-06 11:06:27.951 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:06:27.999 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:28.101 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API)'
+2026-05-06 11:06:28.118 +05:00 [INF] HTTP GET /api/Colors responded 200 in 1650.1957 ms
+2026-05-06 11:06:28.261 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:06:28.363 +05:00 [INF] HTTP GET /api/Categories responded 200 in 2235.7744 ms
+2026-05-06 11:06:28.596 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 2244.6606ms
+2026-05-06 11:06:28.618 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:06:28.667 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Categories - 200 null application/json; charset=utf-8 2596.1544ms
+2026-05-06 11:06:28.862 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Categories - null null
+2026-05-06 11:06:30.034 +05:00 [INF] Executed DbCommand (338ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:06:30.435 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:06:31.382 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:31.816 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:31.851 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API)'
+2026-05-06 11:06:31.931 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 1518.3464ms
+2026-05-06 11:06:32.034 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:32.045 +05:00 [INF] Route matched with {action = "GetAll", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.CategoriesController (AuthX.API).
+2026-05-06 11:06:32.050 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:06:32.166 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 5673.0967ms
+2026-05-06 11:06:32.200 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - null null
+2026-05-06 11:06:32.268 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[CategoryId], [c].[Name], [c].[Description], [c].[IsActive], [c].[CreatedAt]
+FROM [Category] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+ORDER BY [c].[Name]
+2026-05-06 11:06:32.285 +05:00 [INF] HTTP GET /api/Colors responded 200 in 4286.0666 ms
+2026-05-06 11:06:32.416 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:06:32.514 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:06:33.183 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:06:33.084 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 5471.6483ms
+2026-05-06 11:06:33.166 +05:00 [INF] HTTP GET /api/Products responded 200 in 7046.8029 ms
+2026-05-06 11:06:33.015 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Categories.CategoryDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:33.742 +05:00 [INF] Executed action AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API) in 1525.3244ms
+2026-05-06 11:06:33.667 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - 200 null application/json; charset=utf-8 7596.6962ms
+2026-05-06 11:06:33.263 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:06:33.849 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.CategoriesController.GetAll (AuthX.API)'
+2026-05-06 11:06:34.281 +05:00 [INF] Executed DbCommand (27ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:06:34.334 +05:00 [INF] HTTP GET /api/Categories responded 200 in 2952.2219 ms
+2026-05-06 11:06:34.400 +05:00 [INF] Executed DbCommand (16ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:06:34.401 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Categories - 200 null application/json; charset=utf-8 5539.4317ms
+2026-05-06 11:06:34.864 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:06:35.011 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 780.7692ms
+2026-05-06 11:06:35.044 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:06:35.061 +05:00 [INF] HTTP GET /api/Products responded 200 in 2546.7939 ms
+2026-05-06 11:06:35.134 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?page=1&pageSize=20 - 200 null application/json; charset=utf-8 2933.363ms
+2026-05-06 11:07:12.889 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:07:12.889 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:07:12.900 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:12.905 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:12.907 +05:00 [INF] HTTP OPTIONS /api/Dispatch responded 204 in 7.6774 ms
+2026-05-06 11:07:12.908 +05:00 [INF] HTTP OPTIONS /api/Dispatch responded 204 in 2.8364 ms
+2026-05-06 11:07:12.910 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - 204 null null 21.2952ms
+2026-05-06 11:07:12.921 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - 204 null null 31.6855ms
+2026-05-06 11:07:12.959 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:07:12.993 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:13.006 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:07:13.021 +05:00 [INF] Route matched with {action = "GetAll", controller = "Dispatch"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Nullable`1[System.Int64], AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.DispatchController (AuthX.API).
+2026-05-06 11:07:13.053 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Dispatch] AS [d]
+WHERE [d].[CompanyId] = @__companyId_0
+2026-05-06 11:07:13.089 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[DispatchId], [p].[SerialNo], [p].[QRCode], [p0].[Name] AS [ProductName], [t].[Location], [t].[DispatchDate], [c].[Name] AS [ScannedBy], [p].[WarrantyEndDate] AS [WarrantyEnd]
+FROM (
+    SELECT [d].[DispatchId], [d].[DispatchDate], [d].[ItemId], [d].[Location]
+    FROM [Dispatch] AS [d]
+    WHERE [d].[CompanyId] = @__companyId_0
+    ORDER BY [d].[DispatchDate] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [ProductItem] AS [p] ON [t].[ItemId] = [p].[ItemId]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Company] AS [c] ON [p].[CompanyId] = [c].[CompanyId]
+ORDER BY [t].[DispatchDate] DESC
+2026-05-06 11:07:13.099 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Dispatch.DispatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:13.124 +05:00 [INF] Executed action AuthX.API.Controllers.DispatchController.GetAll (AuthX.API) in 99.9347ms
+2026-05-06 11:07:13.126 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:07:13.128 +05:00 [INF] HTTP GET /api/Dispatch responded 200 in 135.2416 ms
+2026-05-06 11:07:13.126 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:07:13.136 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - 200 null application/json; charset=utf-8 176.5145ms
+2026-05-06 11:07:13.142 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:13.183 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:07:13.189 +05:00 [INF] Route matched with {action = "GetAll", controller = "Dispatch"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Nullable`1[System.Int64], AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.DispatchController (AuthX.API).
+2026-05-06 11:07:13.197 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Dispatch] AS [d]
+WHERE [d].[CompanyId] = @__companyId_0
+2026-05-06 11:07:13.209 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[DispatchId], [p].[SerialNo], [p].[QRCode], [p0].[Name] AS [ProductName], [t].[Location], [t].[DispatchDate], [c].[Name] AS [ScannedBy], [p].[WarrantyEndDate] AS [WarrantyEnd]
+FROM (
+    SELECT [d].[DispatchId], [d].[DispatchDate], [d].[ItemId], [d].[Location]
+    FROM [Dispatch] AS [d]
+    WHERE [d].[CompanyId] = @__companyId_0
+    ORDER BY [d].[DispatchDate] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [ProductItem] AS [p] ON [t].[ItemId] = [p].[ItemId]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Company] AS [c] ON [p].[CompanyId] = [c].[CompanyId]
+ORDER BY [t].[DispatchDate] DESC
+2026-05-06 11:07:13.240 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Dispatch.DispatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:13.257 +05:00 [INF] Executed action AuthX.API.Controllers.DispatchController.GetAll (AuthX.API) in 65.6653ms
+2026-05-06 11:07:13.260 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:07:13.266 +05:00 [INF] HTTP GET /api/Dispatch responded 200 in 123.9263 ms
+2026-05-06 11:07:13.273 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - 200 null application/json; charset=utf-8 146.8055ms
+2026-05-06 11:07:14.591 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:14.592 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:14.665 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:14.989 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:14.992 +05:00 [INF] HTTP OPTIONS /api/Batches responded 204 in 327.2578 ms
+2026-05-06 11:07:15.005 +05:00 [INF] HTTP OPTIONS /api/Batches responded 204 in 15.4821 ms
+2026-05-06 11:07:15.009 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - 204 null null 418.4405ms
+2026-05-06 11:07:15.033 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - 204 null null 440.4995ms
+2026-05-06 11:07:15.074 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:15.098 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.104 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.116 +05:00 [INF] Route matched with {action = "GetAll", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:15.156 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductionBatch] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:15.237 +05:00 [INF] Executed DbCommand (14ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt]
+FROM (
+    SELECT [p].[BatchId], [p].[BatchNo], [p].[CreatedAt], [p].[ProductId], [p].[ProductionDate], [p].[Quantity], [p].[Status]
+    FROM [ProductionBatch] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Product] AS [p0] ON [t].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+ORDER BY [t].[CreatedAt] DESC
+2026-05-06 11:07:15.260 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Batches.BatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:15.316 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetAll (AuthX.API) in 191.4522ms
+2026-05-06 11:07:15.326 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.356 +05:00 [INF] HTTP GET /api/Batches responded 200 in 258.7839 ms
+2026-05-06 11:07:15.356 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:15.373 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - 200 null application/json; charset=utf-8 299.3182ms
+2026-05-06 11:07:15.465 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:07:15.465 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:07:15.606 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.609 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:07:15.624 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.638 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.640 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.643 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.653 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 28.6290 ms
+2026-05-06 11:07:15.655 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 16.7871 ms
+2026-05-06 11:07:15.656 +05:00 [INF] Route matched with {action = "GetAll", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:15.657 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 14.4195 ms
+2026-05-06 11:07:15.659 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 193.6286ms
+2026-05-06 11:07:15.671 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - 204 null null 205.9868ms
+2026-05-06 11:07:15.687 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:07:15.689 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - 204 null null 80.253ms
+2026-05-06 11:07:15.695 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductionBatch] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:15.707 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:07:15.710 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.721 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:07:15.728 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt]
+FROM (
+    SELECT [p].[BatchId], [p].[BatchNo], [p].[CreatedAt], [p].[ProductId], [p].[ProductionDate], [p].[Quantity], [p].[Status]
+    FROM [ProductionBatch] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Product] AS [p0] ON [t].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+ORDER BY [t].[CreatedAt] DESC
+2026-05-06 11:07:15.730 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.732 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 21.3531 ms
+2026-05-06 11:07:15.739 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.743 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Batches.BatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:15.746 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.748 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 60.9553ms
+2026-05-06 11:07:15.749 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.755 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetAll (AuthX.API) in 81.1735ms
+2026-05-06 11:07:15.756 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:07:15.764 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:07:15.765 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.779 +05:00 [INF] HTTP GET /api/Batches responded 200 in 173.6806 ms
+2026-05-06 11:07:15.785 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:07:15.787 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:15.788 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - 200 null application/json; charset=utf-8 431.944ms
+2026-05-06 11:07:15.800 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:15.829 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 58.074ms
+2026-05-06 11:07:15.838 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.841 +05:00 [INF] HTTP GET /api/Colors responded 200 in 111.4408 ms
+2026-05-06 11:07:15.853 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:07:15.854 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 147.3902ms
+2026-05-06 11:07:15.887 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:15.890 +05:00 [INF] Executed DbCommand (79ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:07:15.903 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.909 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:07:15.932 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:07:15.971 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:15.973 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:15.976 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 199.6111ms
+2026-05-06 11:07:15.981 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 55.1871ms
+2026-05-06 11:07:15.982 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:07:15.987 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:07:15.990 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:07:16.000 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:16.004 +05:00 [INF] HTTP GET /api/Products responded 200 in 265.4789 ms
+2026-05-06 11:07:16.005 +05:00 [INF] HTTP GET /api/Colors responded 200 in 118.3136 ms
+2026-05-06 11:07:16.007 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:07:16.015 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:07:16.015 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 161.2878ms
+2026-05-06 11:07:16.008 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - 200 null application/json; charset=utf-8 286.655ms
+2026-05-06 11:07:16.023 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:16.056 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:07:16.099 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:16.105 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 88.2929ms
+2026-05-06 11:07:16.121 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:07:16.131 +05:00 [INF] HTTP GET /api/Products responded 200 in 130.5106 ms
+2026-05-06 11:07:16.152 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - 200 null application/json; charset=utf-8 170.1838ms
+2026-05-06 11:07:27.072 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:27.072 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:27.090 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:27.272 +05:00 [INF] HTTP OPTIONS /api/Batches responded 204 in 181.9966 ms
+2026-05-06 11:07:27.273 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:27.318 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - 204 null null 246.0735ms
+2026-05-06 11:07:27.323 +05:00 [INF] HTTP OPTIONS /api/Batches responded 204 in 51.2825 ms
+2026-05-06 11:07:27.354 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:27.368 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches?page=1&pageSize=20 - 204 null null 296.1972ms
+2026-05-06 11:07:27.387 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:27.404 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:27.407 +05:00 [INF] Route matched with {action = "GetAll", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:27.420 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductionBatch] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:27.432 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt]
+FROM (
+    SELECT [p].[BatchId], [p].[BatchNo], [p].[CreatedAt], [p].[ProductId], [p].[ProductionDate], [p].[Quantity], [p].[Status]
+    FROM [ProductionBatch] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Product] AS [p0] ON [t].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+ORDER BY [t].[CreatedAt] DESC
+2026-05-06 11:07:27.436 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Batches.BatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:27.439 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetAll (AuthX.API) in 24.3601ms
+2026-05-06 11:07:27.440 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - null null
+2026-05-06 11:07:27.448 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:27.451 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:27.452 +05:00 [INF] HTTP GET /api/Batches responded 200 in 65.6194 ms
+2026-05-06 11:07:27.454 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:27.456 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - 200 null application/json; charset=utf-8 101.3505ms
+2026-05-06 11:07:27.469 +05:00 [INF] Route matched with {action = "GetAll", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:27.489 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductionBatch] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:07:27.514 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [p0].[Name] AS [ProductName], [c].[Name] AS [CategoryName], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt]
+FROM (
+    SELECT [p].[BatchId], [p].[BatchNo], [p].[CreatedAt], [p].[ProductId], [p].[ProductionDate], [p].[Quantity], [p].[Status]
+    FROM [ProductionBatch] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Product] AS [p0] ON [t].[ProductId] = [p0].[ProductId]
+INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+ORDER BY [t].[CreatedAt] DESC
+2026-05-06 11:07:27.519 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Batches.BatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:27.523 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetAll (AuthX.API) in 35.5916ms
+2026-05-06 11:07:27.552 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetAll (AuthX.API)'
+2026-05-06 11:07:27.554 +05:00 [INF] HTTP GET /api/Batches responded 200 in 102.9101 ms
+2026-05-06 11:07:27.560 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches?page=1&pageSize=20 - 200 null application/json; charset=utf-8 119.5491ms
+2026-05-06 11:07:30.620 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:07:30.622 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:07:30.623 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:07:30.623 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:07:30.624 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:07:30.639 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.646 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.654 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.656 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.664 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.669 +05:00 [INF] HTTP OPTIONS /api/Batches/3 responded 204 in 30.4159 ms
+2026-05-06 11:07:30.686 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - 204 null null 65.2558ms
+2026-05-06 11:07:30.671 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 17.6820 ms
+2026-05-06 11:07:30.672 +05:00 [INF] HTTP OPTIONS /api/Batches/3 responded 204 in 16.7049 ms
+2026-05-06 11:07:30.679 +05:00 [INF] HTTP OPTIONS /api/QR/progress/3 responded 204 in 15.0105 ms
+2026-05-06 11:07:30.670 +05:00 [INF] HTTP OPTIONS /api/QR/progress/3 responded 204 in 24.3604 ms
+2026-05-06 11:07:30.696 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:07:30.702 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 79.4231ms
+2026-05-06 11:07:30.705 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - 204 null null 81.2163ms
+2026-05-06 11:07:30.711 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - 204 null null 87.2974ms
+2026-05-06 11:07:30.716 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - 204 null null 94.8001ms
+2026-05-06 11:07:30.720 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.729 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:07:30.896 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:07:30.940 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:07:30.949 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 229.0778 ms
+2026-05-06 11:07:30.955 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.966 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.970 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:30.972 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 275.9967ms
+2026-05-06 11:07:30.979 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:07:30.982 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:07:30.985 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:07:31.003 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:31.013 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-05-06 11:07:31.015 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:07:31.073 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:07:31.156 +05:00 [INF] Executed DbCommand (34ms) [Parameters=[@__batchId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[Quantity] AS [Total], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p0]
+    WHERE [p].[BatchId] = [p0].[BatchId]) AS [Generated], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p1]
+    WHERE [p].[BatchId] = [p1].[BatchId] AND [p1].[PrintStatus] = N'Printed') AS [Printed], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p2]
+    WHERE [p].[BatchId] = [p2].[BatchId] AND [p2].[Status] = N'Dispatched') AS [Dispatched], CASE
+    WHEN [p].[Quantity] = 0 THEN 0
+    ELSE CAST((CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId] AND [p3].[Status] = N'Dispatched') AS float) * 100.0E0) / CAST([p].[Quantity] AS float) AS int)
+END AS [PercentDone]
+FROM [ProductionBatch] AS [p]
+WHERE [p].[BatchId] = @__batchId_0
+2026-05-06 11:07:31.165 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.182 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchProgressDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.195 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 155.4522ms
+2026-05-06 11:07:31.203 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 183.0684ms
+2026-05-06 11:07:31.204 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:07:31.205 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:07:31.207 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:07:31.216 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:07:31.220 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:31.222 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 252.4418 ms
+2026-05-06 11:07:31.236 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:31.237 +05:00 [INF] HTTP GET /api/QR/progress/3 responded 200 in 271.4616 ms
+2026-05-06 11:07:31.239 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:07:31.247 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 306.994ms
+2026-05-06 11:07:31.254 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:07:31.264 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - 200 null application/json; charset=utf-8 368.1424ms
+2026-05-06 11:07:31.272 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:07:31.296 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-05-06 11:07:31.336 +05:00 [INF] Executed DbCommand (10ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:07:31.339 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchProgressDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.357 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.362 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 29.2336ms
+2026-05-06 11:07:31.370 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 46.8703ms
+2026-05-06 11:07:31.377 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:07:31.386 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:07:31.389 +05:00 [INF] HTTP GET /api/QR/progress/3 responded 200 in 152.5536 ms
+2026-05-06 11:07:31.396 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 176.1343 ms
+2026-05-06 11:07:31.402 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - 200 null application/json; charset=utf-8 195.4327ms
+2026-05-06 11:07:31.404 +05:00 [INF] Executed DbCommand (161ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [t].[ProductId], [t].[Name], [t].[Name0], [t].[ModelNo], [t].[c], [t].[Name1], [t].[c0], [t].[HexCode], [t].[c1], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt], [t].[c2], [t].[c3], [t].[c4], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0], [t0].[CompanyId], [t0].[CreatedAt], [t0].[HexCode], [t0].[IsActive], [t0].[Name], [t2].[ProductId], [t2].[ColorId], [t2].[ColorId0], [t2].[CompanyId], [t2].[CreatedAt], [t2].[HexCode], [t2].[IsActive], [t2].[Name]
+FROM (
+    SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name], [c].[Name] AS [Name0], [p0].[ModelNo], CASE
+        WHEN [c0].[ColorId] IS NOT NULL THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END AS [c], [c0].[Name] AS [Name1], (
+        SELECT TOP(1) [c1].[Name]
+        FROM [ProductColor] AS [p1]
+        INNER JOIN [Color] AS [c1] ON [p1].[ColorId] = [c1].[ColorId]
+        WHERE [p0].[ProductId] = [p1].[ProductId]) AS [c0], [c0].[HexCode], (
+        SELECT TOP(1) [c2].[HexCode]
+        FROM [ProductColor] AS [p2]
+        INNER JOIN [Color] AS [c2] ON [p2].[ColorId] = [c2].[ColorId]
+        WHERE [p0].[ProductId] = [p2].[ProductId]) AS [c1], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId]) AS bigint) AS [c2], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p4]
+        WHERE [p].[BatchId] = [p4].[BatchId] AND [p4].[PrintStatus] = N'Printed') AS bigint) AS [c3], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p5]
+        WHERE [p].[BatchId] = [p5].[BatchId] AND [p5].[Status] = N'Dispatched') AS bigint) AS [c4], [p0].[ProductId] AS [ProductId0]
+    FROM [ProductionBatch] AS [p]
+    INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+    INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+    LEFT JOIN [Color] AS [c0] ON [p].[ColorId] = [c0].[ColorId]
+    WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+) AS [t]
+LEFT JOIN (
+    SELECT [t1].[ProductId], [t1].[ColorId], [t1].[ColorId0], [t1].[CompanyId], [t1].[CreatedAt], [t1].[HexCode], [t1].[IsActive], [t1].[Name]
+    FROM (
+        SELECT [p6].[ProductId], [p6].[ColorId], [c3].[ColorId] AS [ColorId0], [c3].[CompanyId], [c3].[CreatedAt], [c3].[HexCode], [c3].[IsActive], [c3].[Name], ROW_NUMBER() OVER(PARTITION BY [p6].[ProductId] ORDER BY [p6].[ProductId], [p6].[ColorId], [c3].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p6]
+        INNER JOIN [Color] AS [c3] ON [p6].[ColorId] = [c3].[ColorId]
+    ) AS [t1]
+    WHERE [t1].[row] <= 1
+) AS [t0] ON [t].[ProductId0] = [t0].[ProductId]
+LEFT JOIN (
+    SELECT [t3].[ProductId], [t3].[ColorId], [t3].[ColorId0], [t3].[CompanyId], [t3].[CreatedAt], [t3].[HexCode], [t3].[IsActive], [t3].[Name]
+    FROM (
+        SELECT [p7].[ProductId], [p7].[ColorId], [c4].[ColorId] AS [ColorId0], [c4].[CompanyId], [c4].[CreatedAt], [c4].[HexCode], [c4].[IsActive], [c4].[Name], ROW_NUMBER() OVER(PARTITION BY [p7].[ProductId] ORDER BY [p7].[ProductId], [p7].[ColorId], [c4].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p7]
+        INNER JOIN [Color] AS [c4] ON [p7].[ColorId] = [c4].[ColorId]
+    ) AS [t3]
+    WHERE [t3].[row] <= 1
+) AS [t2] ON [t].[ProductId0] = [t2].[ProductId]
+2026-05-06 11:07:31.407 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 202.7107ms
+2026-05-06 11:07:31.510 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.517 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 499.583ms
+2026-05-06 11:07:31.520 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:07:31.521 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:07:31.532 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:31.533 +05:00 [INF] HTTP GET /api/Batches/3 responded 200 in 577.9329 ms
+2026-05-06 11:07:31.536 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:07:31.539 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/3 - 200 null application/json; charset=utf-8 809.4092ms
+2026-05-06 11:07:31.549 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:07:31.572 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [t].[ProductId], [t].[Name], [t].[Name0], [t].[ModelNo], [t].[c], [t].[Name1], [t].[c0], [t].[HexCode], [t].[c1], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt], [t].[c2], [t].[c3], [t].[c4], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0], [t0].[CompanyId], [t0].[CreatedAt], [t0].[HexCode], [t0].[IsActive], [t0].[Name], [t2].[ProductId], [t2].[ColorId], [t2].[ColorId0], [t2].[CompanyId], [t2].[CreatedAt], [t2].[HexCode], [t2].[IsActive], [t2].[Name]
+FROM (
+    SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name], [c].[Name] AS [Name0], [p0].[ModelNo], CASE
+        WHEN [c0].[ColorId] IS NOT NULL THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END AS [c], [c0].[Name] AS [Name1], (
+        SELECT TOP(1) [c1].[Name]
+        FROM [ProductColor] AS [p1]
+        INNER JOIN [Color] AS [c1] ON [p1].[ColorId] = [c1].[ColorId]
+        WHERE [p0].[ProductId] = [p1].[ProductId]) AS [c0], [c0].[HexCode], (
+        SELECT TOP(1) [c2].[HexCode]
+        FROM [ProductColor] AS [p2]
+        INNER JOIN [Color] AS [c2] ON [p2].[ColorId] = [c2].[ColorId]
+        WHERE [p0].[ProductId] = [p2].[ProductId]) AS [c1], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId]) AS bigint) AS [c2], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p4]
+        WHERE [p].[BatchId] = [p4].[BatchId] AND [p4].[PrintStatus] = N'Printed') AS bigint) AS [c3], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p5]
+        WHERE [p].[BatchId] = [p5].[BatchId] AND [p5].[Status] = N'Dispatched') AS bigint) AS [c4], [p0].[ProductId] AS [ProductId0]
+    FROM [ProductionBatch] AS [p]
+    INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+    INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+    LEFT JOIN [Color] AS [c0] ON [p].[ColorId] = [c0].[ColorId]
+    WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+) AS [t]
+LEFT JOIN (
+    SELECT [t1].[ProductId], [t1].[ColorId], [t1].[ColorId0], [t1].[CompanyId], [t1].[CreatedAt], [t1].[HexCode], [t1].[IsActive], [t1].[Name]
+    FROM (
+        SELECT [p6].[ProductId], [p6].[ColorId], [c3].[ColorId] AS [ColorId0], [c3].[CompanyId], [c3].[CreatedAt], [c3].[HexCode], [c3].[IsActive], [c3].[Name], ROW_NUMBER() OVER(PARTITION BY [p6].[ProductId] ORDER BY [p6].[ProductId], [p6].[ColorId], [c3].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p6]
+        INNER JOIN [Color] AS [c3] ON [p6].[ColorId] = [c3].[ColorId]
+    ) AS [t1]
+    WHERE [t1].[row] <= 1
+) AS [t0] ON [t].[ProductId0] = [t0].[ProductId]
+LEFT JOIN (
+    SELECT [t3].[ProductId], [t3].[ColorId], [t3].[ColorId0], [t3].[CompanyId], [t3].[CreatedAt], [t3].[HexCode], [t3].[IsActive], [t3].[Name]
+    FROM (
+        SELECT [p7].[ProductId], [p7].[ColorId], [c4].[ColorId] AS [ColorId0], [c4].[CompanyId], [c4].[CreatedAt], [c4].[HexCode], [c4].[IsActive], [c4].[Name], ROW_NUMBER() OVER(PARTITION BY [p7].[ProductId] ORDER BY [p7].[ProductId], [p7].[ColorId], [c4].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p7]
+        INNER JOIN [Color] AS [c4] ON [p7].[ColorId] = [c4].[ColorId]
+    ) AS [t3]
+    WHERE [t3].[row] <= 1
+) AS [t2] ON [t].[ProductId0] = [t2].[ProductId]
+2026-05-06 11:07:31.587 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:31.598 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 30.2129ms
+2026-05-06 11:07:31.613 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:07:31.619 +05:00 [INF] HTTP GET /api/Batches/3 responded 200 in 86.8168 ms
+2026-05-06 11:07:31.634 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/3 - 200 null application/json; charset=utf-8 114.7641ms
+2026-05-06 11:07:32.143 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - null null
+2026-05-06 11:07:32.193 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:32.211 +05:00 [INF] HTTP OPTIONS /api/qr-image/batch/3 responded 204 in 18.1945 ms
+2026-05-06 11:07:32.253 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - 204 null null 109.7781ms
+2026-05-06 11:07:32.363 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - null null
+2026-05-06 11:07:32.392 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:32.404 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:07:32.429 +05:00 [INF] Route matched with {action = "GetBatchPreview", controller = "QRImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBatchPreview(Int64, Int32, Int32) on controller AuthX.API.Controllers.QRImageController (AuthX.API).
+2026-05-06 11:07:32.462 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__batchId_0='?' (DbType = Int64), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [p].[ItemId], [p].[SerialNo], [p].[QRCode]
+FROM [ProductItem] AS [p]
+WHERE [p].[BatchId] = @__batchId_0
+ORDER BY [p].[ItemId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-05-06 11:07:32.471 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType7`4[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], AuthX.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:32.538 +05:00 [INF] Executed action AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API) in 106.2777ms
+2026-05-06 11:07:32.547 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:07:32.549 +05:00 [INF] HTTP GET /api/qr-image/batch/3 responded 200 in 157.1811 ms
+2026-05-06 11:07:32.555 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - 200 null application/json; charset=utf-8 192.2848ms
+2026-05-06 11:07:36.894 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=20 - null null
+2026-05-06 11:07:36.898 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:36.899 +05:00 [INF] HTTP OPTIONS /api/qr-image/batch/3 responded 204 in 1.0789 ms
+2026-05-06 11:07:36.902 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=20 - 204 null null 7.8475ms
+2026-05-06 11:07:36.920 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=20 - null null
+2026-05-06 11:07:36.932 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:07:36.934 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:07:36.935 +05:00 [INF] Route matched with {action = "GetBatchPreview", controller = "QRImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBatchPreview(Int64, Int32, Int32) on controller AuthX.API.Controllers.QRImageController (AuthX.API).
+2026-05-06 11:07:36.952 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__batchId_0='?' (DbType = Int64), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [p].[ItemId], [p].[SerialNo], [p].[QRCode]
+FROM [ProductItem] AS [p]
+WHERE [p].[BatchId] = @__batchId_0
+ORDER BY [p].[ItemId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-05-06 11:07:36.957 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType7`4[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], AuthX.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:07:36.968 +05:00 [INF] Executed action AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API) in 29.5183ms
+2026-05-06 11:07:36.975 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:07:36.982 +05:00 [INF] HTTP GET /api/qr-image/batch/3 responded 200 in 49.6121 ms
+2026-05-06 11:07:36.984 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=20 - 200 null application/json; charset=utf-8 64.3546ms
+2026-05-06 11:08:12.354 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - null null
+2026-05-06 11:08:12.355 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - null null
+2026-05-06 11:08:12.359 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:12.418 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:12.420 +05:00 [INF] HTTP OPTIONS /api/Claims/scan responded 204 in 61.1838 ms
+2026-05-06 11:08:12.428 +05:00 [INF] HTTP OPTIONS /api/Claims/scan responded 204 in 14.1912 ms
+2026-05-06 11:08:12.430 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - 204 null null 76.2914ms
+2026-05-06 11:08:12.463 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - 204 null null 108.004ms
+2026-05-06 11:08:12.483 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - null null
+2026-05-06 11:08:12.515 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:12.520 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ClaimsController.Scan (AuthX.API)'
+2026-05-06 11:08:12.531 +05:00 [INF] Route matched with {action = "Scan", controller = "Claims"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Scan(System.String) on controller AuthX.API.Controllers.ClaimsController (AuthX.API).
+2026-05-06 11:08:12.615 +05:00 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-05-06 11:08:12.673 +05:00 [INF] Executed DbCommand (25ms) [Parameters=[@__qrCode_0='?' (Size = 500)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ItemId], [t].[BatchId], [t].[CompanyId], [t].[CreatedAt], [t].[FirstScanDate], [t].[FirstScanType], [t].[IsActive], [t].[IsFirstScan], [t].[PrintStatus], [t].[ProductId], [t].[QRCode], [t].[QRImagePath], [t].[SerialNo], [t].[Status], [t].[WarrantyEndDate], [t].[WarrantyStartDate], [t].[ProductId0], [t].[CategoryId], [t].[CompanyId0], [t].[CreatedAt0], [t].[Description], [t].[ImageUrl], [t].[IsActive0], [t].[ModelNo], [t].[Name], [t].[SKU], [t].[WarrantyDays], [t].[CategoryId0], [t].[CompanyId1], [t].[CreatedAt1], [t].[Description0], [t].[IsActive1], [t].[Name0], [t].[BatchId0], [t].[ColorId0], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0], [t0].[CompanyId], [t0].[CreatedAt], [t0].[HexCode], [t0].[IsActive], [t0].[Name], [t].[BatchNo], [t].[ColorId], [t].[CompanyId2], [t].[CreatedAt2], [t].[CreatedBy], [t].[ProductId1], [t].[ProductionDate], [t].[Quantity], [t].[Status0], [t].[CompanyId3], [t].[CreatedAt3], [t].[HexCode], [t].[IsActive2], [t].[Name1], [c2].[ClaimId], [c2].[AssignedTo], [c2].[ClaimDate], [c2].[CompanyId], [c2].[CustomerId], [c2].[ItemId], [c2].[LastStatus], [c2].[Remarks], [c2].[Status]
+FROM (
+    SELECT TOP(1) [p].[ItemId], [p].[BatchId], [p].[CompanyId], [p].[CreatedAt], [p].[FirstScanDate], [p].[FirstScanType], [p].[IsActive], [p].[IsFirstScan], [p].[PrintStatus], [p].[ProductId], [p].[QRCode], [p].[QRImagePath], [p].[SerialNo], [p].[Status], [p].[WarrantyEndDate], [p].[WarrantyStartDate], [p0].[ProductId] AS [ProductId0], [p0].[CategoryId], [p0].[CompanyId] AS [CompanyId0], [p0].[CreatedAt] AS [CreatedAt0], [p0].[Description], [p0].[ImageUrl], [p0].[IsActive] AS [IsActive0], [p0].[ModelNo], [p0].[Name], [p0].[SKU], [p0].[WarrantyDays], [c].[CategoryId] AS [CategoryId0], [c].[CompanyId] AS [CompanyId1], [c].[CreatedAt] AS [CreatedAt1], [c].[Description] AS [Description0], [c].[IsActive] AS [IsActive1], [c].[Name] AS [Name0], [p1].[BatchId] AS [BatchId0], [p1].[BatchNo], [p1].[ColorId], [p1].[CompanyId] AS [CompanyId2], [p1].[CreatedAt] AS [CreatedAt2], [p1].[CreatedBy], [p1].[ProductId] AS [ProductId1], [p1].[ProductionDate], [p1].[Quantity], [p1].[Status] AS [Status0], [c0].[ColorId] AS [ColorId0], [c0].[CompanyId] AS [CompanyId3], [c0].[CreatedAt] AS [CreatedAt3], [c0].[HexCode], [c0].[IsActive] AS [IsActive2], [c0].[Name] AS [Name1]
+    FROM [ProductItem] AS [p]
+    INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+    INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+    INNER JOIN [ProductionBatch] AS [p1] ON [p].[BatchId] = [p1].[BatchId]
+    LEFT JOIN [Color] AS [c0] ON [p1].[ColorId] = [c0].[ColorId]
+    WHERE [p].[QRCode] = @__qrCode_0
+) AS [t]
+LEFT JOIN (
+    SELECT [p2].[ProductId], [p2].[ColorId], [c1].[ColorId] AS [ColorId0], [c1].[CompanyId], [c1].[CreatedAt], [c1].[HexCode], [c1].[IsActive], [c1].[Name]
+    FROM [ProductColor] AS [p2]
+    INNER JOIN [Color] AS [c1] ON [p2].[ColorId] = [c1].[ColorId]
+) AS [t0] ON [t].[ProductId0] = [t0].[ProductId]
+LEFT JOIN [Claim] AS [c2] ON [t].[ItemId] = [c2].[ItemId]
+ORDER BY [t].[ItemId], [t].[ProductId0], [t].[CategoryId0], [t].[BatchId0], [t].[ColorId0], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0]
+2026-05-06 11:08:12.687 +05:00 [ERR] An exception occurred in the database while saving changes for context type 'AuthX.Infrastructure.Data.AppDbContext'.
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-05-06 11:08:12.830 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Claims.ScanResultDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:12.834 +05:00 [INF] Executed action AuthX.API.Controllers.ClaimsController.Scan (AuthX.API) in 298.1459ms
+2026-05-06 11:08:12.844 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - null null
+2026-05-06 11:08:12.845 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ClaimsController.Scan (AuthX.API)'
+2026-05-06 11:08:12.852 +05:00 [INF] HTTP GET /api/Claims/scan responded 200 in 337.0943 ms
+2026-05-06 11:08:12.847 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:12.860 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - 200 null application/json; charset=utf-8 376.9827ms
+2026-05-06 11:08:12.862 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ClaimsController.Scan (AuthX.API)'
+2026-05-06 11:08:12.894 +05:00 [INF] Route matched with {action = "Scan", controller = "Claims"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Scan(System.String) on controller AuthX.API.Controllers.ClaimsController (AuthX.API).
+2026-05-06 11:08:12.946 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Claims.ScanResultDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:13.157 +05:00 [INF] Executed DbCommand (166ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 100), @p2='?' (Size = 300), @p3='?' (Size = 50), @p4='?' (Precision = 10) (Scale = 6) (DbType = Decimal), @p5='?' (Precision = 10) (Scale = 6) (DbType = Decimal), @p6='?' (Size = 500), @p7='?' (Size = 50), @p8='?' (DbType = DateTime2), @p9='?' (Size = 50)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [ScanLog] ([City], [Country], [DeviceInfo], [IPAddress], [Latitude], [Longitude], [QRCode], [ResponseStatus], [ScanTime], [ScanType])
+OUTPUT INSERTED.[ScanId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2026-05-06 11:08:13.158 +05:00 [INF] Executed action AuthX.API.Controllers.ClaimsController.Scan (AuthX.API) in 256.2946ms
+2026-05-06 11:08:13.176 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ClaimsController.Scan (AuthX.API)'
+2026-05-06 11:08:13.178 +05:00 [INF] HTTP GET /api/Claims/scan responded 200 in 331.0003 ms
+2026-05-06 11:08:13.185 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Claims/scan?qrCode=PV-1-2-BTH-0002-00000006-68D6217E115147CEA8EC0BF114EC81E4 - 200 null application/json; charset=utf-8 340.8018ms
+2026-05-06 11:08:22.718 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-05-06 11:08:22.720 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-05-06 11:08:22.806 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:22.936 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 129.4042 ms
+2026-05-06 11:08:22.926 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:22.943 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 224.9231ms
+2026-05-06 11:08:22.950 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 23.6115 ms
+2026-05-06 11:08:23.029 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 308.9849ms
+2026-05-06 11:08:23.196 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:08:23.196 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:08:23.200 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:23.201 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:08:23.227 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.294 +05:00 [INF] HTTP OPTIONS /api/Batches/3 responded 204 in 67.5177 ms
+2026-05-06 11:08:23.278 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.292 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.257 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.309 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - 204 null null 113.3426ms
+2026-05-06 11:08:23.311 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 32.7977 ms
+2026-05-06 11:08:23.312 +05:00 [INF] HTTP OPTIONS /api/Batches/3 responded 204 in 19.5050 ms
+2026-05-06 11:08:23.314 +05:00 [INF] HTTP OPTIONS /api/QR/progress/3 responded 204 in 57.3154 ms
+2026-05-06 11:08:23.344 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:08:23.358 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 157.3859ms
+2026-05-06 11:08:23.362 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Batches/3 - 204 null null 160.8915ms
+2026-05-06 11:08:23.375 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - 204 null null 178.6166ms
+2026-05-06 11:08:23.396 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.412 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:23.444 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:08:23.453 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:08:23.462 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:23.477 +05:00 [INF] HTTP OPTIONS /api/QR/progress/3 responded 204 in 81.0347 ms
+2026-05-06 11:08:23.495 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.523 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.540 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.563 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:23.578 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/QR/progress/3 - 204 null null 233.571ms
+2026-05-06 11:08:23.588 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 93.5682 ms
+2026-05-06 11:08:23.595 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:08:23.606 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:08:23.772 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-05-06 11:08:23.696 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 284.4622ms
+2026-05-06 11:08:23.745 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:08:23.618 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:23.862 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:08:23.877 +05:00 [INF] Executed DbCommand (68ms) [Parameters=[@__batchId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[Quantity] AS [Total], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p0]
+    WHERE [p].[BatchId] = [p0].[BatchId]) AS [Generated], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p1]
+    WHERE [p].[BatchId] = [p1].[BatchId] AND [p1].[PrintStatus] = N'Printed') AS [Printed], (
+    SELECT COUNT(*)
+    FROM [ProductItem] AS [p2]
+    WHERE [p].[BatchId] = [p2].[BatchId] AND [p2].[Status] = N'Dispatched') AS [Dispatched], CASE
+    WHEN [p].[Quantity] = 0 THEN 0
+    ELSE CAST((CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId] AND [p3].[Status] = N'Dispatched') AS float) * 100.0E0) / CAST([p].[Quantity] AS float) AS int)
+END AS [PercentDone]
+FROM [ProductionBatch] AS [p]
+WHERE [p].[BatchId] = @__batchId_0
+2026-05-06 11:08:23.904 +05:00 [INF] Executed DbCommand (16ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:23.911 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchProgressDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:23.926 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:23.929 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 122.8872ms
+2026-05-06 11:08:23.960 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - null null
+2026-05-06 11:08:23.961 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 81.9618ms
+2026-05-06 11:08:23.972 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:23.977 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:08:24.007 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:24.013 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:24.033 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:24.046 +05:00 [INF] HTTP GET /api/QR/progress/3 responded 200 in 505.7265 ms
+2026-05-06 11:08:24.054 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:08:24.087 +05:00 [INF] Route matched with {action = "Progress", controller = "QR"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Progress(Int64) on controller AuthX.API.Controllers.QRController (AuthX.API).
+2026-05-06 11:08:24.061 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:24.188 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:08:24.059 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 496.3383 ms
+2026-05-06 11:08:24.150 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchProgressDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:24.070 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - 200 null application/json; charset=utf-8 617.108ms
+2026-05-06 11:08:24.317 +05:00 [INF] Executed DbCommand (463ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [t].[ProductId], [t].[Name], [t].[Name0], [t].[ModelNo], [t].[c], [t].[Name1], [t].[c0], [t].[HexCode], [t].[c1], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt], [t].[c2], [t].[c3], [t].[c4], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0], [t0].[CompanyId], [t0].[CreatedAt], [t0].[HexCode], [t0].[IsActive], [t0].[Name], [t2].[ProductId], [t2].[ColorId], [t2].[ColorId0], [t2].[CompanyId], [t2].[CreatedAt], [t2].[HexCode], [t2].[IsActive], [t2].[Name]
+FROM (
+    SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name], [c].[Name] AS [Name0], [p0].[ModelNo], CASE
+        WHEN [c0].[ColorId] IS NOT NULL THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END AS [c], [c0].[Name] AS [Name1], (
+        SELECT TOP(1) [c1].[Name]
+        FROM [ProductColor] AS [p1]
+        INNER JOIN [Color] AS [c1] ON [p1].[ColorId] = [c1].[ColorId]
+        WHERE [p0].[ProductId] = [p1].[ProductId]) AS [c0], [c0].[HexCode], (
+        SELECT TOP(1) [c2].[HexCode]
+        FROM [ProductColor] AS [p2]
+        INNER JOIN [Color] AS [c2] ON [p2].[ColorId] = [c2].[ColorId]
+        WHERE [p0].[ProductId] = [p2].[ProductId]) AS [c1], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId]) AS bigint) AS [c2], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p4]
+        WHERE [p].[BatchId] = [p4].[BatchId] AND [p4].[PrintStatus] = N'Printed') AS bigint) AS [c3], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p5]
+        WHERE [p].[BatchId] = [p5].[BatchId] AND [p5].[Status] = N'Dispatched') AS bigint) AS [c4], [p0].[ProductId] AS [ProductId0]
+    FROM [ProductionBatch] AS [p]
+    INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+    INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+    LEFT JOIN [Color] AS [c0] ON [p].[ColorId] = [c0].[ColorId]
+    WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+) AS [t]
+LEFT JOIN (
+    SELECT [t1].[ProductId], [t1].[ColorId], [t1].[ColorId0], [t1].[CompanyId], [t1].[CreatedAt], [t1].[HexCode], [t1].[IsActive], [t1].[Name]
+    FROM (
+        SELECT [p6].[ProductId], [p6].[ColorId], [c3].[ColorId] AS [ColorId0], [c3].[CompanyId], [c3].[CreatedAt], [c3].[HexCode], [c3].[IsActive], [c3].[Name], ROW_NUMBER() OVER(PARTITION BY [p6].[ProductId] ORDER BY [p6].[ProductId], [p6].[ColorId], [c3].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p6]
+        INNER JOIN [Color] AS [c3] ON [p6].[ColorId] = [c3].[ColorId]
+    ) AS [t1]
+    WHERE [t1].[row] <= 1
+) AS [t0] ON [t].[ProductId0] = [t0].[ProductId]
+LEFT JOIN (
+    SELECT [t3].[ProductId], [t3].[ColorId], [t3].[ColorId0], [t3].[CompanyId], [t3].[CreatedAt], [t3].[HexCode], [t3].[IsActive], [t3].[Name]
+    FROM (
+        SELECT [p7].[ProductId], [p7].[ColorId], [c4].[ColorId] AS [ColorId0], [c4].[CompanyId], [c4].[CreatedAt], [c4].[HexCode], [c4].[IsActive], [c4].[Name], ROW_NUMBER() OVER(PARTITION BY [p7].[ProductId] ORDER BY [p7].[ProductId], [p7].[ColorId], [c4].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p7]
+        INNER JOIN [Color] AS [c4] ON [p7].[ColorId] = [c4].[ColorId]
+    ) AS [t3]
+    WHERE [t3].[row] <= 1
+) AS [t2] ON [t].[ProductId0] = [t2].[ProductId]
+2026-05-06 11:08:24.494 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:24.504 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 1041.2473ms
+2026-05-06 11:08:24.521 +05:00 [INF] Executed action AuthX.API.Controllers.QRController.Progress (AuthX.API) in 376.0104ms
+2026-05-06 11:08:24.842 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:24.861 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:24.885 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRController.Progress (AuthX.API)'
+2026-05-06 11:08:24.901 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 1055.5826ms
+2026-05-06 11:08:24.911 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 423.7457ms
+2026-05-06 11:08:24.915 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Batches/3 - null null
+2026-05-06 11:08:24.921 +05:00 [INF] HTTP GET /api/QR/progress/3 responded 200 in 913.6029 ms
+2026-05-06 11:08:24.928 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:08:24.942 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:24.955 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:24.971 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/QR/progress/3 - 200 null application/json; charset=utf-8 1010.8817ms
+2026-05-06 11:08:24.994 +05:00 [INF] HTTP GET /api/Batches/3 responded 200 in 1471.2161 ms
+2026-05-06 11:08:25.016 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 984.0968 ms
+2026-05-06 11:08:25.021 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:08:25.110 +05:00 [INF] Route matched with {action = "GetById", controller = "Batches"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetById(Int64) on controller AuthX.API.Controllers.BatchesController (AuthX.API).
+2026-05-06 11:08:25.082 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 1109.8914ms
+2026-05-06 11:08:25.060 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/3 - 200 null application/json; charset=utf-8 1615.9047ms
+2026-05-06 11:08:25.177 +05:00 [INF] Executed DbCommand (39ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__batchId_1='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[BatchId], [t].[BatchNo], [t].[ProductId], [t].[Name], [t].[Name0], [t].[ModelNo], [t].[c], [t].[Name1], [t].[c0], [t].[HexCode], [t].[c1], [t].[ProductionDate], [t].[Quantity], [t].[Status], [t].[CreatedAt], [t].[c2], [t].[c3], [t].[c4], [t0].[ProductId], [t0].[ColorId], [t0].[ColorId0], [t0].[CompanyId], [t0].[CreatedAt], [t0].[HexCode], [t0].[IsActive], [t0].[Name], [t2].[ProductId], [t2].[ColorId], [t2].[ColorId0], [t2].[CompanyId], [t2].[CreatedAt], [t2].[HexCode], [t2].[IsActive], [t2].[Name]
+FROM (
+    SELECT TOP(1) [p].[BatchId], [p].[BatchNo], [p].[ProductId], [p0].[Name], [c].[Name] AS [Name0], [p0].[ModelNo], CASE
+        WHEN [c0].[ColorId] IS NOT NULL THEN CAST(1 AS bit)
+        ELSE CAST(0 AS bit)
+    END AS [c], [c0].[Name] AS [Name1], (
+        SELECT TOP(1) [c1].[Name]
+        FROM [ProductColor] AS [p1]
+        INNER JOIN [Color] AS [c1] ON [p1].[ColorId] = [c1].[ColorId]
+        WHERE [p0].[ProductId] = [p1].[ProductId]) AS [c0], [c0].[HexCode], (
+        SELECT TOP(1) [c2].[HexCode]
+        FROM [ProductColor] AS [p2]
+        INNER JOIN [Color] AS [c2] ON [p2].[ColorId] = [c2].[ColorId]
+        WHERE [p0].[ProductId] = [p2].[ProductId]) AS [c1], [p].[ProductionDate], [p].[Quantity], [p].[Status], [p].[CreatedAt], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p3]
+        WHERE [p].[BatchId] = [p3].[BatchId]) AS bigint) AS [c2], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p4]
+        WHERE [p].[BatchId] = [p4].[BatchId] AND [p4].[PrintStatus] = N'Printed') AS bigint) AS [c3], CAST((
+        SELECT COUNT(*)
+        FROM [ProductItem] AS [p5]
+        WHERE [p].[BatchId] = [p5].[BatchId] AND [p5].[Status] = N'Dispatched') AS bigint) AS [c4], [p0].[ProductId] AS [ProductId0]
+    FROM [ProductionBatch] AS [p]
+    INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+    INNER JOIN [Category] AS [c] ON [p0].[CategoryId] = [c].[CategoryId]
+    LEFT JOIN [Color] AS [c0] ON [p].[ColorId] = [c0].[ColorId]
+    WHERE [p].[CompanyId] = @__companyId_0 AND [p].[BatchId] = @__batchId_1
+) AS [t]
+LEFT JOIN (
+    SELECT [t1].[ProductId], [t1].[ColorId], [t1].[ColorId0], [t1].[CompanyId], [t1].[CreatedAt], [t1].[HexCode], [t1].[IsActive], [t1].[Name]
+    FROM (
+        SELECT [p6].[ProductId], [p6].[ColorId], [c3].[ColorId] AS [ColorId0], [c3].[CompanyId], [c3].[CreatedAt], [c3].[HexCode], [c3].[IsActive], [c3].[Name], ROW_NUMBER() OVER(PARTITION BY [p6].[ProductId] ORDER BY [p6].[ProductId], [p6].[ColorId], [c3].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p6]
+        INNER JOIN [Color] AS [c3] ON [p6].[ColorId] = [c3].[ColorId]
+    ) AS [t1]
+    WHERE [t1].[row] <= 1
+) AS [t0] ON [t].[ProductId0] = [t0].[ProductId]
+LEFT JOIN (
+    SELECT [t3].[ProductId], [t3].[ColorId], [t3].[ColorId0], [t3].[CompanyId], [t3].[CreatedAt], [t3].[HexCode], [t3].[IsActive], [t3].[Name]
+    FROM (
+        SELECT [p7].[ProductId], [p7].[ColorId], [c4].[ColorId] AS [ColorId0], [c4].[CompanyId], [c4].[CreatedAt], [c4].[HexCode], [c4].[IsActive], [c4].[Name], ROW_NUMBER() OVER(PARTITION BY [p7].[ProductId] ORDER BY [p7].[ProductId], [p7].[ColorId], [c4].[ColorId]) AS [row]
+        FROM [ProductColor] AS [p7]
+        INNER JOIN [Color] AS [c4] ON [p7].[ColorId] = [c4].[ColorId]
+    ) AS [t3]
+    WHERE [t3].[row] <= 1
+) AS [t2] ON [t].[ProductId0] = [t2].[ProductId]
+2026-05-06 11:08:25.311 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Batches.BatchDetailDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:25.336 +05:00 [INF] Executed action AuthX.API.Controllers.BatchesController.GetById (AuthX.API) in 201.195ms
+2026-05-06 11:08:25.360 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.BatchesController.GetById (AuthX.API)'
+2026-05-06 11:08:25.375 +05:00 [INF] HTTP GET /api/Batches/3 responded 200 in 419.6416 ms
+2026-05-06 11:08:25.400 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Batches/3 - 200 null application/json; charset=utf-8 484.7877ms
+2026-05-06 11:08:25.793 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - null null
+2026-05-06 11:08:25.843 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:25.860 +05:00 [INF] HTTP OPTIONS /api/qr-image/batch/3 responded 204 in 17.4073 ms
+2026-05-06 11:08:25.921 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - 204 null null 127.9772ms
+2026-05-06 11:08:25.995 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - null null
+2026-05-06 11:08:26.086 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:26.125 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:08:26.159 +05:00 [INF] Route matched with {action = "GetBatchPreview", controller = "QRImage"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBatchPreview(Int64, Int32, Int32) on controller AuthX.API.Controllers.QRImageController (AuthX.API).
+2026-05-06 11:08:26.236 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__batchId_0='?' (DbType = Int64), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [p].[ItemId], [p].[SerialNo], [p].[QRCode]
+FROM [ProductItem] AS [p]
+WHERE [p].[BatchId] = @__batchId_0
+ORDER BY [p].[ItemId]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2026-05-06 11:08:26.284 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType6`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.IEnumerable`1[[<>f__AnonymousType7`4[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], AuthX.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:26.329 +05:00 [INF] Executed action AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API) in 109.4247ms
+2026-05-06 11:08:26.361 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.QRImageController.GetBatchPreview (AuthX.API)'
+2026-05-06 11:08:26.378 +05:00 [INF] HTTP GET /api/qr-image/batch/3 responded 200 in 291.3680 ms
+2026-05-06 11:08:26.422 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/qr-image/batch/3?page=1&pageSize=12 - 200 null application/json; charset=utf-8 426.4051ms
+2026-05-06 11:08:36.139 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:36.140 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:08:36.140 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:36.141 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:08:36.168 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.171 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.174 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.180 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.182 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 13.8838 ms
+2026-05-06 11:08:36.187 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 16.1962 ms
+2026-05-06 11:08:36.188 +05:00 [INF] HTTP OPTIONS /api/Settings/print responded 204 in 13.7417 ms
+2026-05-06 11:08:36.189 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 9.4739 ms
+2026-05-06 11:08:36.191 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 52.7837ms
+2026-05-06 11:08:36.197 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 56.8452ms
+2026-05-06 11:08:36.204 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Settings/print - 204 null null 64.0466ms
+2026-05-06 11:08:36.207 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 65.4279ms
+2026-05-06 11:08:36.218 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:36.221 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:08:36.257 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.272 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.274 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:36.280 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:08:36.283 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:08:36.288 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:08:36.303 +05:00 [INF] Executed DbCommand (7ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:36.308 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:36.309 +05:00 [INF] Executed DbCommand (3ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:36.311 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 18.0068ms
+2026-05-06 11:08:36.313 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Settings/print - null null
+2026-05-06 11:08:36.316 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:36.319 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:36.323 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.326 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 20.7275ms
+2026-05-06 11:08:36.330 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:08:36.330 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 72.6903 ms
+2026-05-06 11:08:36.332 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:36.333 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:08:36.338 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:08:36.341 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 122.9674ms
+2026-05-06 11:08:36.343 +05:00 [INF] Route matched with {action = "GetPrintSettings", controller = "Settings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPrintSettings() on controller AuthX.API.Controllers.SettingsController (AuthX.API).
+2026-05-06 11:08:36.345 +05:00 [INF] HTTP GET /api/Colors responded 200 in 73.0241 ms
+2026-05-06 11:08:36.348 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:08:36.371 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 149.7313ms
+2026-05-06 11:08:36.371 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [p].[Id], [p].[ColumnsPerRow], [p].[CompanyId], [p].[LabelHeightMm], [p].[LabelWidthMm], [p].[QRSizeMm], [p].[ShowBatchNo], [p].[ShowColorName], [p].[ShowCompanyName], [p].[ShowModelNo], [p].[ShowProductName], [p].[ShowSerialNo], [p].[UpdatedAt], [p].[WarrantyDelayDays]
+FROM [PrintSettings] AS [p]
+WHERE [p].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:36.374 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:08:36.395 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Settings.PrintSettingsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:36.415 +05:00 [INF] Executed action AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API) in 51.0984ms
+2026-05-06 11:08:36.421 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:08:36.423 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.SettingsController.GetPrintSettings (AuthX.API)'
+2026-05-06 11:08:36.426 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:08:36.430 +05:00 [INF] HTTP GET /api/Settings/print responded 200 in 106.6084 ms
+2026-05-06 11:08:36.437 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 31.0524ms
+2026-05-06 11:08:36.441 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Settings/print - 200 null application/json; charset=utf-8 127.8903ms
+2026-05-06 11:08:36.444 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:08:36.464 +05:00 [INF] HTTP GET /api/Colors responded 200 in 126.1809 ms
+2026-05-06 11:08:36.471 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 141.733ms
+2026-05-06 11:09:32.205 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:09:32.206 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:09:32.211 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:32.222 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:32.228 +05:00 [INF] HTTP OPTIONS /api/Dispatch responded 204 in 16.5924 ms
+2026-05-06 11:09:32.231 +05:00 [INF] HTTP OPTIONS /api/Dispatch responded 204 in 9.6779 ms
+2026-05-06 11:09:32.248 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - 204 null null 43.2654ms
+2026-05-06 11:09:32.324 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dispatch?pageSize=20 - 204 null null 118.23ms
+2026-05-06 11:09:32.346 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:09:32.359 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:32.362 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:09:32.379 +05:00 [INF] Route matched with {action = "GetAll", controller = "Dispatch"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Nullable`1[System.Int64], AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.DispatchController (AuthX.API).
+2026-05-06 11:09:32.404 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Dispatch] AS [d]
+WHERE [d].[CompanyId] = @__companyId_0
+2026-05-06 11:09:32.447 +05:00 [INF] Executed DbCommand (20ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[DispatchId], [p].[SerialNo], [p].[QRCode], [p0].[Name] AS [ProductName], [t].[Location], [t].[DispatchDate], [c].[Name] AS [ScannedBy], [p].[WarrantyEndDate] AS [WarrantyEnd]
+FROM (
+    SELECT [d].[DispatchId], [d].[DispatchDate], [d].[ItemId], [d].[Location]
+    FROM [Dispatch] AS [d]
+    WHERE [d].[CompanyId] = @__companyId_0
+    ORDER BY [d].[DispatchDate] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [ProductItem] AS [p] ON [t].[ItemId] = [p].[ItemId]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Company] AS [c] ON [p].[CompanyId] = [c].[CompanyId]
+ORDER BY [t].[DispatchDate] DESC
+2026-05-06 11:09:32.459 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Dispatch.DispatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:32.465 +05:00 [INF] Executed action AuthX.API.Controllers.DispatchController.GetAll (AuthX.API) in 70.3487ms
+2026-05-06 11:09:32.469 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - null null
+2026-05-06 11:09:32.480 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:32.489 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:09:32.475 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:09:32.509 +05:00 [INF] Route matched with {action = "GetAll", controller = "Dispatch"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(System.Nullable`1[System.Int64], AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.DispatchController (AuthX.API).
+2026-05-06 11:09:32.512 +05:00 [INF] HTTP GET /api/Dispatch responded 200 in 153.5198 ms
+2026-05-06 11:09:32.524 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Dispatch] AS [d]
+WHERE [d].[CompanyId] = @__companyId_0
+2026-05-06 11:09:32.528 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - 200 null application/json; charset=utf-8 181.462ms
+2026-05-06 11:09:32.546 +05:00 [INF] Executed DbCommand (13ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[DispatchId], [p].[SerialNo], [p].[QRCode], [p0].[Name] AS [ProductName], [t].[Location], [t].[DispatchDate], [c].[Name] AS [ScannedBy], [p].[WarrantyEndDate] AS [WarrantyEnd]
+FROM (
+    SELECT [d].[DispatchId], [d].[DispatchDate], [d].[ItemId], [d].[Location]
+    FROM [Dispatch] AS [d]
+    WHERE [d].[CompanyId] = @__companyId_0
+    ORDER BY [d].[DispatchDate] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [ProductItem] AS [p] ON [t].[ItemId] = [p].[ItemId]
+INNER JOIN [Product] AS [p0] ON [p].[ProductId] = [p0].[ProductId]
+INNER JOIN [Company] AS [c] ON [p].[CompanyId] = [c].[CompanyId]
+ORDER BY [t].[DispatchDate] DESC
+2026-05-06 11:09:32.576 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Dispatch.DispatchListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:32.580 +05:00 [INF] Executed action AuthX.API.Controllers.DispatchController.GetAll (AuthX.API) in 63.6131ms
+2026-05-06 11:09:32.627 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DispatchController.GetAll (AuthX.API)'
+2026-05-06 11:09:32.640 +05:00 [INF] HTTP GET /api/Dispatch responded 200 in 159.8949 ms
+2026-05-06 11:09:32.648 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dispatch?pageSize=20 - 200 null application/json; charset=utf-8 179.0918ms
+2026-05-06 11:09:32.990 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:09:32.990 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:09:32.990 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:09:32.990 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - null null
+2026-05-06 11:09:33.065 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.077 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.089 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.092 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.093 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 28.9043 ms
+2026-05-06 11:09:33.095 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 18.3025 ms
+2026-05-06 11:09:33.096 +05:00 [INF] HTTP OPTIONS /api/Products responded 204 in 6.6150 ms
+2026-05-06 11:09:33.097 +05:00 [INF] HTTP OPTIONS /api/Colors responded 204 in 4.8265 ms
+2026-05-06 11:09:33.104 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - 204 null null 114.8507ms
+2026-05-06 11:09:33.125 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 134.8585ms
+2026-05-06 11:09:33.146 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Products?pageSize=200 - 204 null null 155.9813ms
+2026-05-06 11:09:33.152 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Colors - 204 null null 162.1182ms
+2026-05-06 11:09:33.161 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:09:33.166 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:09:33.181 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.192 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.193 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.194 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.195 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:09:33.197 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:09:33.210 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:09:33.215 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:09:33.229 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:33.242 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 32.7926ms
+2026-05-06 11:09:33.246 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Colors - null null
+2026-05-06 11:09:33.247 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.260 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.262 +05:00 [INF] HTTP GET /api/Colors responded 200 in 69.7649 ms
+2026-05-06 11:09:33.264 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.265 +05:00 [INF] Executed DbCommand (36ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:09:33.271 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 104.8371ms
+2026-05-06 11:09:33.277 +05:00 [INF] Route matched with {action = "GetAll", controller = "Colors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller AuthX.API.Controllers.ColorsController (AuthX.API).
+2026-05-06 11:09:33.347 +05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__CurrentCompanyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [c].[ColorId], [c].[Name], [c].[HexCode], [c].[IsActive]
+FROM [Color] AS [c]
+WHERE [c].[CompanyId] = @__CurrentCompanyId_0
+2026-05-06 11:09:33.361 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:33.377 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[AuthX.Core.DTOs.Colors.ColorDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:33.379 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 180.6585ms
+2026-05-06 11:09:33.385 +05:00 [INF] Executed action AuthX.API.Controllers.ColorsController.GetAll (AuthX.API) in 58.3787ms
+2026-05-06 11:09:33.385 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - null null
+2026-05-06 11:09:33.395 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.397 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ColorsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.405 +05:00 [INF] CORS policy execution successful.
+2026-05-06 11:09:33.412 +05:00 [INF] HTTP GET /api/Products responded 200 in 230.5009 ms
+2026-05-06 11:09:33.414 +05:00 [INF] HTTP GET /api/Colors responded 200 in 154.5301 ms
+2026-05-06 11:09:33.422 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.426 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - 200 null application/json; charset=utf-8 264.9982ms
+2026-05-06 11:09:33.431 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Colors - 200 null application/json; charset=utf-8 185.7728ms
+2026-05-06 11:09:33.437 +05:00 [INF] Route matched with {action = "GetAll", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(AuthX.Core.DTOs.Common.PaginationParams) on controller AuthX.API.Controllers.ProductsController (AuthX.API).
+2026-05-06 11:09:33.481 +05:00 [INF] Executed DbCommand (1ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 11:09:33.496 +05:00 [INF] Executed DbCommand (2ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [t].[ProductId], [t].[Name], [t].[SKU], [c].[Name], [t].[CategoryId], [t].[WarrantyDays], [t].[Description], [t].[IsActive], [t].[CreatedAt], [t].[ModelNo], [t].[ImageUrl], [c].[CategoryId], [t0].[ColorId], [t0].[Name], [t0].[HexCode], [t0].[ProductId], [t0].[ColorId0]
+FROM (
+    SELECT [p].[ProductId], [p].[CategoryId], [p].[CreatedAt], [p].[Description], [p].[ImageUrl], [p].[IsActive], [p].[ModelNo], [p].[Name], [p].[SKU], [p].[WarrantyDays]
+    FROM [Product] AS [p]
+    WHERE [p].[CompanyId] = @__companyId_0
+    ORDER BY [p].[CreatedAt] DESC
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [t]
+INNER JOIN [Category] AS [c] ON [t].[CategoryId] = [c].[CategoryId]
+LEFT JOIN (
+    SELECT [c0].[ColorId], [c0].[Name], [c0].[HexCode], [p0].[ProductId], [p0].[ColorId] AS [ColorId0]
+    FROM [ProductColor] AS [p0]
+    INNER JOIN [Color] AS [c0] ON [p0].[ColorId] = [c0].[ColorId]
+) AS [t0] ON [t].[ProductId] = [t0].[ProductId]
+ORDER BY [t].[CreatedAt] DESC, [t].[ProductId], [c].[CategoryId], [t0].[ProductId], [t0].[ColorId0]
+2026-05-06 11:09:33.543 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.Interfaces.PagedResult`1[[AuthX.Core.DTOs.Products.ProductListDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 11:09:33.548 +05:00 [INF] Executed action AuthX.API.Controllers.ProductsController.GetAll (AuthX.API) in 69.2096ms
+2026-05-06 11:09:33.565 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.ProductsController.GetAll (AuthX.API)'
+2026-05-06 11:09:33.577 +05:00 [INF] HTTP GET /api/Products responded 200 in 172.0621 ms
+2026-05-06 11:09:33.586 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Products?pageSize=200 - 200 null application/json; charset=utf-8 201.4892ms
+2026-05-06 13:20:18.957 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa caught stopping signal...
+2026-05-06 13:20:19.254 +05:00 [INF] Application is shutting down...
+2026-05-06 13:20:19.791 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa All dispatchers stopped
+2026-05-06 13:20:20.147 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa successfully reported itself as stopped in 197.3813 ms
+2026-05-06 13:20:20.228 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa caught stopped signal...
+2026-05-06 13:20:21.480 +05:00 [INF] Server desktop-4153n37:1648:a7e597fa has been stopped in total 2254.8122 ms

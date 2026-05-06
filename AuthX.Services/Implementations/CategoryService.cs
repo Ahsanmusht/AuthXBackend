@@ -13,14 +13,16 @@ public class CategoryService : ICategoryService
     public async Task<List<CategoryDto>> GetAllAsync(int companyId)
         => await _uow.Categories.Query()
             .Where(c => c.CompanyId == companyId)
-            .OrderBy(c => c.Name)
+            .OrderBy(c => c.ParentId ?? 0).ThenBy(c => c.Name)
             .Select(c => new CategoryDto
             {
                 CategoryId  = c.CategoryId,
+                ParentId    = c.ParentId,
                 Name        = c.Name,
                 Description = c.Description,
                 IsActive    = c.IsActive,
-                CreatedAt   = c.CreatedAt
+                CreatedAt   = c.CreatedAt,
+                ParentName  = c.Parent != null ? c.Parent.Name : null
             })
             .ToListAsync();
 
@@ -43,6 +45,7 @@ public class CategoryService : ICategoryService
         var cat = new Category
         {
             CompanyId   = companyId,
+            ParentId    = dto.ParentId,
             Name        = dto.Name.Trim(),
             Description = dto.Description
         };
@@ -56,7 +59,7 @@ public class CategoryService : ICategoryService
         var cat = await _uow.Categories.FindOneAsync(c =>
             c.CompanyId == companyId && c.CategoryId == categoryId)
             ?? throw new KeyNotFoundException("Category not found.");
-
+        cat.ParentId    = dto.ParentId;
         cat.Name        = dto.Name.Trim();
         cat.Description = dto.Description;
         _uow.Categories.Update(cat);

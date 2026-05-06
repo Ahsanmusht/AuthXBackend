@@ -20,7 +20,7 @@ public class DispatchService : IDispatchService
     }
 
     public async Task<DispatchResultDto> ScanDispatchAsync(
-    int companyId, int scannedBy, string qrCode, string? location)
+    int companyId, int scannedBy, string qrCode, string? location, string? sapInvoiceNo)
 {
     var item = await _uow.ProductItems.Query()
         .Include(i => i.Product)
@@ -56,7 +56,8 @@ public class DispatchService : IDispatchService
         ItemId       = item.ItemId,
         ScannedBy    = scannedBy,
         Location     = location,
-        DispatchDate = now
+        DispatchDate = now,
+        SapInvoiceNo  = sapInvoiceNo 
     });
 
     await _uow.SaveChangesAsync();

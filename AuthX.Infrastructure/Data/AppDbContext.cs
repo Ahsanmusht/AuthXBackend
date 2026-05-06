@@ -8,26 +8,28 @@ public class AppDbContext : DbContext
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     // ─── DbSets ────────────────────────────────────────────
-    public DbSet<Company>            Companies       { get; set; }
-    public DbSet<Role>               Roles           { get; set; }
-    public DbSet<User>               Users           { get; set; }
-    public DbSet<UserRole>           UserRoles       { get; set; }
-    public DbSet<Category>           Categories      { get; set; }
-    public DbSet<Product>            Products        { get; set; }
-    public DbSet<ProductionBatch>    Batches         { get; set; }
-    public DbSet<ProductItem>        ProductItems    { get; set; }
-    public DbSet<QRGeneration>       QRGenerations   { get; set; }
-    public DbSet<PrintJob>           PrintJobs       { get; set; }
-    public DbSet<Dispatch>           Dispatches      { get; set; }
-    public DbSet<Customer>           Customers       { get; set; }
-    public DbSet<Claim>              Claims          { get; set; }
-    public DbSet<ClaimStatusHistory> ClaimHistories  { get; set; }
-    public DbSet<ScanLog>            ScanLogs        { get; set; }
-    public DbSet<Notification>       Notifications   { get; set; }
-    public DbSet<Color>           Colors          { get; set; }
-public DbSet<ProductColor>    ProductColors   { get; set; }
-public DbSet<PrintSettings>   PrintSettings   { get; set; }
-public DbSet<CompanySettings> CompanySettings { get; set; }
+    public DbSet<Company> Companies { get; set; }
+    public DbSet<Role> Roles { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserRole> UserRoles { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<ProductionBatch> Batches { get; set; }
+    public DbSet<ProductItem> ProductItems { get; set; }
+    public DbSet<QRGeneration> QRGenerations { get; set; }
+    public DbSet<PrintJob> PrintJobs { get; set; }
+    public DbSet<Dispatch> Dispatches { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Claim> Claims { get; set; }
+    public DbSet<ClaimStatusHistory> ClaimHistories { get; set; }
+    public DbSet<ScanLog> ScanLogs { get; set; }
+    public DbSet<Notification> Notifications { get; set; }
+    public DbSet<Color> Colors { get; set; }
+    public DbSet<ProductColor> ProductColors { get; set; }
+    public DbSet<PrintSettings> PrintSettings { get; set; }
+    public DbSet<CompanySettings> CompanySettings { get; set; }
+    public DbSet<ReturnReason> ReturnReasons { get; set; }
+    public DbSet<ProductCondition> ProductConditions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder mb)
     {
@@ -94,6 +96,10 @@ public DbSet<CompanySettings> CompanySettings { get; set; }
             e.HasOne(x => x.Company)
              .WithMany(c => c.Categories)
              .HasForeignKey(x => x.CompanyId);
+            e.HasOne(x => x.Parent)
+   .WithMany(c => c.SubCategories)
+   .HasForeignKey(x => x.ParentId)
+   .OnDelete(DeleteBehavior.Restrict);
         });
 
         // ── Product ────────────────────────────────────────
@@ -112,8 +118,8 @@ public DbSet<CompanySettings> CompanySettings { get; set; }
             e.HasOne(x => x.Category)
              .WithMany(c => c.Products)
              .HasForeignKey(x => x.CategoryId);
-             e.Property(x => x.ModelNo).HasMaxLength(100);
-e.Property(x => x.ImageUrl).HasMaxLength(2000);
+            e.Property(x => x.ModelNo).HasMaxLength(100);
+            e.Property(x => x.ImageUrl).HasMaxLength(2000);
         });
 
         // ── ProductionBatch ────────────────────────────────
@@ -131,7 +137,7 @@ e.Property(x => x.ImageUrl).HasMaxLength(2000);
             e.HasOne(x => x.Product)
              .WithMany(p => p.Batches)
              .HasForeignKey(x => x.ProductId);
-             e.HasOne(x => x.Color).WithMany().HasForeignKey(x => x.ColorId).IsRequired(false);
+            e.HasOne(x => x.Color).WithMany().HasForeignKey(x => x.ColorId).IsRequired(false);
         });
 
         // ── ProductItem ────────────────────────────────────
@@ -199,6 +205,7 @@ e.Property(x => x.ImageUrl).HasMaxLength(2000);
             e.HasKey(x => x.DispatchId);
             e.Property(x => x.Location).HasMaxLength(200);
             e.Property(x => x.Notes).HasMaxLength(500);
+            e.Property(x => x.SapInvoiceNo).HasMaxLength(100);
             e.Property(x => x.DispatchDate).HasDefaultValueSql("GETDATE()");
             e.HasOne(x => x.Item)
              .WithMany(i => i.Dispatches)
@@ -282,46 +289,66 @@ e.Property(x => x.ImageUrl).HasMaxLength(2000);
             e.HasIndex(x => new { x.CompanyId, x.CreatedAt });
         });
         // ── Color ──────────────────────────────────────────────────
-mb.Entity<Color>(e =>
-{
-    e.ToTable("Color");
-    e.HasKey(x => x.ColorId);
-    e.Property(x => x.Name).HasMaxLength(100).IsRequired();
-    e.Property(x => x.HexCode).HasMaxLength(10).IsRequired();
-    e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
-    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
-});
+        mb.Entity<Color>(e =>
+        {
+            e.ToTable("Color");
+            e.HasKey(x => x.ColorId);
+            e.Property(x => x.Name).HasMaxLength(100).IsRequired();
+            e.Property(x => x.HexCode).HasMaxLength(10).IsRequired();
+            e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+        });
 
-// ── ProductColor ───────────────────────────────────────────
-mb.Entity<ProductColor>(e =>
-{
-    e.ToTable("ProductColor");
-    e.HasKey(x => new { x.ProductId, x.ColorId });
-    e.HasOne(x => x.Product).WithMany(p => p.ProductColors).HasForeignKey(x => x.ProductId);
-    e.HasOne(x => x.Color).WithMany(c => c.ProductColors).HasForeignKey(x => x.ColorId);
-});
+        // ── ProductColor ───────────────────────────────────────────
+        mb.Entity<ProductColor>(e =>
+        {
+            e.ToTable("ProductColor");
+            e.HasKey(x => new { x.ProductId, x.ColorId });
+            e.HasOne(x => x.Product).WithMany(p => p.ProductColors).HasForeignKey(x => x.ProductId);
+            e.HasOne(x => x.Color).WithMany(c => c.ProductColors).HasForeignKey(x => x.ColorId);
+        });
 
-// ── PrintSettings ──────────────────────────────────────────
-mb.Entity<PrintSettings>(e =>
-{
-    e.ToTable("PrintSettings");
-    e.HasKey(x => x.Id);
-    e.Property(x => x.LabelWidthMm).HasColumnType("decimal(6,2)");
-    e.Property(x => x.LabelHeightMm).HasColumnType("decimal(6,2)");
-    e.Property(x => x.QRSizeMm).HasColumnType("decimal(6,2)");
-    e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
-    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
-    e.HasIndex(x => x.CompanyId).IsUnique();
-});
+        // ── PrintSettings ──────────────────────────────────────────
+        mb.Entity<PrintSettings>(e =>
+        {
+            e.ToTable("PrintSettings");
+            e.HasKey(x => x.Id);
+            e.Property(x => x.LabelWidthMm).HasColumnType("decimal(6,2)");
+            e.Property(x => x.LabelHeightMm).HasColumnType("decimal(6,2)");
+            e.Property(x => x.QRSizeMm).HasColumnType("decimal(6,2)");
+            e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+            e.HasIndex(x => x.CompanyId).IsUnique();
+        });
 
-// ── CompanySettings ────────────────────────────────────────
-mb.Entity<CompanySettings>(e =>
-{
-    e.ToTable("CompanySettings");
-    e.HasKey(x => x.Id);
-    e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
-    e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
-    e.HasIndex(x => x.CompanyId).IsUnique();
-});
+        // ── CompanySettings ────────────────────────────────────────
+        mb.Entity<CompanySettings>(e =>
+        {
+            e.ToTable("CompanySettings");
+            e.HasKey(x => x.Id);
+            e.Property(x => x.UpdatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+            e.HasIndex(x => x.CompanyId).IsUnique();
+        });
+        // ── ReturnReason ────────────────────────────────────────
+        mb.Entity<ReturnReason>(e =>
+        {
+            e.ToTable("ReturnReason");
+            e.HasKey(x => x.ReturnReasonId);
+            e.Property(x => x.Name).HasMaxLength(100).IsRequired();
+            e.Property(x => x.Description).HasMaxLength(300);
+            e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+        });
+        // ── ProductCondition ────────────────────────────────────────
+        mb.Entity<ProductCondition>(e =>
+        {
+            e.ToTable("ProductCondition");
+            e.HasKey(x => x.ProductConditionId);
+            e.Property(x => x.Name).HasMaxLength(100).IsRequired();
+            e.Property(x => x.Description).HasMaxLength(300);
+            e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+        });
     }
 }

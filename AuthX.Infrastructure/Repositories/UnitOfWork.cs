@@ -31,6 +31,8 @@ public class UnitOfWork : IUnitOfWork
 ProductColors   = new Repository<ProductColor>(_ctx);
 PrintSettings   = new Repository<PrintSettings>(_ctx);
 CompanySettings = new Repository<CompanySettings>(_ctx);
+ReturnReasons = new Repository<ReturnReason>(_ctx);
+ProductConditions = new Repository<ProductCondition>(_ctx);
     }
 
     public IRepository<Company>            Companies      { get; }
@@ -53,6 +55,8 @@ CompanySettings = new Repository<CompanySettings>(_ctx);
 public IRepository<ProductColor>    ProductColors   { get; }
 public IRepository<PrintSettings>   PrintSettings   { get; }
 public IRepository<CompanySettings> CompanySettings { get; }
+public IRepository<ReturnReason> ReturnReasons { get; }
+public IRepository<ProductCondition> ProductConditions { get; }
 
     public async Task<int> SaveChangesAsync()
         => await _ctx.SaveChangesAsync();

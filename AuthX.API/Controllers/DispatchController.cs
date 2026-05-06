@@ -23,9 +23,10 @@ public class DispatchController : BaseController
     [Authorize(Roles = $"{AppRoles.Admin},{AppRoles.Warehouse}")]
     public async Task<IActionResult> Scan(
         [FromQuery] string qrCode,
-        [FromQuery] string? location)
+        [FromQuery] string? location,
+        [FromQuery] string? sapInvoiceNo)
         => OkResult(await _svc.ScanDispatchAsync(
-            CurrentCompanyId, CurrentUserId, qrCode, location));
+            CurrentCompanyId, CurrentUserId, qrCode, location, sapInvoiceNo));
 
     /// <summary>Get dispatch history</summary>
     [HttpGet]
@@ -39,7 +40,8 @@ public class DispatchController : BaseController
     [Authorize(Roles = $"{AppRoles.Admin},{AppRoles.Warehouse}")]
     public async Task<IActionResult> ScanBySerial(
         [FromQuery] string serialNo,
-        [FromQuery] string? location)
+        [FromQuery] string? location,
+        [FromQuery] string? sapInvoiceNo)
     {
         // SerialNo se QR code dhundo
         var item = await _uow.ProductItems.Query()
@@ -51,6 +53,6 @@ public class DispatchController : BaseController
             throw new KeyNotFoundException($"Serial No '{serialNo}' not found.");
 
         return OkResult(await _svc.ScanDispatchAsync(
-            CurrentCompanyId, CurrentUserId, item.QRCode, location));
+            CurrentCompanyId, CurrentUserId, item.QRCode, location, sapInvoiceNo));
     }
 }
