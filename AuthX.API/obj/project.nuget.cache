@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q7ub0pGDdLw=",
+  "dgSpecHash": "hOIylfIPmZ8=",
   "success": true,
   "projectFilePath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\messagepack\\2.5.187\\messagepack.2.5.187.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\messagepack.annotations\\2.5.187\\messagepack.annotations.2.5.187.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.26\\microsoft.aspnetcore.authentication.jwtbearer.8.0.26.nupkg.sha512",
-    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.5\\microsoft.aspnetcore.openapi.9.0.5.nupkg.sha512",
+    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.10\\microsoft.aspnetcore.openapi.8.0.10.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.aspnetcore.signalr.stackexchangeredis\\8.0.26\\microsoft.aspnetcore.signalr.stackexchangeredis.8.0.26.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.7\\microsoft.data.sqlclient.5.1.7.nupkg.sha512",
@@ -54,7 +54,7 @@
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.net.stringtools\\17.6.3\\microsoft.net.stringtools.17.6.3.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
-    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.7\\microsoft.win32.systemevents.10.0.7.nupkg.sha512",

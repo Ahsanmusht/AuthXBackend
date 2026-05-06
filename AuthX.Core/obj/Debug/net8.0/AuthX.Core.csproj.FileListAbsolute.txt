@@ -1,0 +1,12 @@
+D:\AuthXBackend\AuthX.Core\bin\Debug\net8.0\AuthX.Core.deps.json
+D:\AuthXBackend\AuthX.Core\bin\Debug\net8.0\AuthX.Core.dll
+D:\AuthXBackend\AuthX.Core\bin\Debug\net8.0\AuthX.Core.pdb
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.AssemblyInfoInputs.cache
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.AssemblyInfo.cs
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.csproj.CoreCompileInputs.cache
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.sourcelink.json
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.dll
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\refint\AuthX.Core.dll
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\AuthX.Core.pdb
+D:\AuthXBackend\AuthX.Core\obj\Debug\net8.0\ref\AuthX.Core.dll

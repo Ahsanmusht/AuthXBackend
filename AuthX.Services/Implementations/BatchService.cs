@@ -99,7 +99,8 @@ public class BatchService : IBatchService
             BatchNo = dto.BatchNo.Trim().ToUpper(),
             ProductionDate = dto.ProductionDate,
             Quantity = dto.Quantity,
-            CreatedBy = createdBy
+            CreatedBy = createdBy,
+            ColorId = dto.ColorId
         };
 
         await _uow.Batches.AddAsync(batch);

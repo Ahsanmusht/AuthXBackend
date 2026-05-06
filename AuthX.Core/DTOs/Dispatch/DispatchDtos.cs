@@ -18,4 +18,5 @@ public class DispatchListDto
     public string?  Location     { get; set; }
     public DateTime DispatchDate { get; set; }
     public string   ScannedBy    { get; set; } = null!;
+    public DateTime? WarrantyEnd { get; set; }
 }

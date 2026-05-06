@@ -41,22 +41,26 @@ builder.Services.AddDbContext<AppDbContext>(opt =>
         }));
 
 // ─── Redis ────────────────────────────────────────────────
-var redisConnection = builder.Configuration["Redis:Connection"];
-if (!string.IsNullOrEmpty(redisConnection))
-{
-    builder.Services.AddStackExchangeRedisCache(opt =>
-    {
-        opt.Configuration = redisConnection;
-        opt.InstanceName = "PV_";
-    });
-    builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
-}
-else
-{
-    // Fallback to in-memory cache if Redis not configured
-    builder.Services.AddDistributedMemoryCache();
-    builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
-}
+// var redisConnection = builder.Configuration["Redis:Connection"];
+// if (!string.IsNullOrEmpty(redisConnection))
+// {
+//     builder.Services.AddStackExchangeRedisCache(opt =>
+//     {
+//         opt.Configuration = redisConnection;
+//         opt.InstanceName = "PV_";
+//     });
+//     builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
+// }
+// else
+// {
+//     // Fallback to in-memory cache if Redis not configured
+//     builder.Services.AddDistributedMemoryCache();
+//     builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
+// }
+
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
 // ─── Repository / UoW ────────────────────────────────────
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
@@ -118,10 +122,10 @@ var signalRBuilder = builder.Services.AddSignalR(opt =>
     opt.ClientTimeoutInterval = TimeSpan.FromSeconds(30);
 });
 
-if (!string.IsNullOrEmpty(redisConnection))
-{
-    signalRBuilder.AddStackExchangeRedis(redisConnection);
-}
+// if (!string.IsNullOrEmpty(redisConnection))
+// {
+//     signalRBuilder.AddStackExchangeRedis(redisConnection);
+// }
 
 // ─── CORS ─────────────────────────────────────────────────
 var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()

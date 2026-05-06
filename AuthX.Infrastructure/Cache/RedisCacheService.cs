@@ -23,28 +23,56 @@ public class RedisCacheService : IRedisCacheService
 
     public async Task<T?> GetAsync<T>(string key)
     {
-        var bytes = await _cache.GetAsync(key);
-        if (bytes == null || bytes.Length == 0) return default;
-        return JsonSerializer.Deserialize<T>(bytes, _opts);
+        try
+        {
+            var bytes = await _cache.GetAsync(key);
+            if (bytes == null || bytes.Length == 0) return default;
+            return JsonSerializer.Deserialize<T>(bytes, _opts);
+        }
+        catch (Exception)
+        {
+            return default;
+        }
     }
 
     public async Task SetAsync<T>(string key, T value, TimeSpan? expiry = null)
     {
-        var bytes = JsonSerializer.SerializeToUtf8Bytes(value, _opts);
-        var options = new DistributedCacheEntryOptions
+        try
         {
-            AbsoluteExpirationRelativeToNow = expiry ?? TimeSpan.FromMinutes(10)
-        };
-        await _cache.SetAsync(key, bytes, options);
+            var bytes = JsonSerializer.SerializeToUtf8Bytes(value, _opts);
+            var options = new DistributedCacheEntryOptions
+            {
+                AbsoluteExpirationRelativeToNow = expiry ?? TimeSpan.FromMinutes(10)
+            };
+            await _cache.SetAsync(key, bytes, options);
+        }
+        catch (Exception)
+        {
+            // Redis down — silently skip
+        }
     }
 
     public async Task RemoveAsync(string key)
-        => await _cache.RemoveAsync(key);
+    {
+        try
+        {
+            await _cache.RemoveAsync(key);
+        }
+        catch (Exception)
+        {
+            // Redis down — silently skip
+        }
+    }
 
     public async Task RemoveByPrefixAsync(string prefix)
     {
-        // For pattern-based removal, use StackExchange.Redis directly
-        // This is a simplified version — in production inject IConnectionMultiplexer
-        await _cache.RemoveAsync(prefix);
+        try
+        {
+            await _cache.RemoveAsync(prefix);
+        }
+        catch (Exception)
+        {
+            // Redis down — silently skip
+        }
     }
 }

@@ -1,1 +1,3 @@
 dotnet run --project AuthX.API
+
+saray cs proj mai dotnet 8 krna hai or aik api walay csproj mai open api ka version change krna hai 

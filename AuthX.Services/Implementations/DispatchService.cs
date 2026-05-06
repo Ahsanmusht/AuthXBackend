@@ -94,7 +94,8 @@ public class DispatchService : IDispatchService
                 ProductName  = d.Item.Product.Name,
                 Location     = d.Location,
                 DispatchDate = d.DispatchDate,
-                ScannedBy    = d.Item.Company.Name
+                ScannedBy    = d.Item.Company.Name,
+                WarrantyEnd  = d.Item.WarrantyEndDate
             })
             .ToListAsync();
 
