@@ -44,6 +44,9 @@ IRepository<PrintSettings>   PrintSettings   { get; }
 IRepository<CompanySettings> CompanySettings { get; }
 IRepository<ReturnReason> ReturnReasons { get; }
 IRepository<ProductCondition> ProductConditions { get; }
+ IRepository<MenuItem>        MenuItems       { get; }
+  IRepository<MenuPermission>  MenuPermissions { get; }
+  IRepository<PromotionSetup>  Promotions      { get; }
 
     Task<int> SaveChangesAsync();
 }

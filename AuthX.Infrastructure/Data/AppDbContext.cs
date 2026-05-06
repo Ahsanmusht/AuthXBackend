@@ -30,6 +30,9 @@ public class AppDbContext : DbContext
     public DbSet<CompanySettings> CompanySettings { get; set; }
     public DbSet<ReturnReason> ReturnReasons { get; set; }
     public DbSet<ProductCondition> ProductConditions { get; set; }
+     public DbSet<MenuItem>       MenuItems       { get; set; }
+     public DbSet<MenuPermission> MenuPermissions { get; set; }
+     public DbSet<PromotionSetup> Promotions      { get; set; }
 
     protected override void OnModelCreating(ModelBuilder mb)
     {
@@ -350,5 +353,40 @@ public class AppDbContext : DbContext
             e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
             e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
         });
+        mb.Entity<MenuItem>(e =>
+    {
+        e.ToTable("MenuItem");
+        e.HasKey(x => x.MenuItemId);
+        e.Property(x => x.Title).HasMaxLength(100).IsRequired();
+        e.Property(x => x.Url).HasMaxLength(200);
+        e.Property(x => x.Icon).HasMaxLength(50);
+        e.Property(x => x.Type).HasMaxLength(20).HasDefaultValue("item");
+        e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+        e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+        e.HasOne(x => x.Parent).WithMany(m => m.Children)
+            .HasForeignKey(x => x.ParentId).OnDelete(DeleteBehavior.Restrict);
+    });
+ 
+    mb.Entity<MenuPermission>(e =>
+    {
+        e.ToTable("MenuPermission");
+        e.HasKey(x => x.Id);
+        e.HasIndex(x => new { x.MenuItemId, x.RoleId }).IsUnique();
+        e.HasOne(x => x.MenuItem).WithMany(m => m.Permissions)
+            .HasForeignKey(x => x.MenuItemId).OnDelete(DeleteBehavior.Cascade);
+        e.HasOne(x => x.Role).WithMany()
+            .HasForeignKey(x => x.RoleId).OnDelete(DeleteBehavior.Cascade);
+    });
+ 
+    mb.Entity<PromotionSetup>(e =>
+    {
+        e.ToTable("PromotionSetup");
+        e.HasKey(x => x.PromotionId);
+        e.Property(x => x.Title).HasMaxLength(200);
+        e.Property(x => x.ImageUrl).HasMaxLength(1000).IsRequired();
+        e.Property(x => x.ForwardUrl).HasMaxLength(500);
+        e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+        e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+    });
     }
 }

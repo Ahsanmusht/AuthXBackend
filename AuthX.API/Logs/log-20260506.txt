@@ -3128,3 +3128,571 @@ WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ClaimDate] >= @__today_1
 2026-05-06 15:01:15.804 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DashboardController.Stats (AuthX.API)'
 2026-05-06 15:01:15.830 +05:00 [INF] HTTP GET /api/Dashboard/stats responded 200 in 1017.3834 ms
 2026-05-06 15:01:15.870 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - 200 null application/json; charset=utf-8 1358.5374ms
+2026-05-06 16:11:22.741 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-05-06 16:11:22.743 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - null null
+2026-05-06 16:11:24.121 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:24.293 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:24.311 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 14.4968 ms
+2026-05-06 16:11:24.312 +05:00 [INF] HTTP OPTIONS /api/Notifications responded 204 in 196.4615 ms
+2026-05-06 16:11:24.345 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 1598.9062ms
+2026-05-06 16:11:24.405 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Notifications?pageSize=20 - 204 null null 1669.7312ms
+2026-05-06 16:11:25.205 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:25.285 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:29.060 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:30.411 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:30.445 +05:00 [INF] HTTP OPTIONS /api/Dashboard/stats responded 204 in 1384.2825 ms
+2026-05-06 16:11:30.690 +05:00 [INF] HTTP OPTIONS /api/Dashboard/stats responded 204 in 278.8694 ms
+2026-05-06 16:11:30.964 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - 204 null null 5678.4358ms
+2026-05-06 16:11:30.946 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - 204 null null 5741.3865ms
+2026-05-06 16:11:32.296 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:32.433 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:32.594 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '06-May-2026 11:01:03 am', Current time (UTC): '06-May-2026 11:11:32 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 16:11:32.701 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '06-May-2026 11:01:03 am', Current time (UTC): '06-May-2026 11:11:32 am'.
+2026-05-06 16:11:32.730 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 16:11:32.768 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 16:11:32.813 +05:00 [INF] HTTP GET /api/Dashboard/stats responded 401 in 381.1190 ms
+2026-05-06 16:11:32.985 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - 401 0 null 689.5684ms
+2026-05-06 16:11:33.043 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:33.111 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/refresh - null null
+2026-05-06 16:11:33.161 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:33.176 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:33.227 +05:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '06-May-2026 11:01:03 am', Current time (UTC): '06-May-2026 11:11:33 am'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2026-05-06 16:11:33.864 +05:00 [INF] HTTP OPTIONS /api/Auth/refresh responded 204 in 687.7503 ms
+2026-05-06 16:11:33.912 +05:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '06-May-2026 11:01:03 am', Current time (UTC): '06-May-2026 11:11:33 am'.
+2026-05-06 16:11:33.928 +05:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-05-06 16:11:33.913 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/refresh - 204 null null 802.0855ms
+2026-05-06 16:11:33.945 +05:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-05-06 16:11:34.274 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/refresh - application/json 764
+2026-05-06 16:11:34.405 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:34.311 +05:00 [INF] HTTP GET /api/Dashboard/stats responded 401 in 1150.9911 ms
+2026-05-06 16:11:34.506 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Refresh (AuthX.API)'
+2026-05-06 16:11:34.561 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - 401 0 null 1517.7678ms
+2026-05-06 16:11:34.663 +05:00 [INF] Route matched with {action = "Refresh", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Refresh(AuthX.Core.DTOs.Auth.RefreshTokenRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 16:11:35.153 +05:00 [INF] Executed DbCommand (23ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+2026-05-06 16:11:35.408 +05:00 [INF] Executed DbCommand (43ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-05-06 16:11:35.947 +05:00 [INF] Executed DbCommand (356ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 150), @p3='?' (DbType = Boolean), @p4='?' (Size = 150), @p5='?' (Size = 500), @p6='?' (Size = 4000), @p7='?' (Size = 500), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CompanyId] = @p0, [CreatedAt] = @p1, [Email] = @p2, [IsActive] = @p3, [Name] = @p4, [PasswordHash] = @p5, [Phone] = @p6, [RefreshToken] = @p7, [RefreshTokenExpiry] = @p8
+OUTPUT 1
+WHERE [UserId] = @p9;
+2026-05-06 16:11:36.007 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Auth.LoginResponseDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 16:11:36.056 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Refresh (AuthX.API) in 1246.9179ms
+2026-05-06 16:11:36.113 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Refresh (AuthX.API)'
+2026-05-06 16:11:36.163 +05:00 [INF] HTTP POST /api/Auth/refresh responded 200 in 1757.5106 ms
+2026-05-06 16:11:36.176 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/refresh - 200 null application/json; charset=utf-8 1901.3916ms
+2026-05-06 16:11:36.210 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:36.364 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:36.413 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:36.476 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:36.493 +05:00 [INF] HTTP OPTIONS /api/Dashboard/stats responded 204 in 80.0264 ms
+2026-05-06 16:11:36.560 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - 204 null null 350.5149ms
+2026-05-06 16:11:36.511 +05:00 [INF] HTTP OPTIONS /api/Dashboard/stats responded 204 in 35.7952 ms
+2026-05-06 16:11:36.678 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:36.806 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Dashboard/stats - 204 null null 442.5246ms
+2026-05-06 16:11:36.875 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:36.978 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DashboardController.Stats (AuthX.API)'
+2026-05-06 16:11:37.121 +05:00 [INF] Route matched with {action = "Stats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Stats() on controller AuthX.API.Controllers.DashboardController (AuthX.API).
+2026-05-06 16:11:37.305 +05:00 [INF] Executed DbCommand (49ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Product] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0 AND [p].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:11:37.394 +05:00 [INF] Executed DbCommand (34ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductionBatch] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 16:11:37.505 +05:00 [INF] Executed DbCommand (59ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductItem] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0
+2026-05-06 16:11:37.628 +05:00 [INF] Executed DbCommand (17ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [ProductItem] AS [p]
+WHERE [p].[CompanyId] = @__companyId_0 AND [p].[Status] = N'Dispatched'
+2026-05-06 16:11:37.777 +05:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT_BIG(*)
+FROM [ScanLog] AS [s]
+2026-05-06 16:11:37.891 +05:00 [INF] Executed DbCommand (36ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Claim] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2026-05-06 16:11:38.001 +05:00 [INF] Executed DbCommand (12ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Claim] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[Status] = N'Open'
+2026-05-06 16:11:38.111 +05:00 [INF] Executed DbCommand (15ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Claim] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[Status] = N'Delivered'
+2026-05-06 16:11:38.304 +05:00 [INF] Executed DbCommand (26ms) [Parameters=[@__today_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT_BIG(*)
+FROM [ScanLog] AS [s]
+WHERE [s].[ScanTime] >= @__today_0
+2026-05-06 16:11:38.409 +05:00 [INF] Executed DbCommand (33ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__today_1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SELECT COUNT(*)
+FROM [Claim] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ClaimDate] >= @__today_1
+2026-05-06 16:11:38.510 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Dashboard.DashboardStatsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 16:11:38.523 +05:00 [INF] Executed action AuthX.API.Controllers.DashboardController.Stats (AuthX.API) in 1312.8988ms
+2026-05-06 16:11:38.570 +05:00 [INF] Request starting HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - null null
+2026-05-06 16:11:38.627 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DashboardController.Stats (AuthX.API)'
+2026-05-06 16:11:38.680 +05:00 [INF] HTTP GET /api/Dashboard/stats responded 200 in 1805.2503 ms
+2026-05-06 16:11:38.662 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:11:38.777 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - 200 null application/json; charset=utf-8 2098.9052ms
+2026-05-06 16:11:38.839 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.DashboardController.Stats (AuthX.API)'
+2026-05-06 16:11:38.961 +05:00 [INF] Route matched with {action = "Stats", controller = "Dashboard"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Stats() on controller AuthX.API.Controllers.DashboardController (AuthX.API).
+2026-05-06 16:11:39.034 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`3[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[AuthX.Core.DTOs.Dashboard.DashboardStatsDto, AuthX.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 16:11:39.087 +05:00 [INF] Executed action AuthX.API.Controllers.DashboardController.Stats (AuthX.API) in 60.2856ms
+2026-05-06 16:11:39.110 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.DashboardController.Stats (AuthX.API)'
+2026-05-06 16:11:39.127 +05:00 [INF] HTTP GET /api/Dashboard/stats responded 200 in 464.9796 ms
+2026-05-06 16:11:39.145 +05:00 [INF] Request finished HTTP/1.1 GET http://localhost:5140/api/Dashboard/stats - 200 null application/json; charset=utf-8 587.2341ms
+2026-05-06 16:15:59.429 +05:00 [INF] Server desktop-4153n37:18316:c0a4658e caught stopping signal...
+2026-05-06 16:15:59.456 +05:00 [INF] Application is shutting down...
+2026-05-06 16:16:00.051 +05:00 [INF] Server desktop-4153n37:18316:c0a4658e All dispatchers stopped
+2026-05-06 16:16:00.073 +05:00 [INF] Server desktop-4153n37:18316:c0a4658e caught stopped signal...
+2026-05-06 16:16:00.120 +05:00 [INF] Server desktop-4153n37:18316:c0a4658e successfully reported itself as stopped in 36.8503 ms
+2026-05-06 16:16:00.130 +05:00 [INF] Server desktop-4153n37:18316:c0a4658e has been stopped in total 691.1143 ms
+2026-05-06 16:17:04.806 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-05-06 16:17:06.266 +05:00 [INF] Hangfire SQL objects installed.
+2026-05-06 16:17:07.215 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-06 16:17:07.571 +05:00 [INF] Now listening on: http://localhost:5140
+2026-05-06 16:17:07.623 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-4153N37\SQL2014@AuthX_DB'
+2026-05-06 16:17:07.627 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-05-06 16:17:07.638 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-06 16:17:07.725 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-06 16:17:07.806 +05:00 [INF] Hosting environment: Development
+2026-05-06 16:17:07.850 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-05-06 16:17:07.888 +05:00 [INF] Server desktop-4153n37:3500:7b98674b successfully announced in 155.1151 ms
+2026-05-06 16:17:07.921 +05:00 [INF] Server desktop-4153n37:3500:7b98674b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-06 16:17:08.111 +05:00 [INF] Server desktop-4153n37:3500:7b98674b all the dispatchers started
+2026-05-06 16:22:48.659 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/revoke - null null
+2026-05-06 16:22:48.843 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:22:48.850 +05:00 [INF] HTTP OPTIONS /api/Auth/revoke responded 204 in 8.5259 ms
+2026-05-06 16:22:48.873 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/revoke - 204 null null 213.6144ms
+2026-05-06 16:22:48.896 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/revoke - null 0
+2026-05-06 16:22:48.926 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:22:49.148 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Revoke (AuthX.API)'
+2026-05-06 16:22:49.201 +05:00 [INF] Route matched with {action = "Revoke", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Revoke() on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 16:22:52.605 +05:00 [INF] Executed DbCommand (31ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry]
+FROM [Users] AS [u]
+WHERE [u].[UserId] = @__p_0
+2026-05-06 16:22:53.159 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@p9='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (Size = 150), @p3='?' (DbType = Boolean), @p4='?' (Size = 150), @p5='?' (Size = 500), @p6='?' (Size = 4000), @p7='?' (Size = 500), @p8='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='120']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [CompanyId] = @p0, [CreatedAt] = @p1, [Email] = @p2, [IsActive] = @p3, [Name] = @p4, [PasswordHash] = @p5, [Phone] = @p6, [RefreshToken] = @p7, [RefreshTokenExpiry] = @p8
+OUTPUT 1
+WHERE [UserId] = @p9;
+2026-05-06 16:22:53.207 +05:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2026-05-06 16:22:53.261 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Revoke (AuthX.API) in 4003.9106ms
+2026-05-06 16:22:53.265 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Revoke (AuthX.API)'
+2026-05-06 16:22:53.271 +05:00 [INF] HTTP POST /api/Auth/revoke responded 200 in 4346.3450 ms
+2026-05-06 16:22:53.308 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/revoke - 200 null application/json; charset=utf-8 4411.671ms
+2026-05-06 16:22:57.431 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - null null
+2026-05-06 16:22:57.539 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:22:57.543 +05:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 4.1796 ms
+2026-05-06 16:22:57.566 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - 204 null null 134.8246ms
+2026-05-06 16:22:58.022 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/login - application/json 50
+2026-05-06 16:22:58.046 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:22:58.074 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:22:58.107 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthX.Core.DTOs.Auth.LoginRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 16:22:58.501 +05:00 [INF] Executed DbCommand (9ms) [Parameters=[@__ToLower_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry], [c].[CompanyId], [c].[CreatedAt], [c].[Domain], [c].[IsActive], [c].[LogoUrl], [c].[Name], [c].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Company] AS [c] ON [u].[CompanyId] = [c].[CompanyId]
+WHERE [u].[Email] = @__ToLower_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:22:58.958 +05:00 [INF] Executed DbCommand (8ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-05-06 16:22:59.168 +05:00 [ERR] Failed executing DbCommand (18ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__userRoles_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleId]
+FROM [Roles] AS [r]
+WHERE [r].[CompanyId] = @__companyId_0 AND [r].[RoleName] IN (
+    SELECT [u].[value]
+    FROM OPENJSON(@__userRoles_1) WITH ([value] nvarchar(100) '$') AS [u]
+) AND [r].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:22:59.256 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AuthX.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c907640-d48a-47d5-9004-f7b43b6d4eb7
+Error Number:156,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c907640-d48a-47d5-9004-f7b43b6d4eb7
+Error Number:156,State:1,Class:15
+2026-05-06 16:22:59.319 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Login (AuthX.API) in 1197.5047ms
+2026-05-06 16:22:59.324 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:22:59.331 +05:00 [ERR] Unhandled exception: Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AuthX.Services.Implementations.MenuService.GetMenuForUserAsync(Int32 companyId, IEnumerable`1 userRoles) in D:\AuthXBackend\AuthX.Services\Implementations\MenuService.cs:line 30
+   at AuthX.Services.Implementations.AuthService.LoginAsync(LoginRequestDto dto) in D:\AuthXBackend\AuthX.Services\Implementations\AuthService.cs:line 38
+   at AuthX.API.Controllers.AuthController.Login(LoginRequestDto dto) in D:\AuthXBackend\AuthX.API\Controllers\AuthController.cs:line 18
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+ClientConnectionId:4c907640-d48a-47d5-9004-f7b43b6d4eb7
+Error Number:156,State:1,Class:15
+2026-05-06 16:22:59.454 +05:00 [ERR] HTTP POST /api/Auth/login responded 500 in 1408.0015 ms
+2026-05-06 16:22:59.464 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/login - 500 null application/json 1441.689ms
+2026-05-06 16:23:29.581 +05:00 [INF] Server desktop-4153n37:3500:7b98674b caught stopping signal...
+2026-05-06 16:23:29.585 +05:00 [INF] Application is shutting down...
+2026-05-06 16:23:29.882 +05:00 [INF] Server desktop-4153n37:3500:7b98674b All dispatchers stopped
+2026-05-06 16:23:29.891 +05:00 [INF] Server desktop-4153n37:3500:7b98674b successfully reported itself as stopped in 3.6802 ms
+2026-05-06 16:23:29.893 +05:00 [INF] Server desktop-4153n37:3500:7b98674b has been stopped in total 308.415 ms
+2026-05-06 16:24:00.757 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-05-06 16:24:01.942 +05:00 [INF] Hangfire SQL objects installed.
+2026-05-06 16:24:02.986 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-06 16:24:03.214 +05:00 [INF] Now listening on: http://localhost:5140
+2026-05-06 16:24:03.232 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-4153N37\SQL2014@AuthX_DB'
+2026-05-06 16:24:03.244 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-05-06 16:24:03.251 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-06 16:24:03.308 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-06 16:24:03.346 +05:00 [INF] Hosting environment: Development
+2026-05-06 16:24:03.362 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-05-06 16:24:03.437 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 successfully announced in 118.7311 ms
+2026-05-06 16:24:03.448 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-06 16:24:03.520 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 all the dispatchers started
+2026-05-06 16:24:25.504 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - null null
+2026-05-06 16:24:25.713 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:24:25.722 +05:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 13.7127 ms
+2026-05-06 16:24:25.746 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - 204 null null 237.6696ms
+2026-05-06 16:24:25.767 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/login - application/json 50
+2026-05-06 16:24:25.797 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:24:25.902 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:24:25.973 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthX.Core.DTOs.Auth.LoginRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 16:24:30.280 +05:00 [INF] Executed DbCommand (43ms) [Parameters=[@__ToLower_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry], [c].[CompanyId], [c].[CreatedAt], [c].[Domain], [c].[IsActive], [c].[LogoUrl], [c].[Name], [c].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Company] AS [c] ON [u].[CompanyId] = [c].[CompanyId]
+WHERE [u].[Email] = @__ToLower_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:24:30.908 +05:00 [INF] Executed DbCommand (5ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-05-06 16:24:31.153 +05:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@__companyId_0='?' (DbType = Int32), @__userRoles_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleId]
+FROM [Roles] AS [r]
+WHERE [r].[CompanyId] = @__companyId_0 AND [r].[RoleName] IN (
+    SELECT [u].[value]
+    FROM OPENJSON(@__userRoles_1) WITH ([value] nvarchar(100) '$') AS [u]
+) AND [r].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:24:31.235 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AuthX.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d9250d2a-eb9b-48d4-9153-8fe16b2915a3
+Error Number:156,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d9250d2a-eb9b-48d4-9153-8fe16b2915a3
+Error Number:156,State:1,Class:15
+2026-05-06 16:24:31.294 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Login (AuthX.API) in 5306.3412ms
+2026-05-06 16:24:31.297 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:24:31.320 +05:00 [ERR] Unhandled exception: Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AuthX.Services.Implementations.MenuService.GetMenuForUserAsync(Int32 companyId, IEnumerable`1 userRoles) in D:\AuthXBackend\AuthX.Services\Implementations\MenuService.cs:line 30
+   at AuthX.Services.Implementations.AuthService.LoginAsync(LoginRequestDto dto) in D:\AuthXBackend\AuthX.Services\Implementations\AuthService.cs:line 38
+   at AuthX.API.Controllers.AuthController.Login(LoginRequestDto dto) in D:\AuthXBackend\AuthX.API\Controllers\AuthController.cs:line 18
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+ClientConnectionId:d9250d2a-eb9b-48d4-9153-8fe16b2915a3
+Error Number:156,State:1,Class:15
+2026-05-06 16:24:31.522 +05:00 [ERR] HTTP POST /api/Auth/login responded 500 in 5730.1681 ms
+2026-05-06 16:24:31.609 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/login - 500 null application/json 5843.5606ms
+2026-05-06 16:29:26.566 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 caught stopping signal...
+2026-05-06 16:29:26.569 +05:00 [INF] Application is shutting down...
+2026-05-06 16:29:26.960 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 All dispatchers stopped
+2026-05-06 16:29:26.971 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 successfully reported itself as stopped in 4.4012 ms
+2026-05-06 16:29:26.975 +05:00 [INF] Server desktop-4153n37:6332:362b4a73 has been stopped in total 406.3768 ms
+2026-05-06 16:30:07.177 +05:00 [INF] Start installing Hangfire SQL objects...
+2026-05-06 16:30:09.454 +05:00 [INF] Hangfire SQL objects installed.
+2026-05-06 16:30:10.665 +05:00 [INF] User profile is available. Using 'C:\Users\Ahsan Mushtaq\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-05-06 16:30:10.967 +05:00 [INF] Now listening on: http://localhost:5140
+2026-05-06 16:30:11.013 +05:00 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-4153N37\SQL2014@AuthX_DB'
+2026-05-06 16:30:11.501 +05:00 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2026-05-06 16:30:11.513 +05:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 8
+    Listening queues: 'qr_generation', 'print_jobs', 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2026-05-06 16:30:11.631 +05:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-05-06 16:30:11.731 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 successfully announced in 89.9126 ms
+2026-05-06 16:30:11.768 +05:00 [INF] Hosting environment: Development
+2026-05-06 16:30:11.844 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, SqlServerHeartbeatProcess, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2026-05-06 16:30:12.151 +05:00 [INF] Content root path: D:\AuthXBackend\AuthX.API
+2026-05-06 16:30:12.704 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 all the dispatchers started
+2026-05-06 16:30:37.798 +05:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - null null
+2026-05-06 16:30:37.944 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:30:37.956 +05:00 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 12.9160 ms
+2026-05-06 16:30:37.969 +05:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5140/api/Auth/login - 204 null null 169.6615ms
+2026-05-06 16:30:38.005 +05:00 [INF] Request starting HTTP/1.1 POST http://localhost:5140/api/Auth/login - application/json 50
+2026-05-06 16:30:38.048 +05:00 [INF] CORS policy execution successful.
+2026-05-06 16:30:38.113 +05:00 [INF] Executing endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:30:38.161 +05:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(AuthX.Core.DTOs.Auth.LoginRequestDto) on controller AuthX.API.Controllers.AuthController (AuthX.API).
+2026-05-06 16:30:42.039 +05:00 [INF] Executed DbCommand (31ms) [Parameters=[@__ToLower_0='?' (Size = 150)], CommandType='"Text"', CommandTimeout='120']
+SELECT TOP(1) [u].[UserId], [u].[CompanyId], [u].[CreatedAt], [u].[Email], [u].[IsActive], [u].[Name], [u].[PasswordHash], [u].[Phone], [u].[RefreshToken], [u].[RefreshTokenExpiry], [c].[CompanyId], [c].[CreatedAt], [c].[Domain], [c].[IsActive], [c].[LogoUrl], [c].[Name], [c].[UpdatedAt]
+FROM [Users] AS [u]
+INNER JOIN [Company] AS [c] ON [u].[CompanyId] = [c].[CompanyId]
+WHERE [u].[Email] = @__ToLower_0 AND [u].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:30:42.661 +05:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleName]
+FROM [UserRoles] AS [u]
+INNER JOIN [Roles] AS [r] ON [u].[RoleId] = [r].[RoleId]
+WHERE [u].[UserId] = @__user_UserId_0
+2026-05-06 16:30:42.723 +05:00 [INF] Executed DbCommand (19ms) [Parameters=[@__companyId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='120']
+SELECT [r].[RoleId], [r].[RoleName]
+FROM [Roles] AS [r]
+WHERE [r].[CompanyId] = @__companyId_0 AND [r].[IsActive] = CAST(1 AS bit)
+2026-05-06 16:30:42.877 +05:00 [ERR] Failed executing DbCommand (9ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='120']
+SELECT DISTINCT [m].[MenuItemId]
+FROM [MenuPermission] AS [m]
+WHERE [m].[RoleId] IN (
+    SELECT [r].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r]
+) AND [m].[CanView] = CAST(1 AS bit)
+2026-05-06 16:30:42.966 +05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AuthX.Infrastructure.Data.AppDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:2d1c0612-0b61-4532-a548-9d395fbcbed1
+Error Number:156,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:2d1c0612-0b61-4532-a548-9d395fbcbed1
+Error Number:156,State:1,Class:15
+2026-05-06 16:30:43.012 +05:00 [INF] Executed action AuthX.API.Controllers.AuthController.Login (AuthX.API) in 4838.7951ms
+2026-05-06 16:30:43.025 +05:00 [INF] Executed endpoint 'AuthX.API.Controllers.AuthController.Login (AuthX.API)'
+2026-05-06 16:30:43.034 +05:00 [ERR] Unhandled exception: Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'WITH'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at AuthX.Services.Implementations.MenuService.GetMenuForUserAsync(Int32 companyId, IEnumerable`1 userRoles) in D:\AuthXBackend\AuthX.Services\Implementations\MenuService.cs:line 44
+   at AuthX.Services.Implementations.AuthService.LoginAsync(LoginRequestDto dto) in D:\AuthXBackend\AuthX.Services\Implementations\AuthService.cs:line 38
+   at AuthX.API.Controllers.AuthController.Login(LoginRequestDto dto) in D:\AuthXBackend\AuthX.API\Controllers\AuthController.cs:line 18
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at AuthX.API.Middleware.ExceptionMiddleware.InvokeAsync(HttpContext context) in D:\AuthXBackend\AuthX.API\Middleware\ExceptionMiddleware.cs:line 22
+ClientConnectionId:2d1c0612-0b61-4532-a548-9d395fbcbed1
+Error Number:156,State:1,Class:15
+2026-05-06 16:30:43.206 +05:00 [ERR] HTTP POST /api/Auth/login responded 500 in 5158.4192 ms
+2026-05-06 16:30:43.242 +05:00 [INF] Request finished HTTP/1.1 POST http://localhost:5140/api/Auth/login - 500 null application/json 5236.9139ms
+2026-05-06 16:32:16.355 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 caught stopping signal...
+2026-05-06 16:32:16.373 +05:00 [INF] Application is shutting down...
+2026-05-06 16:32:16.910 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 caught stopped signal...
+2026-05-06 16:32:17.380 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 All dispatchers stopped
+2026-05-06 16:32:17.389 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 successfully reported itself as stopped in 4.0246 ms
+2026-05-06 16:32:17.391 +05:00 [INF] Server desktop-4153n37:18708:0a626f77 has been stopped in total 1019.4216 ms

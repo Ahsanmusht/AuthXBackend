@@ -346,3 +346,50 @@ public class ProductCondition
 
     public Company Company { get; set; } = null!;
 }
+
+// ─── MenuItem ──────────────────────────────────────────────────────────────────
+public class MenuItem
+{
+    public int      MenuItemId { get; set; }
+    public int      CompanyId  { get; set; }
+    public int?     ParentId   { get; set; }
+    public string   Title      { get; set; } = null!;
+    public string?  Url        { get; set; }
+    public string?  Icon       { get; set; }
+    public string   Type       { get; set; } = "item"; // group | collapse | item
+    public int      SortOrder  { get; set; } = 0;
+    public bool     IsActive   { get; set; } = true;
+    public DateTime CreatedAt  { get; set; } = DateTime.UtcNow;
+ 
+    public Company              Company     { get; set; } = null!;
+    public MenuItem?            Parent      { get; set; }
+    public ICollection<MenuItem>         Children    { get; set; } = new List<MenuItem>();
+    public ICollection<MenuPermission>   Permissions { get; set; } = new List<MenuPermission>();
+}
+ 
+// ─── MenuPermission ────────────────────────────────────────────────────────────
+public class MenuPermission
+{
+    public int  Id         { get; set; }
+    public int  MenuItemId { get; set; }
+    public int  RoleId     { get; set; }
+    public bool CanView    { get; set; } = true;
+ 
+    public MenuItem MenuItem { get; set; } = null!;
+    public Role     Role     { get; set; } = null!;
+}
+ 
+// ─── PromotionSetup ────────────────────────────────────────────────────────────
+public class PromotionSetup
+{
+    public int      PromotionId { get; set; }
+    public int      CompanyId   { get; set; }
+    public string?  Title       { get; set; }
+    public string   ImageUrl    { get; set; } = null!;
+    public string?  ForwardUrl  { get; set; }
+    public bool     IsActive    { get; set; } = false;
+    public DateTime CreatedAt   { get; set; } = DateTime.UtcNow;
+    public DateTime? UpdatedAt  { get; set; }
+ 
+    public Company Company { get; set; } = null!;
+}

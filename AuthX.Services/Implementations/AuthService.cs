@@ -11,12 +11,14 @@ public class AuthService : IAuthService
     private readonly IUnitOfWork _uow;
     private readonly IJwtHelper _jwt;
     private readonly IConfiguration _config;
+    private readonly IMenuService _menuService;
 
-    public AuthService(IUnitOfWork uow, IJwtHelper jwt, IConfiguration config)
+    public AuthService(IUnitOfWork uow, IJwtHelper jwt, IConfiguration config, IMenuService menuService)
     {
         _uow = uow;
         _jwt = jwt;
         _config = config;
+        _menuService = menuService;
     }
 
     public async Task<LoginResponseDto> LoginAsync(LoginRequestDto dto)
@@ -33,6 +35,7 @@ public class AuthService : IAuthService
             .Select(ur => ur.Role.RoleName)
             .ToList();
 
+        var menu = await _menuService.GetMenuForUserAsync(user.CompanyId, roles);
         var accessToken = _jwt.GenerateAccessToken(user, roles);
         var refreshToken = _jwt.GenerateRefreshToken();
         var expiry = int.Parse(_config["Jwt:RefreshTokenExpiryDays"] ?? "7");
@@ -57,7 +60,8 @@ public class AuthService : IAuthService
                 Roles = roles,
                 CompanyName = user.Company?.Name,
                 CompanyLogo = user.Company?.LogoUrl
-            }
+            },
+            Menu = menu
         };
     }
 

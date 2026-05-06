@@ -31,6 +31,8 @@ services.AddScoped<PrintProcessingJob>();
 services.AddScoped<ScanLogCleanupJob>();
 services.AddScoped<IReturnReasonService, ReturnReasonService>();
 services.AddScoped<IProductConditionService, ProductConditionService>();
+services.AddScoped<IMenuService,      MenuService>();
+services.AddScoped<IPromotionService, PromotionService>();
 
         // ── SignalR push service ───────────────────────────
         services.AddScoped<ISignalRService, SignalRService>();

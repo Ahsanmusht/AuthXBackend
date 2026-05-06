@@ -33,6 +33,9 @@ PrintSettings   = new Repository<PrintSettings>(_ctx);
 CompanySettings = new Repository<CompanySettings>(_ctx);
 ReturnReasons = new Repository<ReturnReason>(_ctx);
 ProductConditions = new Repository<ProductCondition>(_ctx);
+MenuItems       = new Repository<MenuItem>(_ctx);
+MenuPermissions = new Repository<MenuPermission>(_ctx);
+Promotions      = new Repository<PromotionSetup>(_ctx);
     }
 
     public IRepository<Company>            Companies      { get; }
@@ -57,6 +60,9 @@ public IRepository<PrintSettings>   PrintSettings   { get; }
 public IRepository<CompanySettings> CompanySettings { get; }
 public IRepository<ReturnReason> ReturnReasons { get; }
 public IRepository<ProductCondition> ProductConditions { get; }
+public IRepository<MenuItem>       MenuItems       { get; }
+public IRepository<MenuPermission> MenuPermissions { get; }
+public IRepository<PromotionSetup> Promotions      { get; }
 
     public async Task<int> SaveChangesAsync()
         => await _ctx.SaveChangesAsync();
