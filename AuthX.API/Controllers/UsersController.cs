@@ -74,4 +74,11 @@ public class UsersController : BaseController
         await _roles.DeleteAsync(CurrentCompanyId, roleId);
         return OkMessage("Role deleted.");
     }
+    [HttpDelete("{userId:int}")]
+    [Authorize(Roles = AppRoles.Admin)]
+    public async Task<IActionResult> Delete(int userId)
+    {
+        await _users.DeleteAsync(CurrentCompanyId, userId);
+        return OkMessage("User deleted.");
+    }
 }

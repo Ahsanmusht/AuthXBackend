@@ -29,22 +29,23 @@ public class UserService : IUserService
             .Take(p.PageSize)
             .Select(u => new UserListDto
             {
-                UserId    = u.UserId,
-                Name      = u.Name,
-                Email     = u.Email,
-                Phone     = u.Phone,
-                IsActive  = u.IsActive,
+                UserId = u.UserId,
+                Name = u.Name,
+                Email = u.Email,
+                Phone = u.Phone,
+                IsActive = u.IsActive,
                 CreatedAt = u.CreatedAt,
-                Roles     = u.UserRoles.Select(ur => ur.Role.RoleName).ToList()
+                Roles = u.UserRoles.Select(ur => ur.Role.RoleName).ToList(),
+                RoleIds = u.UserRoles.Select(ur => ur.RoleId).ToList()
             })
             .ToListAsync();
 
         return new PagedResult<UserListDto>
         {
-            Items      = users,
+            Items = users,
             TotalCount = total,
-            Page       = p.Page,
-            PageSize   = p.PageSize
+            Page = p.Page,
+            PageSize = p.PageSize
         };
     }
 
@@ -54,13 +55,14 @@ public class UserService : IUserService
             .Where(x => x.CompanyId == companyId && x.UserId == userId)
             .Select(u => new UserDetailDto
             {
-                UserId    = u.UserId,
-                Name      = u.Name,
-                Email     = u.Email,
-                Phone     = u.Phone,
-                IsActive  = u.IsActive,
+                UserId = u.UserId,
+                Name = u.Name,
+                Email = u.Email,
+                Phone = u.Phone,
+                IsActive = u.IsActive,
                 CreatedAt = u.CreatedAt,
-                Roles     = u.UserRoles.Select(ur => ur.Role.RoleName).ToList()
+                Roles = u.UserRoles.Select(ur => ur.Role.RoleName).ToList(),
+                RoleIds = u.UserRoles.Select(ur => ur.RoleId).ToList()
             })
             .FirstOrDefaultAsync()
             ?? throw new KeyNotFoundException("User not found.");
@@ -78,10 +80,10 @@ public class UserService : IUserService
 
         var user = new User
         {
-            CompanyId    = companyId,
-            Name         = dto.Name.Trim(),
-            Email        = dto.Email.Trim().ToLower(),
-            Phone        = dto.Phone,
+            CompanyId = companyId,
+            Name = dto.Name.Trim(),
+            Email = dto.Email.Trim().ToLower(),
+            Phone = dto.Phone,
             PasswordHash = PasswordHasher.Hash(dto.Password)
         };
 
@@ -108,7 +110,7 @@ public class UserService : IUserService
             u.CompanyId == companyId && u.UserId == userId)
             ?? throw new KeyNotFoundException("User not found.");
 
-        user.Name  = dto.Name.Trim();
+        user.Name = dto.Name.Trim();
         user.Phone = dto.Phone;
         _uow.Users.Update(user);
 
@@ -156,6 +158,18 @@ public class UserService : IUserService
             RoleId = rid
         });
         await _uow.UserRoles.AddRangeAsync(newRoles);
+        await _uow.SaveChangesAsync();
+    }
+    public async Task DeleteAsync(int companyId, int userId)
+    {
+        var user = await _uow.Users.FindOneAsync(u =>
+            u.CompanyId == companyId && u.UserId == userId)
+            ?? throw new KeyNotFoundException("User not found.");
+
+        var userRoles = (await _uow.UserRoles.FindAsync(ur => ur.UserId == userId)).ToList();
+        userRoles.ForEach(ur => _uow.UserRoles.Remove(ur));
+
+        _uow.Users.Remove(user);
         await _uow.SaveChangesAsync();
     }
 }

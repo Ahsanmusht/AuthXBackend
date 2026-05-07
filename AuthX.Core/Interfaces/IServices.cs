@@ -30,6 +30,7 @@ public interface IUserService
     Task<UserDetailDto> UpdateAsync(int companyId, int userId, UpdateUserDto dto);
     Task SetActiveAsync(int companyId, int userId, bool active);
     Task AssignRolesAsync(int companyId, int userId, List<int> roleIds);
+    Task DeleteAsync(int companyId, int userId);
 }
 
 public interface IRoleService

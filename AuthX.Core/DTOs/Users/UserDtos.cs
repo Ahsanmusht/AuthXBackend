@@ -9,6 +9,7 @@ public class UserListDto
     public bool        IsActive  { get; set; }
     public DateTime    CreatedAt { get; set; }
     public List<string> Roles   { get; set; } = new();
+    public List<int> RoleIds { get; set; }
 }
 
 public class UserDetailDto : UserListDto { }
