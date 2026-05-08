@@ -78,7 +78,7 @@ public class SettingsController : BaseController
 
         return OkResult(new CompanySettingsDto
         {
-            ColorMode = s.ColorMode ?? "Multi",
+            ColorMode = IsOwner ? (s.ColorMode ?? "Multi") : null,
             WarrantyDelayDays = s.WarrantyDelayDays
         });
     }
@@ -96,7 +96,8 @@ public class SettingsController : BaseController
             await _uow.CompanySettings.AddAsync(s);
         }
 
-        s.ColorMode = dto.ColorMode;
+        if (IsOwner && dto.ColorMode != null)
+ s.ColorMode = dto.ColorMode;
         s.WarrantyDelayDays = dto.WarrantyDelayDays;
         s.UpdatedAt = DateTime.UtcNow;
 

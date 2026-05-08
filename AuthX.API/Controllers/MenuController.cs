@@ -21,9 +21,17 @@ public class MenuController : BaseController
  
     /// <summary>Admin: Get ALL menu items with permissions</summary>
     [HttpGet]
-    [Authorize(Roles = AppRoles.Admin)]
-    public async Task<IActionResult> GetAll()
-        => OkResult(await _svc.GetAllMenuItemsAsync(CurrentCompanyId));
+[Authorize(Roles = AppRoles.Admin)]
+public async Task<IActionResult> GetAll()
+{
+ // Owner: saari menus, Admin: sirf apni allowed menus
+ if (IsOwner)
+ return OkResult(await _svc.GetAllMenuItemsAsync(CurrentCompanyId));
+ else
+ return OkResult(await _svc.GetAllowedMenuItemsAsync(CurrentCompanyId,
+CurrentUserId));
+}
+
  
     [HttpGet("{id:int}")]
     [Authorize(Roles = AppRoles.Admin)]
@@ -60,7 +68,7 @@ public class MenuController : BaseController
     [Authorize(Roles = AppRoles.Admin)]
     public async Task<IActionResult> UpdatePermissions([FromBody] MenuPermissionUpdateDto dto)
     {
-        await _svc.UpdatePermissionsAsync(CurrentCompanyId, dto);
+        await _svc.UpdatePermissionsAsync(CurrentCompanyId, dto, CurrentUserId, IsOwner);
         return OkMessage("Permissions updated.");
     }
 }

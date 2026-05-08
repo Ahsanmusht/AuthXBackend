@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuthX.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84b3f15e250babc73e8126be680e2a65e59896fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+444451c86924ea680153fcb1af76ef86215e66ba")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuthX.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuthX.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

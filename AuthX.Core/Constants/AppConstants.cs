@@ -8,6 +8,7 @@ public static class AppRoles
     public const string Warehouse   = "Warehouse";
     public const string Support     = "Support";
     public const string Viewer      = "Viewer";
+    public const string Owner = "Owner";
 }
 
 public static class CacheKeys

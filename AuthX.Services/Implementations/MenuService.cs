@@ -13,9 +13,10 @@ public interface IMenuService
     Task<MenuItemDto> CreateAsync(int companyId, CreateMenuItemDto dto);
     Task<MenuItemDto> UpdateAsync(int companyId, int menuItemId, UpdateMenuItemDto dto);
     Task DeleteAsync(int companyId, int menuItemId);
-    Task UpdatePermissionsAsync(int companyId, MenuPermissionUpdateDto dto);
+    Task UpdatePermissionsAsync(int companyId, MenuPermissionUpdateDto dto, int requestingUserId = 0, bool isOwner = true);
     Task SetActiveAsync(int companyId, int menuItemId, bool active);
     Task ReorderAsync(int companyId, List<(int id, int order)> items);
+    Task<List<MenuItemDto>> GetAllowedMenuItemsAsync(int companyId, int userId);
 }
 
 public class MenuService : IMenuService
@@ -244,8 +245,24 @@ public class MenuService : IMenuService
         await _uow.SaveChangesAsync();
     }
 
-    public async Task UpdatePermissionsAsync(int companyId, MenuPermissionUpdateDto dto)
+    public async Task UpdatePermissionsAsync(int companyId, MenuPermissionUpdateDto dto, int
+requestingUserId = 0, bool isOwner = true)
     {
+        if (!isOwner && requestingUserId > 0)
+        {
+            var myRoleIds = await _uow.UserRoles.Query()
+            .Where(ur => ur.UserId == requestingUserId)
+            .Select(ur => ur.RoleId)
+            .ToListAsync();
+            var myAllowedMenuIds = await _uow.MenuPermissions.Query()
+            .Where(mp => myRoleIds.Contains(mp.RoleId) && mp.CanView)
+            .Select(mp => mp.MenuItemId)
+            .Distinct()
+            .ToListAsync();
+            if (!myAllowedMenuIds.Contains(dto.MenuItemId))
+                throw new UnauthorizedAccessException(
+                "You can only assign permissions for menus you have access to.");
+        }
         // Verify item belongs to company
         var item = await _uow.MenuItems.FindOneAsync(m =>
             m.CompanyId == companyId && m.MenuItemId == dto.MenuItemId)
@@ -293,5 +310,27 @@ public class MenuService : IMenuService
             }
         }
         await _uow.SaveChangesAsync();
+    }
+
+    public async Task<List<MenuItemDto>> GetAllowedMenuItemsAsync(int companyId, int userId)
+    {
+
+        var userRoleIds = await _uow.UserRoles.Query()
+        .Where(ur => ur.UserId == userId)
+        .Select(ur => ur.RoleId)
+        .ToListAsync();
+
+        var allowedMenuIds = await _uow.MenuPermissions.Query()
+        .Where(mp => userRoleIds.Contains(mp.RoleId) && mp.CanView)
+        .Select(mp => mp.MenuItemId)
+        .Distinct()
+        .ToListAsync();
+
+        var items = await _uow.MenuItems.Query()
+        .Include(m => m.Permissions)
+        .Where(m => m.CompanyId == companyId && allowedMenuIds.Contains(m.MenuItemId))
+        .OrderBy(m => m.SortOrder)
+        .ToListAsync();
+        return BuildAdminMenuTree(items, null);
     }
 }

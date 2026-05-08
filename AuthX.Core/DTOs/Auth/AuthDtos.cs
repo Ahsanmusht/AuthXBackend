@@ -32,4 +32,5 @@ public class UserInfoDto
     public List<string> Roles { get; set; } = new();
     public string? CompanyName { get; set; }
     public string? CompanyLogo { get; set; }
+    public bool IsOwner { get; set; }
 }

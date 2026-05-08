@@ -12,6 +12,7 @@ using AuthX.Core.DTOs.Notifications;
 using AuthX.Core.DTOs.Dashboard;
 using AuthX.Core.DTOs.ReturnReasons;
 using AuthX.Core.DTOs.ProductConditions;
+using AuthX.Core.DTOs.Menu;
 
 namespace AuthX.Core.Interfaces;
 

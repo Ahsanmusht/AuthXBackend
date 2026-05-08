@@ -14,8 +14,18 @@ public abstract class BaseController : ControllerBase
     protected int CurrentUserId =>
         int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0");
 
-    protected int CurrentCompanyId =>
-        int.Parse(User.FindFirstValue("CompanyId") ?? "0");
+    protected int CurrentCompanyId
+    {
+        get
+        {
+            // Owner ke liye: agar header mein company override hai to woh use karo
+            if (IsOwner && Request.Headers.TryGetValue("X-Owner-CompanyId", out var val))
+                if (int.TryParse(val, out var overrideId) && overrideId > 0)
+                    return overrideId;
+            return int.Parse(User.FindFirstValue("CompanyId") ?? "0");
+        }
+    }
+
 
     protected string CurrentUserEmail =>
         User.FindFirstValue(ClaimTypes.Email) ?? string.Empty;
@@ -25,6 +35,10 @@ public abstract class BaseController : ControllerBase
 
     protected bool IsAdmin =>
         CurrentUserRoles.Contains(AppRoles.Admin);
+
+    protected bool IsOwner =>
+User.FindFirstValue("IsOwner") == "true";
+
 
     protected bool IsSupport =>
         CurrentUserRoles.Contains(AppRoles.Support) || IsAdmin;

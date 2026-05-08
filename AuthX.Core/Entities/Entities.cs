@@ -8,6 +8,7 @@ public class Company
     public string?   Domain     { get; set; }
     public string?   LogoUrl    { get; set; }
     public bool      IsActive   { get; set; } = true;
+    public bool IsOwnerCompany { get; set; } = false;
     public DateTime  CreatedAt  { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt  { get; set; }
 
@@ -42,6 +43,7 @@ public class User
     public string?   RefreshToken         { get; set; }
     public DateTime? RefreshTokenExpiry   { get; set; }
     public bool      IsActive             { get; set; } = true;
+    public bool IsOwner { get; set; } = false;
     public DateTime  CreatedAt            { get; set; } = DateTime.UtcNow;
 
     public Company             Company   { get; set; } = null!;

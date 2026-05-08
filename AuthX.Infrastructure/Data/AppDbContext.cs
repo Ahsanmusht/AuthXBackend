@@ -46,6 +46,7 @@ public class AppDbContext : DbContext
             e.Property(x => x.Name).HasMaxLength(200).IsRequired();
             e.Property(x => x.Domain).HasMaxLength(200);
             e.Property(x => x.LogoUrl).HasMaxLength(500);
+            e.Property(x => x.IsOwnerCompany).HasDefaultValue(false);
             e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
         });
 
@@ -69,6 +70,7 @@ public class AppDbContext : DbContext
             e.Property(x => x.Email).HasMaxLength(150).IsRequired();
             e.Property(x => x.PasswordHash).HasMaxLength(500).IsRequired();
             e.Property(x => x.RefreshToken).HasMaxLength(500);
+            e.Property(x => x.IsOwner).HasDefaultValue(false);
             e.HasIndex(x => x.Email).IsUnique();
             e.HasOne(x => x.Company)
              .WithMany(c => c.Users)

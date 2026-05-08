@@ -23,8 +23,8 @@ public class JwtHelper : IJwtHelper
 
     public string GenerateAccessToken(User user, IList<string> roles)
     {
-        var key    = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
-        var creds  = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]!));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
         var expiry = DateTime.UtcNow.AddMinutes(
             int.Parse(_config["Jwt:AccessTokenExpiryMinutes"] ?? "60"));
 
@@ -37,13 +37,17 @@ public class JwtHelper : IJwtHelper
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
+        if (user.IsOwner)
+            claims.Add(new System.Security.Claims.Claim("IsOwner", "true"));
+
+
         claims.AddRange(roles.Select(r => new System.Security.Claims.Claim(ClaimTypes.Role, r)));
 
         var token = new JwtSecurityToken(
-            issuer:             _config["Jwt:Issuer"],
-            audience:           _config["Jwt:Audience"],
-            claims:             claims,
-            expires:            expiry,
+            issuer: _config["Jwt:Issuer"],
+            audience: _config["Jwt:Audience"],
+            claims: claims,
+            expires: expiry,
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -62,10 +66,10 @@ public class JwtHelper : IJwtHelper
         var validationParams = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey         = key,
-            ValidateIssuer           = false,
-            ValidateAudience         = false,
-            ValidateLifetime         = false // expired is fine here
+            IssuerSigningKey = key,
+            ValidateIssuer = false,
+            ValidateAudience = false,
+            ValidateLifetime = false // expired is fine here
         };
 
         try

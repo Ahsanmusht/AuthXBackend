@@ -59,7 +59,8 @@ public class AuthService : IAuthService
                 Email = user.Email,
                 Roles = roles,
                 CompanyName = user.Company?.Name,
-                CompanyLogo = user.Company?.LogoUrl
+                CompanyLogo = user.Company?.LogoUrl,
+                IsOwner = user.IsOwner
             },
             Menu = menu
         };
@@ -106,7 +107,8 @@ public class AuthService : IAuthService
                 CompanyId = user.CompanyId,
                 Name = user.Name,
                 Email = user.Email,
-                Roles = roles
+                Roles = roles,
+                IsOwner = user.IsOwner
             }
         };
     }
