@@ -85,9 +85,21 @@
               "target": "Package",
               "version": "[5.*, )"
             },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.9, )"
+            },
+            "ZXing.Net.Bindings.ImageSharp": {
+              "target": "Package",
+              "version": "[0.16.9, )"
             }
           },
           "imports": [

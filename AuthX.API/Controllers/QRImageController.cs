@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using ZXing;
 using ZXing.QrCode;
 using ZXing.QrCode.Internal;
-using ZXing.Rendering;
-using System.Drawing;
-using System.Drawing.Imaging;
+using ZXing.ImageSharp.Rendering;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.PixelFormats;
+using ZXing.Common;
 
 namespace AuthX.API.Controllers;
 
@@ -32,11 +34,15 @@ public class QRImageController : ControllerBase
 {
     private readonly IUnitOfWork _uow;
     private readonly ILogger<QRImageController> _log;
+    private readonly IConfiguration _configuration;
+    private readonly string _baseUrl;
 
-    public QRImageController(IUnitOfWork uow, ILogger<QRImageController> log)
+    public QRImageController(IUnitOfWork uow, ILogger<QRImageController> log, IConfiguration configuration)
     {
         _uow = uow;
         _log = log;
+        _configuration = configuration;
+        _baseUrl = _configuration["AppSettings:BaseUrl"] ?? "https://devapi.authx.pk";
     }
 
     /// <summary>
@@ -63,10 +69,10 @@ public class QRImageController : ControllerBase
         // The QR string itself is the authority
 
         var imageBytes = GenerateQRImage(q, size);
-        
+
         Response.Headers["Cache-Control"] = "public, max-age=31536000, immutable";
         Response.Headers["ETag"] = $"\"{q.GetHashCode():X8}\"";
-        
+
         return File(imageBytes, "image/png");
     }
 
@@ -109,7 +115,7 @@ public class QRImageController : ControllerBase
         [FromQuery] int pageSize = 12)
     {
         pageSize = Math.Clamp(pageSize, 1, 50);
-        page     = Math.Max(1, page);
+        page = Math.Max(1, page);
 
         var items = await _uow.ProductItems.Query()
             .Where(i => i.BatchId == batchId)
@@ -131,38 +137,34 @@ public class QRImageController : ControllerBase
                 i.SerialNo,
                 i.QRCode,
                 // Image URL — frontend can use this OR render client-side
-                ImageUrl = Url.Action("GetByCode", "QRImage",
-                    new { q = i.QRCode, size = 150 }, Request.Scheme)
+                //     ImageUrl = Url.Action("GetByCode", "QRImage",
+                //         new { q = i.QRCode, size = 150 }, Request.Scheme)
+                ImageUrl = $"{_baseUrl}/api/qr-image/by-code?q={i.QRCode}&size=150"
             })
         });
     }
 
     // ─── Private: ZXing QR Generation ─────────────────────────────────────────
-    
+
     private static byte[] GenerateQRImage(string content, int size)
     {
-        var writer = new QRCodeWriter();
-        var hints  = new Dictionary<EncodeHintType, object>
+        var writer = new BarcodeWriter<Image<Rgba32>>
         {
-            [EncodeHintType.ERROR_CORRECTION] = ErrorCorrectionLevel.M,
-            [EncodeHintType.MARGIN]           = 1, // Minimal quiet zone
-            [EncodeHintType.CHARACTER_SET]    = "UTF-8"
+            Format = BarcodeFormat.QR_CODE,
+            Options = new EncodingOptions  // ZXing.Common se
+            {
+                Width = size,
+                Height = size,
+                Margin = 1,
+                PureBarcode = true
+            },
+            Renderer = new ImageSharpRenderer<Rgba32>()
         };
 
-        var bitMatrix = writer.encode(content, BarcodeFormat.QR_CODE, size, size, hints);
-
-        // Convert BitMatrix to PNG bytes
-        using var bitmap = new Bitmap(size, size, PixelFormat.Format32bppArgb);
-        for (int x = 0; x < size; x++)
-        {
-            for (int y = 0; y < size; y++)
-            {
-                bitmap.SetPixel(x, y, bitMatrix[x, y] ? Color.Black : Color.White);
-            }
-        }
-
+        using var image = writer.Write(content);
         using var stream = new MemoryStream();
-        bitmap.Save(stream, ImageFormat.Png);
+        image.Save(stream, new PngEncoder());
+
         return stream.ToArray();
     }
 }

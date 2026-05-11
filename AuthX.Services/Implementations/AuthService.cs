@@ -1,6 +1,6 @@
 // AuthX.Services/Implementations/AuthService.cs
-// CLEAN FIX: isOwner flag MenuService ko pass karo
-// Owner = saare menus, no permission check
+// FIX: Owner login pe pehli company nahi, OWNER ki apni company ka menu load karo
+// Owner ki company = IsOwnerCompany = true
 
 using AuthX.Core.DTOs.Auth;
 using AuthX.Core.Interfaces;
@@ -12,10 +12,10 @@ namespace AuthX.Services.Implementations;
 
 public class AuthService : IAuthService
 {
-    private readonly IUnitOfWork    _uow;
-    private readonly IJwtHelper     _jwt;
+    private readonly IUnitOfWork _uow;
+    private readonly IJwtHelper _jwt;
     private readonly IConfiguration _config;
-    private readonly IMenuService   _menuService;
+    private readonly IMenuService _menuService;
 
     public AuthService(
         IUnitOfWork uow,
@@ -23,9 +23,9 @@ public class AuthService : IAuthService
         IConfiguration config,
         IMenuService menuService)
     {
-        _uow         = uow;
-        _jwt         = jwt;
-        _config      = config;
+        _uow = uow;
+        _jwt = jwt;
+        _config = config;
         _menuService = menuService;
     }
 
@@ -44,55 +44,45 @@ public class AuthService : IAuthService
             .Select(ur => ur.Role.RoleName)
             .ToList();
 
-        // Owner ke liye Admin role bhi add karo (API authorization ke liye)
         var effectiveRoles = roles.ToList();
         if (user.IsOwner && !effectiveRoles.Contains("Admin"))
             effectiveRoles.Add("Admin");
 
-        // Owner ke liye selected company ka menu load karo (pehli active company)
-        // Normal user ke liye apni company ka menu
-        int menuCompanyId = user.CompanyId;
-        if (user.IsOwner)
-        {
-            var firstCo = await _uow.Companies.Query()
-                .Where(c => c.IsActive)
-                .OrderBy(c => c.CompanyId)
-                .Select(c => new { c.CompanyId })
-                .FirstOrDefaultAsync();
-            menuCompanyId = firstCo?.CompanyId ?? user.CompanyId;
-        }
+        // ── KEY FIX: Owner ke liye APNI company ka menu lo ──────────────────
+        // Owner ki company = user.CompanyId (jo IsOwnerCompany=true wali hogi)
+        // Pehle wala code galat tha: OrderBy(CompanyId).First() kisi bhi company uthata tha
+        int menuCompanyId = user.CompanyId; // Owner ya normal user dono ke liye same
 
-        // KEY: isOwner = true hoga to MenuService permission check skip karega
         var menu = await _menuService.GetMenuForUserAsync(
             menuCompanyId,
             effectiveRoles,
             isOwner: user.IsOwner);
 
-        var accessToken  = _jwt.GenerateAccessToken(user, effectiveRoles);
+        var accessToken = _jwt.GenerateAccessToken(user, effectiveRoles);
         var refreshToken = _jwt.GenerateRefreshToken();
-        var expiry       = int.Parse(_config["Jwt:RefreshTokenExpiryDays"] ?? "7");
+        var expiry = int.Parse(_config["Jwt:RefreshTokenExpiryDays"] ?? "7");
 
-        user.RefreshToken       = refreshToken;
+        user.RefreshToken = refreshToken;
         user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(expiry);
         _uow.Users.Update(user);
         await _uow.SaveChangesAsync();
 
         return new LoginResponseDto
         {
-            AccessToken       = accessToken,
-            RefreshToken      = refreshToken,
+            AccessToken = accessToken,
+            RefreshToken = refreshToken,
             AccessTokenExpiry = DateTime.UtcNow.AddMinutes(
                 int.Parse(_config["Jwt:AccessTokenExpiryMinutes"] ?? "60")),
             User = new UserInfoDto
             {
-                UserId      = user.UserId,
-                CompanyId   = user.CompanyId,
-                Name        = user.Name,
-                Email       = user.Email,
-                Roles       = effectiveRoles,
+                UserId = user.UserId,
+                CompanyId = user.CompanyId,  // Always owner's own companyId
+                Name = user.Name,
+                Email = user.Email,
+                Roles = effectiveRoles,
                 CompanyName = user.Company?.Name,
                 CompanyLogo = user.Company?.LogoUrl,
-                IsOwner     = user.IsOwner
+                IsOwner = user.IsOwner
             },
             Menu = menu
         };
@@ -122,29 +112,29 @@ public class AuthService : IAuthService
         if (user.IsOwner && !effectiveRoles.Contains("Admin"))
             effectiveRoles.Add("Admin");
 
-        var newAccessToken  = _jwt.GenerateAccessToken(user, effectiveRoles);
+        var newAccessToken = _jwt.GenerateAccessToken(user, effectiveRoles);
         var newRefreshToken = _jwt.GenerateRefreshToken();
-        var expiry          = int.Parse(_config["Jwt:RefreshTokenExpiryDays"] ?? "7");
+        var expireDays = int.Parse(_config["Jwt:RefreshTokenExpiryDays"] ?? "7");
 
-        user.RefreshToken       = newRefreshToken;
-        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(expiry);
+        user.RefreshToken = newRefreshToken;
+        user.RefreshTokenExpiry = DateTime.UtcNow.AddDays(expireDays);
         _uow.Users.Update(user);
         await _uow.SaveChangesAsync();
 
         return new LoginResponseDto
         {
-            AccessToken       = newAccessToken,
-            RefreshToken      = newRefreshToken,
+            AccessToken = newAccessToken,
+            RefreshToken = newRefreshToken,
             AccessTokenExpiry = DateTime.UtcNow.AddMinutes(
                 int.Parse(_config["Jwt:AccessTokenExpiryMinutes"] ?? "60")),
             User = new UserInfoDto
             {
-                UserId    = user.UserId,
+                UserId = user.UserId,
                 CompanyId = user.CompanyId,
-                Name      = user.Name,
-                Email     = user.Email,
-                Roles     = effectiveRoles,
-                IsOwner   = user.IsOwner
+                Name = user.Name,
+                Email = user.Email,
+                Roles = effectiveRoles,
+                IsOwner = user.IsOwner
             }
         };
     }
@@ -154,7 +144,7 @@ public class AuthService : IAuthService
         var user = await _uow.Users.GetByIdAsync(userId)
             ?? throw new KeyNotFoundException("User not found.");
 
-        user.RefreshToken       = null;
+        user.RefreshToken = null;
         user.RefreshTokenExpiry = null;
         _uow.Users.Update(user);
         await _uow.SaveChangesAsync();

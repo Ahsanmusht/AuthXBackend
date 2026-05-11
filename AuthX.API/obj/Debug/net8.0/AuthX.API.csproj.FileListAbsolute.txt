@@ -167,3 +167,5 @@ D:\AuthXBackend\AuthX.API\obj\Debug\net8.0\refint\AuthX.API.dll
 D:\AuthXBackend\AuthX.API\obj\Debug\net8.0\AuthX.API.pdb
 D:\AuthXBackend\AuthX.API\obj\Debug\net8.0\AuthX.API.genruntimeconfig.cache
 D:\AuthXBackend\AuthX.API\obj\Debug\net8.0\ref\AuthX.API.dll
+D:\AuthXBackend\AuthX.API\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+D:\AuthXBackend\AuthX.API\bin\Debug\net8.0\ZXing.ImageSharp.dll

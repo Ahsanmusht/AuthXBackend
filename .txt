@@ -1,3 +1,4 @@
 dotnet run --project AuthX.API
 
-saray cs proj mai dotnet 8 krna hai or aik api walay csproj mai open api ka version change krna hai 
+
+error jo araha hai abhi bhi compnay dropdown change krnay per error araaha hai ussay fix krna hai 

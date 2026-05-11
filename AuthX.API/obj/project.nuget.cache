@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hOIylfIPmZ8=",
+  "dgSpecHash": "10a61h0Z/NQ=",
   "success": true,
   "projectFilePath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
   "expectedPackageFiles": [
@@ -88,6 +88,7 @@
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\serilog.sinks.debug\\2.0.0\\serilog.sinks.debug.2.0.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\serilog.sinks.file\\5.0.0\\serilog.sinks.file.5.0.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\sixlabors.fonts\\1.0.0\\sixlabors.fonts.1.0.0.nupkg.sha512",
+    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\sixlabors.imagesharp\\3.1.5\\sixlabors.imagesharp.3.1.5.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\stackexchange.redis\\2.7.33\\stackexchange.redis.2.7.33.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
@@ -167,7 +168,45 @@
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\xlparser\\1.5.2\\xlparser.1.5.2.nupkg.sha512",
-    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\zxing.net\\0.16.11\\zxing.net.0.16.11.nupkg.sha512"
+    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512",
+    "C:\\Users\\Ahsan Mushtaq\\.nuget\\packages\\zxing.net.bindings.imagesharp\\0.16.10\\zxing.net.bindings.imagesharp.0.16.10.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "AuthX.API depends on ZXing.Net.Bindings.ImageSharp (>= 0.16.9) but ZXing.Net.Bindings.ImageSharp 0.16.9 was not found. ZXing.Net.Bindings.ImageSharp 0.16.10 was resolved instead.",
+      "projectPath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "libraryId": "ZXing.Net.Bindings.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-2cmq-823j-5qj8",
+      "projectPath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'SixLabors.ImageSharp' 3.1.5 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-rxmq-m78w-7wmc",
+      "projectPath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\AuthXBackend\\AuthX.API\\AuthX.API.csproj",
+      "libraryId": "SixLabors.ImageSharp",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

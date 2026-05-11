@@ -13,8 +13,11 @@
     <PackageReference Include="Serilog.AspNetCore" Version="8.*" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.*" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <PackageReference Include="Hangfire.AspNetCore"  Version="1.8.*" />
-<PackageReference Include="Hangfire.SqlServer"   Version="1.8.*" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="1.8.*" />
+<PackageReference Include="Hangfire.SqlServer" Version="1.8.*" />
+<PackageReference Include="ZXing.Net" Version="0.16.9" />
+<PackageReference Include="ZXing.Net.Bindings.ImageSharp" Version="0.16.9" />
+<PackageReference Include="SixLabors.ImageSharp" Version="3.1.5" />
   </ItemGroup>
 
   <ItemGroup>
