@@ -148,23 +148,92 @@ public class QRImageController : ControllerBase
 
     private static byte[] GenerateQRImage(string content, int size)
     {
-        var writer = new BarcodeWriter<Image<Rgba32>>
+        var writer = new ZXing.BarcodeWriterPixelData
         {
-            Format = BarcodeFormat.QR_CODE,
-            Options = new EncodingOptions  // ZXing.Common se
+            Format = ZXing.BarcodeFormat.QR_CODE,
+            Options = new ZXing.Common.EncodingOptions
             {
                 Width = size,
                 Height = size,
-                Margin = 1,
-                PureBarcode = true
-            },
-            Renderer = new ImageSharpRenderer<Rgba32>()
+                Margin = 2,
+                PureBarcode = false
+            }
         };
 
-        using var image = writer.Write(content);
-        using var stream = new MemoryStream();
-        image.Save(stream, new PngEncoder());
+        var pixelData = writer.Write(content);
+        return CreatePng(pixelData.Pixels, pixelData.Width, pixelData.Height);
+    }
 
-        return stream.ToArray();
+    private static byte[] CreatePng(byte[] rgba, int w, int h)
+    {
+        using var ms = new MemoryStream();
+        using var bw = new BinaryWriter(ms);
+
+        // PNG signature
+        bw.Write(new byte[] { 137, 80, 78, 71, 13, 10, 26, 10 });
+
+        // IHDR
+        WriteChunk(bw, "IHDR", b =>
+        {
+            b.Write(ToBE(w));
+            b.Write(ToBE(h));
+            b.Write((byte)8);  // bit depth
+            b.Write((byte)2);  // RGB
+            b.Write((byte)0); b.Write((byte)0); b.Write((byte)0);
+        });
+
+        // IDAT - raw RGB scanlines
+        var raw = new byte[h * (1 + w * 3)];
+        for (int y = 0; y < h; y++)
+        {
+            raw[y * (w * 3 + 1)] = 0; // filter byte
+            for (int x = 0; x < w; x++)
+            {
+                int src = (y * w + x) * 4;
+                int dst = y * (w * 3 + 1) + 1 + x * 3;
+                raw[dst] = rgba[src];     // R
+                raw[dst + 1] = rgba[src + 1]; // G
+                raw[dst + 2] = rgba[src + 2]; // B
+            }
+        }
+
+        using var compressed = new MemoryStream();
+        using (var zlib = new System.IO.Compression.ZLibStream(
+            compressed, System.IO.Compression.CompressionLevel.Fastest, true))
+            zlib.Write(raw, 0, raw.Length);
+
+        WriteChunk(bw, "IDAT", b => b.Write(compressed.ToArray()));
+        WriteChunk(bw, "IEND", _ => { });
+
+        return ms.ToArray();
+    }
+
+    private static void WriteChunk(BinaryWriter bw, string type, Action<BinaryWriter> data)
+    {
+        using var buf = new MemoryStream();
+        using var tmp = new BinaryWriter(buf);
+        data(tmp);
+        var bytes = buf.ToArray();
+        var typeBytes = System.Text.Encoding.ASCII.GetBytes(type);
+
+        bw.Write(ToBE(bytes.Length));
+        bw.Write(typeBytes);
+        bw.Write(bytes);
+        bw.Write(ToBE((int)Crc32(typeBytes.Concat(bytes).ToArray())));
+    }
+
+    private static byte[] ToBE(int v) =>
+        new[] { (byte)(v >> 24), (byte)(v >> 16), (byte)(v >> 8), (byte)v };
+
+    private static uint Crc32(byte[] data)
+    {
+        uint crc = 0xFFFFFFFF;
+        foreach (var b in data)
+        {
+            crc ^= b;
+            for (int i = 0; i < 8; i++)
+                crc = (crc & 1) != 0 ? (crc >> 1) ^ 0xEDB88320 : crc >> 1;
+        }
+        return crc ^ 0xFFFFFFFF;
     }
 }
