@@ -139,7 +139,7 @@ public class QRImageController : ControllerBase
                 // Image URL — frontend can use this OR render client-side
                 //     ImageUrl = Url.Action("GetByCode", "QRImage",
                 //         new { q = i.QRCode, size = 150 }, Request.Scheme)
-                ImageUrl = $"{_baseUrl}/api/qr-image/by-code?q={i.QRCode}&size=150"
+                ImageUrl = $"{_baseUrl}/api/qr-image/by-code?q={i.QRCode}&size=200"
             })
         });
     }

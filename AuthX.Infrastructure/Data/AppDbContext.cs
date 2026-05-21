@@ -9,6 +9,7 @@ public class AppDbContext : DbContext
 
     // ─── DbSets ────────────────────────────────────────────
     public DbSet<Company> Companies { get; set; }
+    public DbSet<BulkDispatchLog> BulkDispatchLogs { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<UserRole> UserRoles { get; set; }
@@ -30,9 +31,9 @@ public class AppDbContext : DbContext
     public DbSet<CompanySettings> CompanySettings { get; set; }
     public DbSet<ReturnReason> ReturnReasons { get; set; }
     public DbSet<ProductCondition> ProductConditions { get; set; }
-     public DbSet<MenuItem>       MenuItems       { get; set; }
-     public DbSet<MenuPermission> MenuPermissions { get; set; }
-     public DbSet<PromotionSetup> Promotions      { get; set; }
+    public DbSet<MenuItem> MenuItems { get; set; }
+    public DbSet<MenuPermission> MenuPermissions { get; set; }
+    public DbSet<PromotionSetup> Promotions { get; set; }
 
     protected override void OnModelCreating(ModelBuilder mb)
     {
@@ -369,27 +370,33 @@ public class AppDbContext : DbContext
         e.HasOne(x => x.Parent).WithMany(m => m.Children)
             .HasForeignKey(x => x.ParentId).OnDelete(DeleteBehavior.Restrict);
     });
- 
-    mb.Entity<MenuPermission>(e =>
-    {
-        e.ToTable("MenuPermission");
-        e.HasKey(x => x.Id);
-        e.HasIndex(x => new { x.MenuItemId, x.RoleId }).IsUnique();
-        e.HasOne(x => x.MenuItem).WithMany(m => m.Permissions)
-            .HasForeignKey(x => x.MenuItemId).OnDelete(DeleteBehavior.Cascade);
-        e.HasOne(x => x.Role).WithMany()
-            .HasForeignKey(x => x.RoleId).OnDelete(DeleteBehavior.Cascade);
-    });
- 
-    mb.Entity<PromotionSetup>(e =>
-    {
-        e.ToTable("PromotionSetup");
-        e.HasKey(x => x.PromotionId);
-        e.Property(x => x.Title).HasMaxLength(200);
-        e.Property(x => x.ImageUrl).HasMaxLength(1000).IsRequired();
-        e.Property(x => x.ForwardUrl).HasMaxLength(500);
-        e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
-        e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
-    });
+
+        mb.Entity<MenuPermission>(e =>
+        {
+            e.ToTable("MenuPermission");
+            e.HasKey(x => x.Id);
+            e.HasIndex(x => new { x.MenuItemId, x.RoleId }).IsUnique();
+            e.HasOne(x => x.MenuItem).WithMany(m => m.Permissions)
+                .HasForeignKey(x => x.MenuItemId).OnDelete(DeleteBehavior.Cascade);
+            e.HasOne(x => x.Role).WithMany()
+                .HasForeignKey(x => x.RoleId).OnDelete(DeleteBehavior.Cascade);
+        });
+
+        mb.Entity<PromotionSetup>(e =>
+        {
+            e.ToTable("PromotionSetup");
+            e.HasKey(x => x.PromotionId);
+            e.Property(x => x.Title).HasMaxLength(200);
+            e.Property(x => x.ImageUrl).HasMaxLength(1000).IsRequired();
+            e.Property(x => x.ForwardUrl).HasMaxLength(500);
+            e.Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            e.HasOne(x => x.Company).WithMany().HasForeignKey(x => x.CompanyId);
+        });
+        mb.Entity<BulkDispatchLog>(e =>
+        {
+            e.HasKey(x => x.LogId);
+            e.Property(x => x.Status).HasDefaultValue("Processing");
+            e.Property(x => x.StartedAt).HasDefaultValueSql("GETUTCDATE()");
+        });
     }
 }

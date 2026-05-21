@@ -78,8 +78,12 @@ public interface IQRService
 
 public interface IDispatchService
 {
-    Task<DispatchResultDto> ScanDispatchAsync(int companyId, int scannedBy, string qrCode, string? location,string? sapInvoiceNo);
+    Task<DispatchResultDto> ScanDispatchAsync(int companyId, int scannedBy, string qrCode, string? location, string? sapInvoiceNo);
     Task<PagedResult<DispatchListDto>> GetDispatchesAsync(int companyId, long? batchId, PaginationParams p);
+    Task<BulkDispatchResultDto> BulkBatchDispatchAsync(
+        int companyId,
+        int scannedBy,
+        BulkBatchDispatchDto dto);
 }
 
 public interface IClaimService

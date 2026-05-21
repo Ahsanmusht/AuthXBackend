@@ -9,8 +9,8 @@ namespace AuthX.Services.BackgroundJobs;
 
 public class QRGenerationJob
 {
-    private readonly IUnitOfWork           _uow;
-    private readonly INotificationService  _notif;
+    private readonly IUnitOfWork              _uow;
+    private readonly INotificationService     _notif;
     private readonly ILogger<QRGenerationJob> _log;
 
     public QRGenerationJob(
@@ -45,41 +45,72 @@ public class QRGenerationJob
             return;
         }
 
+        // ── Warranty mode fetch karo ────────────────────────────────────────
+        var settings = await _uow.CompanySettings.Query()
+            .FirstOrDefaultAsync(s => s.CompanyId == companyId);
+
+        var warrantyMode  = settings?.WarrantyStartMode ?? "AfterDispatch";
+        var warrantyDelay = settings?.WarrantyDelayDays ?? 60;
+
+        // AfterQRGenerate mode mein: QR generate hote hi warranty set karo
+        // Warranty start = now + delayDays, End = start + product.WarrantyDays
+        bool setWarrantyOnGenerate = warrantyMode == "AfterQRGenerate";
+
+        // Product warranty days chahiye agar AfterQRGenerate mode hai
+        int productWarrantyDays = 365; // default
+        if (setWarrantyOnGenerate)
+        {
+            var product = await _uow.Products.Query()
+                .Where(p => p.ProductId == batch.ProductId)
+                .Select(p => new { p.WarrantyDays })
+                .FirstOrDefaultAsync();
+            productWarrantyDays = product?.WarrantyDays ?? 365;
+        }
+
         try
         {
-            var now   = DateTime.UtcNow;
+            var now               = DateTime.UtcNow;
+            var warrantyStartDate = now.AddDays(warrantyDelay);        // delay ke baad start
+            var warrantyEndDate   = warrantyStartDate.AddDays(productWarrantyDays); // end
+
             const int chunkSize = 5_000;
             int totalInserted = 0;
 
-            // ── Generate in chunks — avoids memory spike for 500k items ──
             for (int chunkStart = 1; chunkStart <= batch.Quantity; chunkStart += chunkSize)
             {
                 int chunkEnd = Math.Min(chunkStart + chunkSize - 1, batch.Quantity);
-                var items = new List<ProductItem>(chunkEnd - chunkStart + 1);
+                var items    = new List<ProductItem>(chunkEnd - chunkStart + 1);
 
                 for (int i = chunkStart; i <= chunkEnd; i++)
                 {
-                    // ── FIX: NO TRUNCATION — full unique QR code ──────────────────
-                    // Format: PV-{companyId}-{batchId}-{batchNo}-{sequence}-{guid}
-                    // This is guaranteed unique because Guid.NewGuid() is UUID v4
                     var serial = $"{batch.BatchNo}-{i:D8}";
                     var qrCode = $"PV-{companyId}-{batchId}-{serial}-{Guid.NewGuid():N}".ToUpper();
-                    // qrCode length: ~60-70 chars, well within VARCHAR(500)
-                    // No truncation — no collision risk
 
-                    items.Add(new ProductItem
+                    var item = new ProductItem
                     {
                         CompanyId   = companyId,
                         ProductId   = batch.ProductId,
                         BatchId     = batchId,
                         SerialNo    = serial,
                         QRCode      = qrCode,
-                        QRImagePath = null, // NOT storing images — on-demand generation
+                        QRImagePath = null,
                         CreatedAt   = now
-                    });
+                    };
+
+                    // ── AfterQRGenerate: warranty dates abhi set karo ──────
+                    if (setWarrantyOnGenerate)
+                    {
+                        item.WarrantyStartDate = warrantyStartDate;
+                        item.WarrantyEndDate   = warrantyEndDate;
+                        item.IsFirstScan       = true;
+                        item.FirstScanDate     = now;
+                        item.FirstScanType     = "QRGenerate";
+                        // Status still 'Generated' — dispatch ki zaroorat nahi warranty ke liye
+                    }
+
+                    items.Add(item);
                 }
 
-                // ── Bulk insert with duplicate protection ──────────────────────────
                 try
                 {
                     await _uow.ProductItems.AddRangeAsync(items);
@@ -87,23 +118,22 @@ public class QRGenerationJob
                     totalInserted += items.Count;
 
                     _log.LogInformation(
-                        "Batch {BatchId}: inserted chunk {Start}-{End} ({Total}/{Grand} total)",
-                        batchId, chunkStart, chunkEnd, totalInserted, batch.Quantity);
+                        "Batch {BatchId}: inserted chunk {Start}-{End} ({Total}/{Grand} total) | WarrantyMode: {Mode}",
+                        batchId, chunkStart, chunkEnd, totalInserted, batch.Quantity, warrantyMode);
                 }
                 catch (DbUpdateException dbEx) when (IsUniqueConstraintViolation(dbEx))
                 {
-                    // Extremely rare — Guid collision (practically impossible but handle gracefully)
                     _log.LogError(dbEx,
                         "Batch {BatchId}: unique constraint on chunk {Start}-{End}. Retrying one-by-one.",
                         batchId, chunkStart, chunkEnd);
 
-                    // Retry this chunk item-by-item to skip any duplicates
-                    int recovered = await InsertOneByOneAsync(items, batchId);
+                    int recovered = await InsertOneByOneAsync(items, batchId, setWarrantyOnGenerate,
+                        warrantyStartDate, warrantyEndDate, now);
                     totalInserted += recovered;
                 }
             }
 
-            // ── Log generation record ────────────────────────────────────────────
+            // ── QRGeneration log ──────────────────────────────────────────
             await _uow.QRGenerations.AddAsync(new QRGeneration
             {
                 CompanyId      = companyId,
@@ -116,16 +146,21 @@ public class QRGenerationJob
             _uow.Batches.Update(batch);
             await _uow.SaveChangesAsync();
 
+            // Notification message — mode ke hisab se
+            var notifMsg = setWarrantyOnGenerate
+                ? $"✓ {totalInserted:N0} QR codes generated for batch {batch.BatchNo}. Warranty auto-activated (starts {warrantyStartDate:dd MMM yyyy})."
+                : $"✓ {totalInserted:N0} QR codes generated for batch {batch.BatchNo}. Warranty starts after dispatch.";
+
             await _notif.PushAsync(
                 companyId:   companyId,
                 type:        NotificationTypes.QRGenerated,
                 referenceId: batchId,
-                message:     $"✓ {totalInserted:N0} QR codes generated for batch {batch.BatchNo}",
+                message:     notifMsg,
                 actionUrl:   $"/batches/{batchId}");
 
             _log.LogInformation(
-                "QR Generation complete — BatchId: {BatchId}, Total: {Total}",
-                batchId, totalInserted);
+                "QR Generation complete — BatchId: {BatchId}, Total: {Total}, WarrantyMode: {Mode}",
+                batchId, totalInserted, warrantyMode);
         }
         catch (Exception ex)
         {
@@ -134,15 +169,28 @@ public class QRGenerationJob
         }
     }
 
-    private async Task<int> InsertOneByOneAsync(List<ProductItem> items, long batchId)
+    // ─── Retry one-by-one on unique constraint violation ─────────────────────
+    private async Task<int> InsertOneByOneAsync(
+        List<ProductItem> items,
+        long batchId,
+        bool setWarranty,
+        DateTime warrantyStart,
+        DateTime warrantyEnd,
+        DateTime now)
     {
         int inserted = 0;
         foreach (var item in items)
         {
             try
             {
-                // Regenerate QR to avoid duplicate
                 item.QRCode = $"PV-{item.CompanyId}-{batchId}-{item.SerialNo}-{Guid.NewGuid():N}".ToUpper();
+
+                if (setWarranty)
+                {
+                    item.WarrantyStartDate = warrantyStart;
+                    item.WarrantyEndDate   = warrantyEnd;
+                }
+
                 await _uow.ProductItems.AddAsync(item);
                 await _uow.SaveChangesAsync();
                 inserted++;

@@ -22,31 +22,32 @@ public interface IRepository<T> where T : class
 // ─── Unit of Work ──────────────────────────────────────────
 public interface IUnitOfWork : IDisposable
 {
-    IRepository<Company>            Companies     { get; }
-    IRepository<Role>               Roles         { get; }
-    IRepository<User>               Users         { get; }
-    IRepository<UserRole>           UserRoles     { get; }
-    IRepository<Category>           Categories    { get; }
-    IRepository<Product>            Products       { get; }
-    IRepository<ProductionBatch>    Batches       { get; }
-    IRepository<ProductItem>        ProductItems  { get; }
-    IRepository<QRGeneration>       QRGenerations { get; }
-    IRepository<PrintJob>           PrintJobs     { get; }
-    IRepository<Dispatch>           Dispatches    { get; }
-    IRepository<Customer>           Customers     { get; }
-    IRepository<Claim>              Claims        { get; }
+    IRepository<Company> Companies { get; }
+    IRepository<Role> Roles { get; }
+    IRepository<User> Users { get; }
+    IRepository<UserRole> UserRoles { get; }
+    IRepository<Category> Categories { get; }
+    IRepository<Product> Products { get; }
+    IRepository<ProductionBatch> Batches { get; }
+    IRepository<ProductItem> ProductItems { get; }
+    IRepository<QRGeneration> QRGenerations { get; }
+    IRepository<PrintJob> PrintJobs { get; }
+    IRepository<Dispatch> Dispatches { get; }
+    IRepository<Customer> Customers { get; }
+    IRepository<Claim> Claims { get; }
     IRepository<ClaimStatusHistory> ClaimHistories { get; }
-    IRepository<ScanLog>            ScanLogs      { get; }
-    IRepository<Notification>       Notifications { get; }
-    IRepository<Color>           Colors          { get; }
-IRepository<ProductColor>    ProductColors   { get; }
-IRepository<PrintSettings>   PrintSettings   { get; }
-IRepository<CompanySettings> CompanySettings { get; }
-IRepository<ReturnReason> ReturnReasons { get; }
-IRepository<ProductCondition> ProductConditions { get; }
- IRepository<MenuItem>        MenuItems       { get; }
-  IRepository<MenuPermission>  MenuPermissions { get; }
-  IRepository<PromotionSetup>  Promotions      { get; }
+    IRepository<ScanLog> ScanLogs { get; }
+    IRepository<Notification> Notifications { get; }
+    IRepository<Color> Colors { get; }
+    IRepository<ProductColor> ProductColors { get; }
+    IRepository<PrintSettings> PrintSettings { get; }
+    IRepository<CompanySettings> CompanySettings { get; }
+    IRepository<BulkDispatchLog> BulkDispatchLogs { get; }
+    IRepository<ReturnReason> ReturnReasons { get; }
+    IRepository<ProductCondition> ProductConditions { get; }
+    IRepository<MenuItem> MenuItems { get; }
+    IRepository<MenuPermission> MenuPermissions { get; }
+    IRepository<PromotionSetup> Promotions { get; }
 
     Task<int> SaveChangesAsync();
 }
@@ -54,21 +55,21 @@ IRepository<ProductCondition> ProductConditions { get; }
 // ─── Paginated Result ──────────────────────────────────────
 public class PagedResult<T>
 {
-    public IEnumerable<T> Items       { get; set; } = Enumerable.Empty<T>();
-    public int            TotalCount  { get; set; }
-    public int            Page        { get; set; }
-    public int            PageSize    { get; set; }
-    public int            TotalPages  => (int)Math.Ceiling((double)TotalCount / PageSize);
-    public bool           HasPrevious => Page > 1;
-    public bool           HasNext     => Page < TotalPages;
+    public IEnumerable<T> Items { get; set; } = Enumerable.Empty<T>();
+    public int TotalCount { get; set; }
+    public int Page { get; set; }
+    public int PageSize { get; set; }
+    public int TotalPages => (int)Math.Ceiling((double)TotalCount / PageSize);
+    public bool HasPrevious => Page > 1;
+    public bool HasNext => Page < TotalPages;
 }
 
 // ─── API Response Wrapper ──────────────────────────────────
 public class ApiResponse<T>
 {
-    public bool    Success { get; set; }
+    public bool Success { get; set; }
     public string? Message { get; set; }
-    public T?      Data    { get; set; }
+    public T? Data { get; set; }
     public List<string> Errors { get; set; } = new();
 
     public static ApiResponse<T> Ok(T data, string? message = null) =>

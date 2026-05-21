@@ -18,5 +18,6 @@ public class PrintSettingsDto
 public class CompanySettingsDto
 {
     public string ColorMode { get; set; } = "Multi"; // "Multi" | "Single"
+    public string WarrantyStartMode  { get; set; } = "AfterDispatch";
     public int    WarrantyDelayDays { get; set; } = 60;
 }
